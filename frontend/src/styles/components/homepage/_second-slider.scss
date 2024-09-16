@@ -1,0 +1,64 @@
+.App-secondSlider {
+  min-height: 207px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: $spacing-large;
+  overflow: hidden;
+
+  background-position: end;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: $spacing-medium;
+  box-sizing: border-box;
+
+  .title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    row-gap: $spacing-xlarge;
+    padding: 0 $spacing-medium;
+    box-sizing: border-box;
+
+    h2 {
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 100px; /* 156.25% */
+    }
+  }
+
+  .container_lastRecipes {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .filter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    z-index: -1;
+    box-shadow: inset 300px 0px 250px 138px $light;
+  }
+
+  .background {
+    position: absolute;
+    // bottom: -300px; // Fait dépasser le background de 30px en bas
+    bottom: 0;
+    left: 0;
+    right: 0;
+    // height: calc(100% + 30px); // Ajuste la hauteur pour compenser le dépassement
+    height: 100%;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    z-index: -2;
+  }
+}

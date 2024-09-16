@@ -1,0 +1,52 @@
+.App-Contact {
+  .App-ContactBloc {
+    display: flex;
+    column-gap: $spacing-medium;
+
+    form {
+      max-width: 540px;
+      width: 100%;
+      padding: 47px 65px;
+      border-radius: $border-radius-medium;
+
+      .Name_Username {
+        .firstname, .lastname {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+        }
+      }
+    }
+
+    .information {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: column;
+
+      a {
+        background-color: $orange;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        border-radius: $border-radius-medium;
+        padding: 40px 20px;
+        width: 340px;
+
+        i::before {
+          font-size: 40px;
+        }
+
+        p {
+          color: $light;
+          font-family: 'Inter', sans-serif;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 25px; /* 125% */
+        }
+      }
+    }
+  }
+}

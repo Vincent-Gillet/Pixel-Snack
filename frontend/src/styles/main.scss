@@ -1,0 +1,317 @@
+@import './variables';
+@import './components/header';
+@import './components/footer.scss';
+@import './components/fisrt-slider.scss';
+@import './components/searchbar.scss';
+@import './components/homepage/categories.scss';
+@import './components/homepage/second-slider.scss';
+@import './components/homepage/best-recipe.scss';
+@import './components/last-recipes.scss';
+@import './components/separator.scss';
+@import './components/best-recipes.scss';
+@import './components/homepage/partnership.scss';
+@import './components/newsletter.scss';
+@import './components/contact/contact.scss';
+@import './components/recipe/recipe.scss';
+@import './components/recipes/recipes.scss';
+@import '../components/main/recipes/filter_recipes/filter_recipes';
+@import '../pages/Dashboard_Admin/Dashboard_Admin.scss';
+// @import '../components/main/cards/card_recipe/card_recipe.scss';
+@import '../components/main/homepage/cards/user_card/user_card.scss';
+// @import '../components/main/cards/user_card/user_card.scss';
+@import '../components/dashboard/users/users.scss';
+@import '../pages/Dashboard_Admin/Dashboard_Admin.scss';
+@import '../components/main/homepage/cards/recipe_card/recipe_card.scss';
+@import '../components/main/homepage/cards/category_card/category_card.scss';
+
+body {
+  margin: 0;
+  background-color: $background;
+}
+
+h1, h2, h3, h4 {
+  color: $dark;
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: 400;
+  margin: 0;
+}
+
+h2 {
+  font-size: $font-size-h1;
+  line-height: 25px; /* 78.125% */
+}
+
+h3 {
+  font-size: $font-size-h3;
+  line-height: normal;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-medium;
+  background-color: $orange;
+
+  h2 {
+    color: $light;
+  }
+
+  label {
+    font-size: $font-size-h3;
+    color: $light;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+p, label, input {
+  color: $dark;
+  text-align: center;
+  font-family: $font-family;
+  font-size: $font-size-p;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px; /* 178.571% */
+  margin: 0;
+}
+
+.main_button, button {
+  cursor: pointer;
+  appearance: none; /* Désactive le style par défaut du navigateur */
+  -webkit-appearance: none; /* Pour les navigateurs WebKit */
+  -moz-appearance: none; /* Pour les navigateurs Mozilla */
+}
+
+.main_button:hover, .normal_button:hover, .social_network a:hover {
+  background: $light;
+  color: $orange !important;
+  background-color: $light !important;
+  border: 1px solid $orange;
+  font-family: $font-family;
+
+  i {
+    color: $orange;
+  }
+}
+
+i {
+  color: $light;
+}
+
+.pagination {
+  max-width: 1440px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  column-gap: $spacing-small;
+
+  .page, .arrow {
+    background-color: $background;
+    border: none;
+    color: $orange;
+    font-size: $font-size-p;
+    i {
+      color: $orange;
+      font-size: 25px;
+    }    
+  }
+
+  .page {
+    padding: 6px 10px;
+  }
+  
+  .active, .page:hover, .arrow:hover {
+    background-color: $orange !important;
+    color: $light !important;
+    border-radius: $border-radius-medium;
+    border: 1px $orange;
+    i {
+      color: $light;
+    }  
+    
+    .arrow {
+      padding: 6px 10px;
+    }
+  }
+}
+
+.main_button, .user_button {
+  border-radius: $border-radius-medium;
+  font-family: $font-family;
+
+  display: flex;
+  width: max-content;
+  padding: $spacing-small $spacing-medium;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.main_button {
+  border: 1px solid $orange;
+  background: $orange;
+  color: $light;
+}
+
+.card {
+  background-color: $orange;
+  border-radius: $border-radius-large;
+  width: 300px;
+  height: 268px;
+  box-shadow: $box-shadow;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+
+  .card_content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+
+}
+
+.card_recipe {
+
+  .card_image {
+    height: 174px;
+    overflow: hidden;
+    border-radius: $border-radius-large;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .card_content {
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .reviews {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: $spacing-medium;
+    }
+
+    h3, p { 
+      color: $dark;
+    }
+  }
+}
+
+.card_recipe:hover {
+  background-color: $light !important;
+
+  .card_content {
+    h3, p { 
+      color: $orange !important;
+    }
+    .reviews {
+      .stars {
+        i {
+          color: $orange !important;
+        }
+      }
+    }
+  }
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: $spacing-large;
+
+  /* Inscription et Connexion */
+
+  .App-login, .App-subscribe, .App-ContactBloc {
+    display: flex;
+    justify-content: center;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: $spacing-medium;
+      max-width: 300px;
+      padding: 30px 10px;
+      border-radius: 10px;
+      box-sizing: border-box;
+      background-color: $orange;
+      gap: $spacing-medium; 
+      
+      h2 {
+        color: $light;
+      }
+
+      label {
+        font-size: $font-size-h3;
+        color: $light;
+      }
+
+      input {
+        font-size: 16px;
+        border: none;
+        border-radius: $border-radius-medium;
+        width: 225px;
+        height: 55px;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .cgu {
+        display: flex;
+        input {
+          position: relative;
+          top: 7px;
+          width: 10px;
+          height: 10px;
+        }
+        label {
+          font-size: $font-size-p !important;
+        }
+      }
+
+      p {
+        color: $light;
+        a {
+          color: $light;
+          font-weight: bold;
+        }
+      }
+
+      button {
+        border: none;
+        background: $light;
+        color: $dark !important;
+        background-color: $light !important;
+        border: 1px solid $orange;
+        border-radius: $border-radius-medium;
+        width: 123px;
+        height: 35px;
+      }
+    }
+  }
+}

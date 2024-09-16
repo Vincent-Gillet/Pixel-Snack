@@ -1,0 +1,62 @@
+.App-bestRecipe {
+  min-height: 207px;
+  display: flex;
+  flex-direction: column;
+  row-gap: $spacing-large;
+
+  .bestRecipe {
+    display: flex;
+    justify-content: center;
+    column-gap: 10%;
+    align-items: center;
+    min-height: 631.533px;
+
+    .image_recipe, .text_bestRecipe {
+      flex: 1;
+      width: 50%;
+      box-sizing: border-box;
+    }
+
+    .image_recipe {
+      max-width: 457.954px;
+      height: 631.533px;
+      flex-shrink: 0;
+      margin-bottom: $spacing-medium;
+      margin-left: $spacing-medium;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: $border-radius-large;
+        box-shadow: -30px 30px 0px $orange;
+      }
+    }
+
+    .text_bestRecipe {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: $spacing-xlarge;
+      max-width: 434px;
+    }
+
+    @media (max-width: 700px) {
+      margin-top: $spacing-medium;
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: $spacing-medium;
+
+      .image_recipe {
+        img {
+          box-shadow: -10px 10px 0px $orange;
+        }
+      }
+
+      .image_recipe, .text_bestRecipe {
+        width: 80%;
+      }
+    }
+  }
+}

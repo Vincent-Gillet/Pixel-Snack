@@ -1,0 +1,261 @@
+.App-RecipeBloc {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+
+     
+    .title {
+      display: flex;
+      justify-content: center;
+      column-gap: 400px;
+      flex-wrap: wrap;
+      row-gap: 20px;
+      
+      .reviews {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+
+        .stars {
+          i {
+            color: #F99800 !important;
+          }            
+        }        
+      }
+
+       
+      
+    }
+
+    .container_ingredients {
+      display: flex;
+      justify-content: center;
+      column-gap: 100px;
+      flex-wrap: wrap;
+
+
+      .image {
+        width: 100%;
+        max-width: 500px;
+        max-height: 400px;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 20px;
+        }
+      }
+
+      .text {
+        margin-top: 30px;
+
+        ul {
+          list-style: '-';
+
+          li {
+            text-align: left;
+            color: #000;
+            text-align: start;
+            font-family: Inter;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 25px; /* 178.571% */
+          }          
+        }
+
+      }
+    }
+
+    .container_timer {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 40px;
+
+      .bloc_timer {
+        display: flex;
+        max-width: max-content;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;   
+        border-radius: 20px;
+        background: #F9F9F9;
+        padding: 20px 40px;
+        row-gap: 20px;
+        
+        .all_timer {
+          display: flex;
+          justify-content: center;
+          column-gap: 20px;
+          align-items: center;
+          
+          .timer {
+            width: 110px;
+
+          }
+
+
+        }        
+      }
+
+
+
+    }
+
+    .container_video {
+      display: flex;
+      justify-content: center;
+      height: 500px;
+      align-items: center;
+
+      .video {
+        display: flex;
+        max-width: 800px;
+        width: 100%;
+        max-height: 400px;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 20px;
+        background-position: center !important;
+        background-size: cover !important; 
+
+
+
+
+
+      }
+
+      .video_overlay {
+        position: absolute;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8); // Fond transparent noir
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+
+
+        .iframe_container {
+          position: relative;
+          width: 80%; // Ajustez cette valeur selon vos besoins
+          padding-bottom: 56.25%; // Ratio d'aspect 16:9
+          height: 0;
+          overflow: hidden;
+        }
+      
+        .responsive_iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
+
+        // .iframe {
+        //   max-width: 900px;
+        //   height: 500px;
+        //   width: 100%;
+        //   height: 100%;
+        // }
+      }
+    }
+
+    .container_preparation {
+      display: flex;
+      align-items: center;      
+      flex-direction: column;
+      row-gap: 20px;
+
+      .step {
+        max-width: 800px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+
+        h4, p {
+          text-align: start;
+  
+        }      
+      }
+    }
+
+    .App-Reference {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      counter-reset: 20px;
+      max-width: 1440px;
+      width: 100%;
+
+      .container_reference {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 1000px;
+        width: 100%;
+        column-gap: 40px;
+
+        .container_text {
+          display: flex;
+          flex-direction: column;
+          row-gap: 20px;
+          .contenu_reference {
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            max-width: 500px;
+            width: 100%;
+            justify-content: start;
+
+            h3, p {
+              text-align: start;
+              // width: 100%;
+            }
+
+            span {
+              display: flex;
+              align-items: center;
+              column-gap: 10px;
+
+              img {
+                width: 200px;
+                height: 50px;
+                object-fit: contain;
+
+              }
+            }            
+          }
+
+        }
+        .image {
+          width: 100%;
+          max-width: 500px;
+          max-height: 400px;
+          height: 100%;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+          }
+        }        
+      }
+
+
+    }
+
+  }
