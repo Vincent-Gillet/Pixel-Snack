@@ -1,14 +1,14 @@
 import React from 'react';
-import FirstSlider from '../components/first_slider';
-import SearchBar from '../components/search_bar';
-import Categories from '../components/main/homepage/categories';
-import SecondSlider from '../components/main/homepage/second_slider';
-import BestRecipe from '../components/main/homepage/best_recipe';
-import LastRecipes from '../components/main/homepage/last_recipes';
-import BestRecipes from '../components/main/homepage/best_recipes';
-import Separator from '../components/main/homepage/separator';
-import Parternship from '../components/main/homepage/partnership';
-import Newsletter from '../components/newsletter';
+import FirstSlider from '../components/first_slider/first_slider';
+import SearchBar from '../components/searchbar/searchbar';
+import Categories from '../components/pages/homepage/categories/categories';
+import SecondSlider from '../components/pages/homepage/second_slider/second_slider';
+import BestRecipe from '../components/pages/homepage/best_recipe/best_recipe';
+import LastRecipes from '../components/last_recipes/last_recipes';
+import BestRecipes from '../components/best_recipes/best_recipes';
+import Separator from '../components/separator/separator';
+import Parternship from '../components/pages/homepage/partnership/partnership';
+import Newsletter from '../components/newsletter/newsletter';
 
 function Home() {
   return (

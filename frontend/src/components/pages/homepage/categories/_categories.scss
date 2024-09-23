@@ -1,0 +1,62 @@
+.App-Categories {
+  min-height: 207px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: $spacing-large;
+  overflow: hidden;
+
+  background-position: end;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+  .element_background {
+    position: absolute;
+  }
+
+  .plat {
+    left: 22px;
+    bottom: 10px;
+  }
+
+  .salad_bowl {
+    right: 24px;
+    top: 50px;
+  }
+
+  .title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 $spacing-medium;
+    box-sizing: border-box;
+  }
+
+  .container_Categories {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: $spacing-large;
+    max-width: 980px;
+    flex-wrap: wrap;
+    gap: $spacing-large;
+    position: relative;
+  }
+
+  .background {
+    position: absolute;
+    bottom: -300px; // Fait dépasser le background de 30px en bas
+    left: 0;
+    right: 0;
+    height: calc(100% + 30px); // Ajuste la hauteur pour compenser le dépassement
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+
+  .main_button {
+    font-size: 14px;
+  }
+}

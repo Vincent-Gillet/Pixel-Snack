@@ -1,0 +1,43 @@
+.container_dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    row-gap: 40px;
+    column-gap: 40px;
+
+    .card_dashboard {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #F99800;
+        border-radius: 40px; 
+        width: 300px;
+        height: 268px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        flex-direction: column;
+    
+        .button_card {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+    
+            .dashboard_button {
+                border: 1px solid $light;
+                background: $light;
+                color: $dark;
+    
+                &:hover {
+                    border: 1px solid $orange;
+                    background: $orange;
+                    color: $dark;
+                }
+            }
+        }
+    }
+  }
+  

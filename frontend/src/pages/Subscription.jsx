@@ -1,6 +1,6 @@
 import React from 'react';
 import SubscriptionBloc from '../components/subscription';
-import Newsletter from '../components/newsletter';
+import Newsletter from '../components/newsletter/newsletter';
 
 function Subscription() {
   return (

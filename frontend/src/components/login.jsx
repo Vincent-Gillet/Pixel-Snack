@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { NavLink } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 function LoginBloc() {
   const [email, setEmail] = useState('');
@@ -19,10 +18,8 @@ function LoginBloc() {
       });
 
       console.log('Connexion réussie:', response.data);
-      const accessToken = response.data.accessToken;
-      const refreshToken = response.data.refreshToken;
+      const { accessToken, role, user_id } = response.data;
       localStorage.setItem('accessToken', accessToken);
-      localStorage.setItem('refreshToken', refreshToken);
       navigate('/dashboard');
     } catch (error) {
       console.error('Erreur lors de la connexion:', error);

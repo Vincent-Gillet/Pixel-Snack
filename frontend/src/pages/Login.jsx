@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginBloc from '../components/login';
-import Newsletter from '../components/newsletter';
+import Newsletter from '../components/newsletter/newsletter';
 
 function Login() {
   return (

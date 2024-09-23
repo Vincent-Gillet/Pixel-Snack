@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 
 function SubscriptionBloc() {
   const [name, setName] = useState('');
@@ -83,6 +83,7 @@ function SubscriptionBloc() {
           </label>
         </div> */}
         <button type="submit">S'inscrire</button>
+        <p className=''>Vous avez déjà un compte ? <NavLink to="/login" >Se connecter</NavLink></p>
       </form>
     </div>
   );

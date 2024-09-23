@@ -4,15 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-
-    public function index (): JsonResponse
+    public function index(): JsonResponse
     {
         $users = User::all();
 
@@ -21,9 +19,9 @@ class UserController extends Controller
         ]);
     }
 
-    public function show($id): JsonResponse
+    public function show(): JsonResponse
     {
-        $user = User::find($id);
+        $user = Auth::user();
 
         if (!$user) {
             return response()->json([
@@ -63,12 +61,18 @@ class UserController extends Controller
         }
 
         $data = $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|string',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email,' . $id,
+            'password' => 'nullable|string|min:8|confirmed',
+            'role' => 'required|string',
         ]);
 
         $user->name = $data['name'];
         $user->email = $data['email'];
+        if (!empty($data['password'])) {
+            $user->password = Hash::make($data['password']);
+        }
+        $user->role = $data['role'];
         $user->save();
 
         return response()->json([
@@ -76,10 +80,9 @@ class UserController extends Controller
             'user' => $user,
         ]);
     }
-    
 
-    public function delete($id): JsonResponse {
-
+    public function delete($id): JsonResponse
+    {
         $user = User::find($id);
 
         if (!$user) {
@@ -93,6 +96,23 @@ class UserController extends Controller
 
         return response()->json([
             'message' => 'User deleted successfully',
+        ]);
+    }
+
+    public function getUserRecipes(): JsonResponse
+    {
+        $user = auth()->user();
+
+        if (!$user) {
+            return response()->json([
+                'message' => 'User not authenticated',
+            ], 401);
+        }
+
+        $recipes = $user->recipes; 
+
+        return response()->json([
+            'recipes' => $recipes,
         ]);
     }
 }

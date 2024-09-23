@@ -1,11 +1,11 @@
 import React from 'react';
-import SearchBar from '../components/search_bar';
-import RecipeBloc from '../components/main/recipe/recipebloc';
-import Newsletter from '../components/newsletter';
-import FirstSlider from '../components/first_slider';
-import LastRecipes from '../components/main/homepage/last_recipes';
-import Separator from '../components/main/homepage/separator';
-import BestRecipes from '../components/main/homepage/best_recipes';
+import SearchBar from '../components/searchbar/searchbar';
+import RecipeBloc from '../components/recipe/recipe_bloc';
+import Newsletter from '../components/newsletter/newsletter';
+import FirstSlider from '../components/first_slider/first_slider';
+import LastRecipes from '../components/last_recipes/last_recipes';
+import Separator from '../components/separator/separator';
+import BestRecipes from '../components/best_recipes/best_recipes';
 
 function Recipe() {
   return (

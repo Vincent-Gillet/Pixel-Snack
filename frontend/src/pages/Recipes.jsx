@@ -1,20 +1,21 @@
-import React from 'react';
-import RecipesBloc from '../components/main/recipes/recipesbloc';
-import Newsletter from '../components/newsletter';
-import FirstSlider from '../components/first_slider';
-import SearchBar from '../components/search_bar';
-import FilterBloc from '../components/main/recipes/filter_recipes/filter_recipes';
+import React, { useState } from 'react';
+import RecipesBloc from '../components/pages/recipes/recipes_bloc';
+import Newsletter from '../components/newsletter/newsletter';
+import FirstSlider from '../components/first_slider/first_slider';
+import SearchBar from '../components/searchbar/searchbar';
+import FilterBloc from '../components/filter_recipes/filter_recipes';
 
 function Recipes() {
+  const [recipes, setRecipes] = useState([]);
+  
   return (
     <div className="App container">
-        <FirstSlider />
-        <SearchBar />
-        <FilterBloc />
-        <RecipesBloc />
-        <Newsletter />
+      <FirstSlider />
+      <SearchBar setRecipes={setRecipes} />
+      <FilterBloc />
+      <RecipesBloc recipes={recipes} setRecipes={setRecipes} />
+      <Newsletter />
     </div>
-
   );
 }
 

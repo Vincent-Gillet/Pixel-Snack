@@ -2,42 +2,26 @@ import React from 'react';
 
 const Pagination = ({ currentPage, totalPages, handlePreviousPage, handleNextPage, handlePageClick }) => {
 
-    const getPageNumbers = () => {
+  const getPageNumbers = () => {
     const pages = [];
-    
-    if (currentPage === 1) {
-        pages.push(1, 2, 3);
-        if (totalPages > 3) {
-        pages.push('...');
-        pages.push(totalPages);
-        }
-    } else if (currentPage === totalPages) {
-        if (totalPages > 3) {
-        pages.push(1);
-        pages.push('...');
-        }
-        pages.push(totalPages - 2, totalPages - 1, totalPages);
-    } else {
-        pages.push(1);
-        if (currentPage > 4) {
-        pages.push('...');
-        }
-        if (currentPage > 2) {
-        pages.push(currentPage - 1);
-        }
-        pages.push(currentPage);
-        if (currentPage < totalPages - 1) {
-        pages.push(currentPage + 1);
-        }
-        if (currentPage < totalPages - 3) {
-        pages.push('...');
-        }
-        pages.push(totalPages);
-    }
-    
-    return pages;
-    };
+    const maxPagesToShow = 5;
 
+    if (totalPages <= maxPagesToShow) {
+      for (let i = 1; i <= totalPages; i++) {
+        pages.push(i);
+      }
+    } else {
+      if (currentPage <= 3) {
+        pages.push(1, 2, 3, 4, '...', totalPages);
+      } else if (currentPage >= totalPages - 2) {
+        pages.push(1, '...', totalPages - 3, totalPages - 2, totalPages - 1, totalPages);
+      } else {
+        pages.push(1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages);
+      }
+    }
+
+    return pages;
+  };
 
   return (
     <div className="pagination">

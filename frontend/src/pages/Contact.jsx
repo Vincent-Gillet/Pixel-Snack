@@ -1,6 +1,6 @@
 import React from 'react';
-import ContactBloc from '../components/main/contact/contactbloc';
-import Newsletter from '../components/newsletter';
+import ContactBloc from '../components/pages/contact/contactbloc';
+import Newsletter from '../components/newsletter/newsletter';
 
 function Contact() {
   return (
