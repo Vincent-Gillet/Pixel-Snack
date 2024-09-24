@@ -16,7 +16,6 @@ class RecipeFactory extends Factory
             'description' => $this->faker->paragraph,
             'image' => $this->faker->imageUrl,
             'video' => $this->faker->url,
-            'ingredient' => $this->faker->text,
             'total_time' => $this->faker->numberBetween(10, 120),
             'preparation_time' => $this->faker->numberBetween(5, 60),
             'rest_time' => $this->faker->numberBetween(0, 60),

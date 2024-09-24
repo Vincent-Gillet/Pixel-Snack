@@ -52,17 +52,15 @@
         margin-top: 30px;
 
         ul {
-          list-style: '-';
+          list-style: none;
+          padding: 0;
 
           li {
-            text-align: left;
-            color: #000;
-            text-align: start;
-            font-family: Inter;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 25px; /* 178.571% */
+            p {
+              text-align: start !important;              
+            }
+        
+            
           }          
         }
 

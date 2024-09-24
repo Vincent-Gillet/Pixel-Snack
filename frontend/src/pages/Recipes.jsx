@@ -12,7 +12,7 @@ function Recipes() {
     <div className="App container">
       <FirstSlider />
       <SearchBar setRecipes={setRecipes} />
-      <FilterBloc />
+      <FilterBloc setRecipes={setRecipes} />
       <RecipesBloc recipes={recipes} setRecipes={setRecipes} />
       <Newsletter />
     </div>

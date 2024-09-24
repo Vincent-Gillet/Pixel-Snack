@@ -17,7 +17,6 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('image')->nullable();
             $table->string('video')->nullable();
-            $table->text('ingredient')->nullable();
             $table->integer('total_time')->nullable();
             $table->integer('preparation_time')->nullable();
             $table->integer('rest_time')->nullable();

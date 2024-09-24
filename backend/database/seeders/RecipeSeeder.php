@@ -12,7 +12,7 @@ class RecipeSeeder extends Seeder
     {
         $userIds = User::pluck('id')->toArray();
 
-        Recipe::factory()->count(10)->create([
+        Recipe::factory()->count(50)->create([
             'user_id' => function () use ($userIds) {
                 return $userIds[array_rand($userIds)];
             }

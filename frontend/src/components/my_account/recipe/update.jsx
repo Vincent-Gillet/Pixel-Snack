@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import RecipeInfo from './informations_recipe';
 
 function UpdateRecipe() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [recipe, setRecipe] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
+  const [newIngredient, setNewIngredient] = useState({ name: '', quantity: '', unit: '' });
   const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
     title: '',
@@ -25,7 +27,8 @@ function UpdateRecipe() {
     description_reference: '',
     image_repice_reference: '',
     logo_platform_reference: '',
-    logo_platform_url_reference: ''
+    logo_platform_url_reference: '',
+    ingredients: []
   });
 
   useEffect(() => {
@@ -48,6 +51,33 @@ function UpdateRecipe() {
     setFormData({
       ...formData,
       [name]: value
+    });
+  };
+
+  const handleIngredientChange = (index, e) => {
+    const { name, value } = e.target;
+    const updatedIngredients = formData.ingredients.map((ingredient, i) => 
+      i === index ? { ...ingredient, pivot: { ...ingredient.pivot, [name]: value } } : ingredient
+    );
+    setFormData({
+      ...formData,
+      ingredients: updatedIngredients
+    });
+  };
+
+  const handleAddIngredient = () => {
+    setFormData({
+      ...formData,
+      ingredients: [...formData.ingredients, { ...newIngredient, pivot: { quantity: newIngredient.quantity, unit: newIngredient.unit } }]
+    });
+    setNewIngredient({ name: '', quantity: '', unit: '' });
+  };
+
+  const handleRemoveIngredient = (index) => {
+    const updatedIngredients = formData.ingredients.filter((_, i) => i !== index);
+    setFormData({
+      ...formData,
+      ingredients: updatedIngredients
     });
   };
 
@@ -106,8 +136,56 @@ function UpdateRecipe() {
               <input type="text" name="image" value={formData.image} onChange={handleInputChange} />
             </div>
             <div className='dashboard_input'>
-              <label>les Ingredients :</label>
-              <textarea name="ingredient" value={formData.ingredient} onChange={handleInputChange}></textarea>
+              <h3>Ingredients</h3>
+              <ul>
+                {formData.ingredients && formData.ingredients.map((ingredient, index) => (
+                  <li key={index}>
+                    <input
+                      type="text"
+                      name="name"
+                      value={ingredient.name}
+                      onChange={(e) => handleIngredientChange(index, e)}
+                    />
+                    <input
+                      type="number"
+                      name="quantity"
+                      value={ingredient.pivot.quantity}
+                      onChange={(e) => handleIngredientChange(index, e)}
+                    />
+                    <input
+                      type="text"
+                      name="unit"
+                      value={ingredient.pivot.unit}
+                      onChange={(e) => handleIngredientChange(index, e)}
+                    />
+                    <button type="button" onClick={() => handleRemoveIngredient(index)}>Remove</button>
+                  </li>
+                ))}
+              </ul>
+              <div>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Ingredient Name"
+                  value={newIngredient.name}
+                  onChange={(e) => setNewIngredient({ ...newIngredient, name: e.target.value })}
+                />
+                <input
+                  type="number"
+                  name="quantity"
+                  placeholder="Quantity"
+                  value={newIngredient.quantity}
+                  onChange={(e) => setNewIngredient({ ...newIngredient, quantity: e.target.value })}
+                />
+                <input
+                  type="text"
+                  name="unit"
+                  placeholder="Unit"
+                  value={newIngredient.unit}
+                  onChange={(e) => setNewIngredient({ ...newIngredient, unit: e.target.value })}
+                />
+                <button type="button" onClick={handleAddIngredient}>Add Ingredient</button>
+              </div>
             </div>
             <div className='dashboard_input'>
               <label>Temps total :</label>
@@ -162,35 +240,11 @@ function UpdateRecipe() {
         </>
 
       ) : (
-        <>
-          <h1>Info Recette</h1>
-          <div className='form_dashboard'>
-            <h2>Recette</h2>
-            <span><h2>Nom :</h2><p>{recipe.title}</p></span>
-            <span><h2>Image :</h2><p>{recipe.image}</p></span>
-            <img src={recipe.image} alt={recipe.title} />            
-            <span><h2>Ingrédients :</h2><p>{recipe.ingredient}</p></span>
-            <span><h2>Temps total :</h2><p>{recipe.total_time}</p></span>
-            <span><h2>Temps de préparation :</h2><p>{recipe.preparation_time}</p></span>
-            <span><h2>Temps de repos :</h2><p>{recipe.rest_time}</p></span>
-            <span><h2>Temps de cuisson :</h2><p>{recipe.cooking_time}</p></span>
-            <span><h2>Vidéo :</h2><p><a href={recipe.video} target="_blank" rel="noopener noreferrer">Voir la vidéo</a></p></span>
-            <a href={recipe.video} target="_blank" rel="noopener noreferrer">Voir la vidéo</a>
-            <h2>Oeuvre lier</h2>
-            <span><h2>Titre :</h2><p>{recipe.title_reference}</p></span>
-            <span><h2>Apparition de la recette:</h2><p>{recipe.episode_reference}</p></span>
-            <span><h2>Description :</h2><p>{recipe.description_reference}</p></span>
-            <span><h2>Image de la recette :</h2><p>{recipe.image_repice_reference}</p></span>
-            <img src={recipe.image_repice_reference} alt="Image de la recette" />
-            <span><h2>Logo de la Platforme de visionnage:</h2><p>{recipe.logo_platform_reference}</p></span>
-            <img src={recipe.logo_platform_reference} alt="Logo de la platforme" />
-            <span><h2>URL de la platforme :</h2><p>{recipe.logo_platform_url_reference}</p></span>
-            <div className='button_dashboard'>
-              <button onClick={() => setIsEditing(true)}>Modifier</button>
-              <button onClick={handleDeleteRecipe}>Supprimer</button>
-            </div>
-          </div>
-        </>
+        <RecipeInfo
+          recipe={recipe}
+          setIsEditing={setIsEditing}
+          handleDeleteRecipe={handleDeleteRecipe}
+        />
       )}
     </div>
   );

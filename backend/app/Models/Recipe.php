@@ -14,7 +14,6 @@ class Recipe extends Model
         'description',
         'image',
         'video',
-        'ingredient',
         'total_time',
         'preparation_time',
         'rest_time',
@@ -36,5 +35,12 @@ class Recipe extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function ingredients()
+    {
+        return $this->belongsToMany(Ingredient::class, 'ingredient_recipe')
+                    ->withPivot('quantity', 'unit')
+                    ->withTimestamps();
     }
 }

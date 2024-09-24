@@ -57,13 +57,17 @@ function RecipeBloc() {
         <div className='text'>
           <h3>Ingrédients</h3>
           <ul>
-            {/* {recipe.recipe.ingredients.map((ingredient, index) => (
-              <li key={index}>{ingredient}</li>
-            ))} */}
+            {recipe.ingredients.map((ingredient, index) => (
+              <li key={index}>
+                <p>
+                  - {ingredient.name} : {ingredient.quantity} {ingredient.unit}                  
+                </p>
+
+              </li>
+            ))}
           </ul>
         </div>
       </div>
-
 
       <div className='container_timer'>
         <h3>Préparation</h3>
@@ -100,12 +104,6 @@ function RecipeBloc() {
       </div>
 
       <div className='container_preparation'>
-        {/* {recipe.steps && recipe.steps.map((step, index) => (
-          <div key={index} className='step'>
-            <h4>Etape {index + 1}</h4>
-            <p>{step}</p>
-          </div>
-        ))} */}
         <h3>Étapes</h3>
         <p>{recipe.recipe.description}</p>
       </div>
