@@ -11,7 +11,7 @@ import Category from './pages/Category';
 import CategoryUpdate from './components/my_account/category/update';
 import Contact from './pages/Contact';
 import Recipe from './pages/Recipe';
-import RecipeEdit from './components/my_account/recipe/update';
+import RecipeEdit from './components/my_account/recipe/update/update';
 import RecipePost from './components/my_account/recipe/post';
 
 import Account from './pages/Account/Account';

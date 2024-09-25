@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Recipe;
 use App\Models\Ingredient;
+use App\Models\Diet;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Log;
 
@@ -18,11 +19,11 @@ class RecipeController extends Controller
 
     public function show($id): JsonResponse
     {
-        $recipe = Recipe::with('ingredients')->find($id);
+        $recipe = Recipe::with(['ingredients', 'diets'])->find($id);
         if (!$recipe) {
             return response()->json(['message' => 'Recipe not found'], 404);
         }
-
+    
         $ingredients = $recipe->ingredients->map(function ($ingredient) {
             return [
                 'name' => $ingredient->name,
@@ -30,8 +31,37 @@ class RecipeController extends Controller
                 'unit' => $ingredient->pivot->unit,
             ];
         });
-
-        return response()->json(['recipe' => $recipe, 'ingredients' => $ingredients]);
+    
+        $diets = $recipe->diets->map(function ($diet) {
+            return [
+                'name' => $diet->name,
+            ];
+        });
+    
+        return response()->json([
+            'recipe' => [
+                'id' => $recipe->id,
+                'title' => $recipe->title,
+                'description' => $recipe->description,
+                'image' => $recipe->image,
+                'video' => $recipe->video,
+                'total_time' => $recipe->total_time,
+                'preparation_time' => $recipe->preparation_time,
+                'rest_time' => $recipe->rest_time,
+                'cooking_time' => $recipe->cooking_time,
+                'title_reference' => $recipe->title_reference,
+                'episode_reference' => $recipe->episode_reference,
+                'description_reference' => $recipe->description_reference,
+                'logo_platform_reference' => $recipe->logo_platform_reference,
+                'logo_platform_url_reference' => $recipe->logo_platform_url_reference,
+                'image_repice_reference' => $recipe->image_repice_reference,
+                'created_at' => $recipe->created_at,
+                'updated_at' => $recipe->updated_at,
+                'user_id' => $recipe->user_id,
+                'ingredients' => $ingredients,
+                'diets' => $diets,
+            ]
+        ]);
     }
 
     public function store(Request $request): JsonResponse
@@ -144,44 +174,53 @@ class RecipeController extends Controller
         return response()->json(['message' => 'Recipe deleted successfully']);
     }
 
-    public function search(Request $request): JsonResponse
+    // public function search(Request $request): JsonResponse
+    // {
+    //     $query = $request->input('query');
+    
+    //     if (!$query) {
+    //         return response()->json(['message' => 'Query parameter is required'], 400);
+    //     }
+    
+    //     $recipes = Recipe::where('title', 'LIKE', "%{$query}%")->get();
+    
+    //     if ($recipes->isEmpty()) {
+    //         return response()->json(['message' => 'Recipe not found'], 404);
+    //     }
+    
+    //     return response()->json(['recipes' => $recipes], 200);
+    // }
+
+    public function filter(Request $request)
     {
-        $query = $request->input('query');
-    
-        if (!$query) {
-            return response()->json(['message' => 'Query parameter is required'], 400);
+        $ingredient = $request->query('ingredient');
+        $diet = $request->query('diet');
+        $title = $request->query('title');
+
+        $recipeQuery = Recipe::query();
+
+        if ($ingredient) {
+            $recipeQuery->whereHas('ingredients', function ($q) use ($ingredient) {
+                $q->where('name', $ingredient);
+            });
         }
-    
-        $recipes = Recipe::where('title', 'LIKE', "%{$query}%")->get();
-    
+
+        if ($diet) {
+            $recipeQuery->whereHas('diets', function ($q) use ($diet) {
+                $q->where('name', $diet);
+            });
+        }
+
+        if ($title) {
+            $recipeQuery->where('title', 'LIKE', "%{$title}%");
+        }
+
+        $recipes = $recipeQuery->get();
+
         if ($recipes->isEmpty()) {
             return response()->json(['message' => 'Recipe not found'], 404);
         }
-    
-        return response()->json(['recipes' => $recipes], 200);
-    }
 
-
-    public function filterByIngredient(Request $request): JsonResponse
-    {
-        $ingredient = $request->query('ingredient');
-    
-        if (!$ingredient) {
-            return response()->json(['message' => 'Ingrédient non spécifié'], 400);
-        }
-    
-        $ingredientModel = Ingredient::where('name', 'LIKE', '%' . $ingredient . '%')->first();
-    
-        if (!$ingredientModel) {
-            return response()->json(['message' => 'Ingrédient non trouvé'], 404);
-        }
-    
-        $recipes = $ingredientModel->recipes;
-    
-        if ($recipes->isEmpty()) {
-            return response()->json(['message' => 'Aucune recette trouvée'], 404);
-        }
-    
         return response()->json(['recipes' => $recipes], 200);
     }
 }

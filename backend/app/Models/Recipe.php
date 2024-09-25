@@ -43,4 +43,9 @@ class Recipe extends Model
                     ->withPivot('quantity', 'unit')
                     ->withTimestamps();
     }
+
+    public function diets()
+    {
+        return $this->belongsToMany(Diet::class);
+    }
 }

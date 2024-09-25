@@ -8,14 +8,16 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\IngredientController;
+use App\Http\Controllers\DietController;
 
 Route::group(['prefix' => 'v1'], function () {
     Route::post('/login', [AuthController::class, 'login']);
     Route::post('/register', [AuthController::class, 'register']); 
     Route::get('/recipes', [RecipeController::class, 'index'])->name('recipes.index');
     Route::get('/recipes/{id}', [RecipeController::class, 'show'])->name('recipes.show');
-    Route::get('/recipes/filter/ingredient', [RecipeController::class, 'filterByIngredient'])->name('recipes.filterByIngredient');
-    
+    Route::get('/recipes/filter/recipes', [RecipeController::class, 'filter']);
+
+
     Route::get('/categories/{id}', [CategoryController::class, 'show'])->name('categories.show');
     Route::get('/recipes/{id}/categories', [RecipeController::class, 'show']);
     Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
@@ -26,6 +28,9 @@ Route::group(['prefix' => 'v1'], function () {
 
 
     Route::get('/ingredients', [IngredientController::class, 'index'])->name('ingredients.index');
+
+    Route::get('/diets', [DietController::class, 'index']);
+    Route::get('/diets/{id}', [DietController::class, 'show']);
 
     Route::middleware('auth:sanctum')->group(function () {
         Route::post('/logout', [AuthController::class, 'logout']);

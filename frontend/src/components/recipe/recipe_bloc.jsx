@@ -5,7 +5,7 @@ import repice from '../../assets/image/recettes/20969525.webp';
 import start from '../../assets/element/PlayButtonCircled.svg';
 import Reference from './reference';
 
-function RecipeBloc() {
+function RecipeBloc({ setRecipeTitle, setRecipeImage }) {
   const { id } = useParams(); 
   const [showVideo, setShowVideo] = useState(false);
   const [recipe, setRecipe] = useState(null);
@@ -15,13 +15,15 @@ function RecipeBloc() {
       try {
         const response = await axios.get(`http://127.0.0.1:8000/api/v1/recipes/${id}`);
         setRecipe(response.data);
+        setRecipeTitle(response.data.recipe.title); 
+        setRecipeImage(response.data.recipe.image || repice); // Utilisez une image par défaut si l'image est manquante
       } catch (error) {
         console.error('Error fetching recipe:', error);
       }
     };
 
     fetchRecipe();
-  }, [id]);
+  }, [id, setRecipeTitle, setRecipeImage]);
 
   const handleVideoClick = () => {
     setShowVideo(true);
@@ -57,12 +59,11 @@ function RecipeBloc() {
         <div className='text'>
           <h3>Ingrédients</h3>
           <ul>
-            {recipe.ingredients.map((ingredient, index) => (
+            {recipe.recipe.ingredients.map((ingredient, index) => (
               <li key={index}>
                 <p>
                   - {ingredient.name} : {ingredient.quantity} {ingredient.unit}                  
                 </p>
-
               </li>
             ))}
           </ul>
@@ -97,7 +98,7 @@ function RecipeBloc() {
         {showVideo && (
           <div className='video_overlay' onClick={handleOverlayClick}>
             <div className='iframe_container'>
-              <iframe className='responsive_iframe' src={recipe.recipe.videoUrl} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+              <iframe className='responsive_iframe' src={recipe.recipe.video} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
             </div>
           </div>
         )}

@@ -2,7 +2,7 @@
 @import '../components/header/header';
 @import '../components/footer/footer';
 @import '../components/first_slider/fisrt-slider';
-@import '../components/searchbar/searchbar';
+@import '../components/filter_recipes/searchbar/searchbar';
 @import '../components/pages/homepage/categories/categories';
 @import '../components/pages/homepage/second_slider/second-slider';
 @import '../components/pages/homepage/best_recipe/best-recipe';
@@ -16,11 +16,11 @@
 @import '../components/pages/recipes_categories_bloc';
 @import '../components/filter_recipes/filter_recipes';
 @import '../components/cards/user_card/user_card.scss';
-@import '../components/my_account/users/users.scss';
 @import '../pages/Account/account';
 @import '../components/cards/recipe_card/recipe_card';
 @import '../components/cards/category_card/category_card';
 @import '../components/my_account/dashboard.scss';
+@import '../components/banner/banner.scss';
 
 body {
   margin: 0;
@@ -400,6 +400,7 @@ i {
       }
       p {
         font-size: 14px;
+        text-align: center;
       }    
     }
 

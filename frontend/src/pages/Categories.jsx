@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import FirstSlider from '../components/first_slider/first_slider';
+import Banner from '../components/banner/banner';
 import CategoriesBloc from '../components/pages/categories/categories_bloc';
 import Newsletter from '../components/newsletter/newsletter';
-
+import customImage from '../assets/image/recettes/foodwarsplat.png';
 
 function Categories() {
   const [categories, setCategories] = useState([]);
 
   return (
     <div className="App container">
-        <FirstSlider />
+        <Banner title="Catégories" image={customImage} />
         <CategoriesBloc categories={categories} setCategories={setCategories} />
         <Newsletter />
     </div>

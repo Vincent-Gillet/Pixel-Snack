@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
+import Banner from '../components/banner/banner';
 import RecipesBloc from '../components/pages/recipes/recipes_bloc';
 import Newsletter from '../components/newsletter/newsletter';
-import FirstSlider from '../components/first_slider/first_slider';
-import SearchBar from '../components/searchbar/searchbar';
 import FilterBloc from '../components/filter_recipes/filter_recipes';
+import customImage from '../assets/image/recettes/foodwars.jpeg';
 
 function Recipes() {
   const [recipes, setRecipes] = useState([]);
   
   return (
     <div className="App container">
-      <FirstSlider />
-      <SearchBar setRecipes={setRecipes} />
+      <Banner title="Recettes" image={customImage} />
       <FilterBloc setRecipes={setRecipes} />
       <RecipesBloc recipes={recipes} setRecipes={setRecipes} />
       <Newsletter />

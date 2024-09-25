@@ -1,6 +1,5 @@
 import React from 'react';
 import FirstSlider from '../components/first_slider/first_slider';
-import SearchBar from '../components/searchbar/searchbar';
 import Categories from '../components/pages/homepage/categories/categories';
 import SecondSlider from '../components/pages/homepage/second_slider/second_slider';
 import BestRecipe from '../components/pages/homepage/best_recipe/best_recipe';
@@ -14,7 +13,6 @@ function Home() {
   return (
     <div className="App container">
       <FirstSlider />
-      <SearchBar />    
       <Categories />
       <SecondSlider />
       <BestRecipe />

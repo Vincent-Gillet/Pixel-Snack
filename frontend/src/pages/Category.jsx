@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import FirstSlider from '../components/first_slider/first_slider';
+import Banner from '../components/banner/banner';
 import RecipesBloc from '../components/pages/recipes/recipes_bloc';
 import Newsletter from '../components/newsletter/newsletter';
 
@@ -32,11 +32,12 @@ function Category() {
     fetchCategoryAndRecipes();
   }, [id]);
 
+  const categoryImage = category?.image;
+
   return (
     <div className="App container">
       {error && <div className="error">{error}</div>}
-      <FirstSlider />
-      {category && <h1 className='category_title'>{category.title}</h1>}
+      <Banner title={category?.title || 'Catégorie'} image={categoryImage} />
       <RecipesBloc recipes={recipes} setRecipes={setRecipes} categoryId={id} />
       <Newsletter />
     </div>
