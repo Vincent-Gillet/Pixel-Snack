@@ -18,6 +18,10 @@
     justify-content: center;
     align-items: center;
 
+    @media screen and (max-width: 768px) {
+        box-shadow: inset 0px 50px 200px 70px $dark;
+      
+    }
 
     h1 {
         color: $light;
@@ -26,6 +30,6 @@
     h1 {
     font-size: 64px;
     font-weight: 700;
-    line-height: 100px; /* 156.25% */
+    line-height: 100px;
     }
 }

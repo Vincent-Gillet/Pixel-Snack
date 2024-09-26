@@ -7,7 +7,7 @@ function Reference({ title_reference, episode_reference, description_reference, 
         <div className='container_text'>
           <h3>{title_reference}</h3>
           <div className='contenu_reference'>
-            <h4>({episode_reference})</h4>
+            <h4>{episode_reference}</h4>
             <p>{description_reference}</p>
             <span>
               <p>Disponible sur :</p>

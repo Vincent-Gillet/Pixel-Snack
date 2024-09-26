@@ -21,10 +21,23 @@
   }
 
   .container_bestRecipes {
-    display: flex;
-    justify-content: space-around;
     width: 100%;
     margin-bottom: $spacing-large;
+
+    .slick-slider {
+      width: 100%;
+
+      .slick-track {
+        display: flex;
+        align-items: center;
+      }
+
+      .slick-slide {
+        display: flex;
+        justify-content: center;
+        margin: 0 10px; // Ajoutez une marge horizontale de 10px pour chaque slide
+      }
+    }
   }
 
   .background {
@@ -36,5 +49,39 @@
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
+  }
+
+  @media screen and (max-width: 1350px) {
+    .container_bestRecipes .slick-slider {
+      width: 100% !important;
+    }
+
+    .container_bestRecipes .slick-slide {
+      margin: 0 5px; // Réduisez la marge pour les écrans plus petits
+    }
+  }
+
+  @media screen and (max-width: 1050px) {
+    .title {
+      width: 100%;
+    }
+
+    .container_bestRecipes .slick-slider {
+      width: 100% !important;
+    }
+
+    .container_bestRecipes .slick-slide {
+      margin: 0 5px; // Réduisez la marge pour les écrans plus petits
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .container_bestRecipes .slick-slider {
+      width: 100% !important;
+    }
+
+    .container_bestRecipes .slick-slide {
+      margin: 0 2px; // Réduisez encore plus la marge pour les écrans très petits
+    }
   }
 }

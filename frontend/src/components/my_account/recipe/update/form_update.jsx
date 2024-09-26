@@ -12,8 +12,9 @@ function FormUpdate({
   handleFormSubmit,
   setNewIngredient,
   setIsEditing,
-  diet  // Recevoir la prop diet
+  handleDietChange
 }) {
+
   return (
     <form className='form_dashboard' onSubmit={handleFormSubmit}>
       <h2>Recette</h2>
@@ -36,34 +37,37 @@ function FormUpdate({
                 onChange={(e) => handleIngredientChange(index, e)}
               >
                 {ingredients.map((ing) => (
-                  <option key={ing.id} value={ing.name}>
-                    {ing.name}
-                  </option>
+                  <>
+                    <option key={ing.id} value={ing.name}>
+                      {ing.name}
+                    </option>
+                    <p>{ing.id}</p>                  
+                  </>
                 ))}
               </select>
               <input
                 type="number"
                 name="quantity"
-                value={ingredient.pivot?.quantity || ''}
+                value={ingredient.quantity}
                 onChange={(e) => handleIngredientChange(index, e)}
               />
               <input
                 type="text"
                 name="unit"
-                value={ingredient.pivot?.unit || ''}
+                value={ingredient.unit}
                 onChange={(e) => handleIngredientChange(index, e)}
               />
-              <button type="button" onClick={() => handleRemoveIngredient(index)}>Remove</button>
+              <button type="button" onClick={() => handleRemoveIngredient(index)}>Supprimer</button>
             </li>
           ))}
         </ul>
-        <div>
+        <div className='add_data'>
           <select
             name="name"
             value={newIngredient.name}
             onChange={(e) => setNewIngredient({ ...newIngredient, name: e.target.value })}
           >
-            <option value="">Select Ingredient</option>
+            <option value="">Sélectionner</option>
             {ingredients.map((ing) => (
               <option key={ing.id} value={ing.name}>
                 {ing.name}
@@ -84,15 +88,15 @@ function FormUpdate({
             value={newIngredient.unit}
             onChange={(e) => setNewIngredient({ ...newIngredient, unit: e.target.value })}
           />
-          <button type="button" onClick={handleAddIngredient}>Add Ingredient</button>
+          <button type="button" onClick={handleAddIngredient}>Ajouter</button>
         </div>
       </div>
       <div className='dashboard_input'>
         <label>Régime :</label>
-        <select name="diet" value={formData.diet || diet} onChange={handleInputChange}>
+        <select name="diet" value={formData.diets.length > 0 ? formData.diets[0].id : ''} onChange={handleDietChange}>
           <option value="">Aucun</option>
           {diets.map((diet) => (
-            <option key={diet.id} value={diet.name}>
+            <option key={diet.id} value={diet.id}>
               {diet.name}
             </option>
           ))}

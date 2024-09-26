@@ -1,102 +1,51 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useState } from 'react';
+import { slide as Menu } from 'react-burger-menu';
 import logo from '../../assets/logo/logo_pixel_snack.svg';
-
 import { NavLink } from 'react-router-dom';
 
-function HeaderBurger() {
-
+function HeaderBurger({ isUserLoggedIn, handleLogout }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
+    const handleStateChange = (state) => {
+        setIsMenuOpen(state.isOpen);
     };
 
-    useEffect(() => {
-        const handleResize = () => {
-            const burgerMenuButton = document.querySelector('.burger-menu-button');
-            const menus = document.querySelectorAll('.navigation_burger');
-            const burgerLines = document.querySelectorAll('.burger-line');
-
-            const handleClick = () => {
-                menus.forEach(menu => {
-                    menu.classList.toggle('open');
-                });
-
-                burgerLines.forEach(line => {
-                    line.classList.toggle('open');
-                });
-            };
-
-            if (window.innerWidth < 1000) {
-                if (burgerMenuButton) {
-                    burgerMenuButton.addEventListener('click', handleClick);
-                }
-            } else {
-                if (burgerMenuButton) {
-                    burgerMenuButton.removeEventListener('click', handleClick);
-                }
-            }
-
-            return () => {
-                if (burgerMenuButton) {
-                    burgerMenuButton.removeEventListener('click', handleClick);
-                }
-            };
-        };
-
-        handleResize(); // Initial check
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+    };
 
     return (
         <header className="App-header container">
             <NavLink to="/">
                 <img src={logo} className="App-logo" alt="logo" />
             </NavLink>
-            <nav className={`navigation_burger ${isMenuOpen ? 'open' : ''}`}>
-                <button className="burger-menu-button" aria-label="Menu" onClick={toggleMenu}>                        
-                    <span className={`burger-line ${isMenuOpen ? 'open' : ''}`}></span>
-                    <span className={`burger-line ${isMenuOpen ? 'open' : ''}`}></span>
-                    <span className={`burger-line ${isMenuOpen ? 'open' : ''}`}></span>
-                </button>
-                <ul>
-                    <li>                                                    
-                        <NavLink to="/recettes" className=''>Recettes</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/catégories" className=''>Catégories</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/contact" className=''>Contact</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/dashboard" className=''>Dashboard</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/connexion" className='normal_button'>Connexion</NavLink>
-                    </li>
-                    <div>
-                        <NavLink to="/connexion" className='connexion normal_button'>
+            <Menu 
+                isOpen={isMenuOpen}
+                onStateChange={(state) => handleStateChange(state)}
+                right
+            >
+                <NavLink to="/recettes" onClick={closeMenu}>Recettes</NavLink>
+                <NavLink to="/catégories" onClick={closeMenu}>Catégories</NavLink>
+                <NavLink to="/contact" onClick={closeMenu}>Contact</NavLink>
+                {isUserLoggedIn && (
+                    <NavLink to="/dashboard" onClick={closeMenu}>Dashboard</NavLink>
+                )}
+                <div>
+                    {isUserLoggedIn ? (
+                        <button onClick={handleLogout} className='connexion normal_button'>
+                            Déconnexion
+                            <i className="fa-solid fa-user"></i>
+                        </button>
+                    ) : (
+                        <NavLink to="/login" className='connexion normal_button' onClick={closeMenu}>
                             Connexion
                             <i className="fa-solid fa-user"></i>
                         </NavLink>
-                    </div>
-                </ul>
-            </nav>
+                    )}
+                </div>
+            </Menu>
         </header>
-
     );
-
 }
 
 export default HeaderBurger;
-
-
-
-  

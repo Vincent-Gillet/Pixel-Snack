@@ -46,6 +46,6 @@ class Recipe extends Model
 
     public function diets()
     {
-        return $this->belongsToMany(Diet::class);
+        return $this->belongsToMany(Diet::class, 'diet_recipe');
     }
 }

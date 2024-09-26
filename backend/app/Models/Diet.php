@@ -9,8 +9,10 @@ class Diet extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name'];
+
     public function recipes()
     {
-        return $this->belongsToMany(Recipe::class);
+        return $this->belongsToMany(Recipe::class, 'diet_recipe');
     }
 }

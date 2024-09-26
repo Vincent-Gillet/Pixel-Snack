@@ -1,3 +1,45 @@
+// .App-lastRecipes {
+//   min-height: 207px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   row-gap: $spacing-large;
+//   overflow: hidden;
+
+//   background-position: end;
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   position: relative;
+//   margin-bottom: -$spacing-large;
+
+//   .title {
+//     width: 100%;
+//     display: flex;
+//     justify-content: space-between;
+//     padding: 0 $spacing-medium;
+//     box-sizing: border-box;
+//   }
+
+//   .container_lastRecipes {
+//     display: flex;
+//     justify-content: space-around;
+//     width: 100%;
+//     margin-bottom: $spacing-large;
+//   }
+
+//   .background {
+//     position: absolute;
+//     bottom: -300px; // Fait dépasser le background de 30px en bas
+//     left: 0;
+//     right: 0;
+//     height: calc(100% + 30px); // Ajuste la hauteur pour compenser le dépassement
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     z-index: -1;
+//   }
+// }
+
 .App-lastRecipes {
   min-height: 207px;
   display: flex;
@@ -22,10 +64,24 @@
   }
 
   .container_lastRecipes {
-    display: flex;
-    justify-content: space-around;
     width: 100%;
     margin-bottom: $spacing-large;
+
+    .slick-slider {
+      width: 100%;
+
+      .slick-track {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+      }
+
+      .slick-slide {
+        display: flex;
+        justify-content: center;
+        margin: 0 10px; // Ajoutez une marge horizontale de 10px pour chaque slide
+      }
+    }
   }
 
   .background {
@@ -37,5 +93,39 @@
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
+  }
+
+  @media screen and (max-width: 1350px) {
+    .container_lastRecipes .slick-slider {
+      width: 100% !important;
+    }
+
+    .container_lastRecipes .slick-slide {
+      margin: 0 5px; // Réduisez la marge pour les écrans plus petits
+    }
+  }
+
+  @media screen and (max-width: 1050px) {
+    .title {
+      width: 100%;
+    }
+
+    .container_lastRecipes .slick-slider {
+      width: 100% !important;
+    }
+
+    .container_lastRecipes .slick-slide {
+      margin: 0 5px; // Réduisez la marge pour les écrans plus petits
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .container_lastRecipes .slick-slider {
+      width: 100% !important;
+    }
+
+    .container_lastRecipes .slick-slide {
+      margin: 0 2px; // Réduisez encore plus la marge pour les écrans très petits
+    }
   }
 }

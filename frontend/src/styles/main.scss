@@ -297,6 +297,14 @@ i {
 
   /* Inscription et Connexion */
 
+  .App-login, .App-subscribe {
+    margin-top: 130px;
+  }
+
+  .App-ContactBloc {
+    margin: 50px 0;
+  }
+
   .App-login, .App-subscribe, .App-ContactBloc {
     display: flex;
     justify-content: center;

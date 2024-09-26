@@ -22,9 +22,6 @@ function UpdateRecipe() {
     rest_time: '',
     cooking_time: '',
     video: '',
-    steps: [],
-    reviews: '',
-    rating: '',
     title_reference: '',
     episode_reference: '',
     description_reference: '',
@@ -38,15 +35,22 @@ function UpdateRecipe() {
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
-        const token = localStorage.getItem('accessToken'); // Supposons que le jeton est stocké dans le localStorage
+        const token = localStorage.getItem('accessToken');
         const response = await axios.get(`http://127.0.0.1:8000/api/v1/recipes/${id}`);
         setRecipe(response.data.recipe);
-        setFormData(response.data.recipe);
+        setFormData({
+          ...response.data.recipe,
+          ingredients: response.data.recipe.ingredients.map(ingredient => ({
+            ...ingredient,
+            pivot: ingredient.pivot || { quantity: '', unit: '' }
+          })),
+          diet: response.data.recipe.diets.length > 0 ? response.data.recipe.diets[0].id : ''
+        });
       } catch (error) {
         setError(error.message);
       }
     };
-
+  
     const fetchIngredients = async () => {
       try {
         const response = await axios.get('http://127.0.0.1:8000/api/v1/ingredients');
@@ -55,7 +59,7 @@ function UpdateRecipe() {
         console.error('Erreur lors de la récupération des ingrédients:', error);
       }
     };
-
+  
     const fetchDiets = async () => {
       try {
         const response = await axios.get('http://127.0.0.1:8000/api/v1/diets');
@@ -64,7 +68,7 @@ function UpdateRecipe() {
         console.error('Erreur lors de la récupération des régimes:', error);
       }
     };
-
+  
     fetchRecipe();
     fetchIngredients();
     fetchDiets();
@@ -81,8 +85,11 @@ function UpdateRecipe() {
   const handleIngredientChange = (index, e) => {
     const { name, value } = e.target;
     const updatedIngredients = formData.ingredients.map((ingredient, i) => 
-      i === index ? { ...ingredient, [name]: value } : ingredient
+      i === index ? { ...ingredient, [name]: name === 'quantity' ? Number(value) : String(value) } : ingredient
     );
+
+    console.log('updatedIngredients:', updatedIngredients);
+  
     setFormData({
       ...formData,
       ingredients: updatedIngredients
@@ -90,11 +97,21 @@ function UpdateRecipe() {
   };
 
   const handleAddIngredient = () => {
-    setFormData({
-      ...formData,
-      ingredients: [...formData.ingredients, { ...newIngredient, pivot: { quantity: newIngredient.quantity, unit: newIngredient.unit } }]
-    });
-    setNewIngredient({ name: '', quantity: '', unit: '' });
+    const selectedIngredient = ingredients.find(ing => ing.name === newIngredient.name);
+    if (selectedIngredient) {
+      setFormData({
+        ...formData,
+        ingredients: [...formData.ingredients, { 
+          id: selectedIngredient.id, 
+          name: newIngredient.name, 
+          quantity: newIngredient.quantity, 
+          unit: newIngredient.unit 
+        }]
+      });
+      setNewIngredient({ id: '', name: '', quantity: '', unit: '' });
+    } else {
+      console.error('Ingrédient sélectionné non trouvé');
+    }
   };
 
   const handleRemoveIngredient = (index) => {
@@ -105,16 +122,39 @@ function UpdateRecipe() {
     });
   };
 
+  const handleDietChange = (event) => {
+    const { value } = event.target;
+    const selectedDiet = diets.find(diet => diet.id === parseInt(value));
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      diets: selectedDiet ? [selectedDiet] : []
+    }));
+  };
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('accessToken');
-      await axios.put(`http://127.0.0.1:8000/api/v1/recipes/${id}`, formData, {
+  
+      const dataToSend = {
+        ...formData,
+        ingredients: formData.ingredients.map(ingredient => ({
+          id: ingredient.id ? ingredient.id : null, 
+          quantity: ingredient.quantity ? Number(ingredient.quantity) : 0, 
+          unit: ingredient.unit ? String(ingredient.unit) : '' 
+        })),
+        diets: formData.diets.map(diet => ({ id: diet.id }))
+      };
+  
+      console.log('dataToSend:', dataToSend);
+  
+      await axios.put(`http://127.0.0.1:8000/api/v1/recipes/${id}`, dataToSend, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'
         }
       });
+  
       setRecipe(formData);
       setIsEditing(false);
     } catch (error) {
@@ -130,7 +170,7 @@ function UpdateRecipe() {
           Authorization: `Bearer ${token}`
         }
       });
-      navigate('/recipes'); // Redirige vers la page des recettes après la suppression
+      navigate('/recipes'); 
     } catch (error) {
       setError(error.message);
     }
@@ -143,8 +183,6 @@ function UpdateRecipe() {
   if (!recipe) {
     return <p>Chargement...</p>;
   }
-
-  const diet = recipe.diets && recipe.diets.length > 0 ? recipe.diets[0].name : 'Aucun régime spécifié';
 
   return (
     <div className="App-UpdateRecipe container">
@@ -161,14 +199,14 @@ function UpdateRecipe() {
           handleFormSubmit={handleFormSubmit}
           setNewIngredient={setNewIngredient}
           setIsEditing={setIsEditing}
-          diet={diet}  
+          handleDietChange={handleDietChange}
         />
       ) : (
         <RecipeInfo
           recipe={recipe}
           setIsEditing={setIsEditing}
           handleDeleteRecipe={handleDeleteRecipe}
-          diet={diet}
+          diet={recipe.diets} 
         />
       )}
     </div>

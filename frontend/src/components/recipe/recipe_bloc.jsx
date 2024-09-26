@@ -16,7 +16,7 @@ function RecipeBloc({ setRecipeTitle, setRecipeImage }) {
         const response = await axios.get(`http://127.0.0.1:8000/api/v1/recipes/${id}`);
         setRecipe(response.data);
         setRecipeTitle(response.data.recipe.title); 
-        setRecipeImage(response.data.recipe.image || repice); // Utilisez une image par défaut si l'image est manquante
+        setRecipeImage(response.data.recipe.image);
       } catch (error) {
         console.error('Error fetching recipe:', error);
       }
@@ -39,6 +39,9 @@ function RecipeBloc({ setRecipeTitle, setRecipeImage }) {
     return <div>Loading...</div>;
   }
 
+  // Ajoutez cette ligne pour vérifier les ingrédients dans la console
+  console.log(recipe.recipe.ingredients);
+
   return (
     <div className="App-RecipeBloc container">
       <div className='title'>
@@ -59,13 +62,19 @@ function RecipeBloc({ setRecipeTitle, setRecipeImage }) {
         <div className='text'>
           <h3>Ingrédients</h3>
           <ul>
-            {recipe.recipe.ingredients.map((ingredient, index) => (
-              <li key={index}>
-                <p>
-                  - {ingredient.name} : {ingredient.quantity} {ingredient.unit}                  
-                </p>
-              </li>
-            ))}
+              {recipe.recipe.ingredients.map((ingredient, index) => {
+                  console.log(`Ingredient ${index}:`, ingredient);
+                  return (
+                      <li key={index}>
+                          <p>
+                              - {ingredient.name}
+                              {ingredient.quantity !== null && ingredient.quantity !== 0 && (
+                                  <> : {ingredient.quantity} {ingredient.unit}</>
+                              )}
+                          </p>
+                      </li>
+                  );
+              })}
           </ul>
         </div>
       </div>
@@ -105,7 +114,7 @@ function RecipeBloc({ setRecipeTitle, setRecipeImage }) {
       </div>
 
       <div className='container_preparation'>
-        <h3>Étapes</h3>
+        <h3>Préparation</h3>
         <p>{recipe.recipe.description}</p>
       </div>
 
