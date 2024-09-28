@@ -25,7 +25,7 @@ class RecipeFactory extends Factory
             'description_reference' => $this->faker->paragraph,
             'logo_platform_reference' => $this->faker->imageUrl,
             'logo_platform_url_reference' => $this->faker->url,
-            'image_repice_reference' => $this->faker->imageUrl,
+            'image_recipe_reference' => $this->faker->imageUrl,
             'user_id' => $this->faker->numberBetween(1, 10),
         ];
     }

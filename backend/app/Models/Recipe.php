@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -23,7 +22,7 @@ class Recipe extends Model
         'description_reference',
         'logo_platform_reference',
         'logo_platform_url_reference',
-        'image_repice_reference',
+        'image_recipe_reference',
         'user_id',
     ];
 

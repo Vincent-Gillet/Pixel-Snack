@@ -35,12 +35,12 @@
       font-size: $font-size-h2;
       font-style: normal;
       font-weight: 400;
-      line-height: 25px; /* 104.167% */
+      line-height: 25px; 
       list-style: none;
 
       li {
         list-style: none;
-        position: relative; /* Ajouté pour le positionnement du sous-menu */
+        position: relative; 
 
         a {
           color: $dark;
@@ -49,11 +49,10 @@
           font-size: $font-size-h2;
           font-style: normal;
           font-weight: 400;
-          line-height: 25px; /* 104.167% */
+          line-height: 25px;
           list-style: none;
         }
 
-        /* Styles pour le sous-menu */
         .sub-menu {
           display: none;
           position: absolute;
@@ -89,142 +88,6 @@
     }
   }
 
-  .navigation_burger {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-
-    ul {
-      display: none;
-      flex-direction: column;
-      width: max-content;
-      height: 100%;
-      padding: 0;
-      margin: 0;
-      justify-content: center;
-      align-items: end;
-      gap: 60px;
-      flex-shrink: 0;
-      color: $dark;
-      text-align: center;
-      font-family: $font-family;
-      font-size: $font-size-h2;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 25px; /* 104.167% */
-      list-style: none;
-      position: relative;
-      top: 200px;
-      right: 16%;
-
-      li {
-        list-style: none;
-
-        a {
-          color: $dark;
-          text-align: center;
-          font-family: $font-family;
-          font-size: $font-size-h2;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 25px; /* 104.167% */
-          list-style: none;
-        }
-      }
-    }
-
-    .burger-menu-button {
-      background-color: $orange;
-      width: 40px;
-      height: 40px;
-      border-radius: $border-radius-small;
-      border: none;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: $spacing-small;
-
-      .burger-line {
-        width: 24px;
-        height: 2px;
-        background: $orange;
-        border-radius: $border-radius-small;
-      }
-    }
-  }
-
-  & .open {
-    background-color: $orange;
-    max-width: 1000px;
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    z-index: 10;
-
-    .burger-menu-button {
-      position: relative;
-      top: 5%;
-      right: 16%;
-      background-color: $light;
-
-      .burger-line {
-        width: 30px;
-        height: 3px;
-        background-color: $orange;
-        display: block;
-        height: 3px;
-        transition: opacity 0.2s linear, transform 0.2s linear;
-      }
-
-      .burger-line.open:first-child {
-        transform: translateX(0) translateY(18px) rotate(45deg);
-      }
-
-      .burger-line.open:nth-child(2) {
-        opacity: 0;
-      }
-
-      .burger-line.open:nth-child(3) {
-        transform: translateX(0) translateY(18px) rotate(-45deg);
-      }
-    }
-
-    ul {
-      display: flex;
-
-      li {
-        a {
-          color: $light;
-        }
-      }
-
-      .connexion {
-        border-radius: $border-radius-medium;
-        border: 1px solid $light;
-        background: $light;
-
-        button {
-          display: flex;
-          width: 120px;
-          height: 40px;
-          padding: 1px 3px;
-          justify-content: center;
-          align-items: center;
-          gap: $spacing-small;
-          flex-shrink: 0;
-          color: $orange;
-          font-family: $font-family;
-          font-size: 12px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
-        }
-      }
-    }
-  }
-
   .connexion {
     border-radius: $border-radius-medium;
     border: 1px solid $orange;
@@ -250,7 +113,31 @@
   }
 }
 
+@media screen and (max-width: 350px) {
 
+  .App-header {
+    min-height: 200px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+
+    .App-logo {
+      position: relative;
+      top: 40px;
+    }
+
+    .bm-burger-button {
+      position: fixed;
+      width: 36px;
+      height: 30px;
+      right: 50%;
+      left: 50%;
+      top: 100px;
+    }
+  }
+
+
+}
 
 
 /* HeaderBurger.css */

@@ -14,9 +14,14 @@ function RecipeBloc({ setRecipeTitle, setRecipeImage }) {
     const fetchRecipe = async () => {
       try {
         const response = await axios.get(`http://127.0.0.1:8000/api/v1/recipes/${id}`);
-        setRecipe(response.data);
-        setRecipeTitle(response.data.recipe.title); 
-        setRecipeImage(response.data.recipe.image);
+        const recipeData = response.data;
+        if (recipeData) {
+          setRecipe(recipeData);
+          setRecipeTitle(recipeData.title); 
+          setRecipeImage(recipeData.image);
+        } else {
+          console.error('Recipe data is undefined');
+        }
       } catch (error) {
         console.error('Error fetching recipe:', error);
       }
@@ -39,42 +44,42 @@ function RecipeBloc({ setRecipeTitle, setRecipeImage }) {
     return <div>Loading...</div>;
   }
 
-  // Ajoutez cette ligne pour vérifier les ingrédients dans la console
-  console.log(recipe.recipe.ingredients);
+  const { ingredients, title, reviews, image, total_time, preparation_time, rest_time, cooking_time, video, description, title_reference, episode_reference, description_reference, image_recipe_reference, logo_platform_url_reference, logo_platform_reference } = recipe;
+
+  if (!ingredients) {
+    return <div>Recipe details are not available</div>;
+  }
 
   return (
     <div className="App-RecipeBloc container">
       <div className='title'>
-        <h2>{recipe.recipe.title}</h2>
+        <h2>{title}</h2>
         <div className='reviews'>
           <div className='stars'>
             {[...Array(5)].map((_, i) => (
               <i key={i} className={`fa-star ${i < recipe.rating ? 'fa-solid' : 'fa-regular'}`}></i>
             ))}
           </div>
-          <p>{recipe.recipe.reviews} avis</p>
+          <p>{reviews} avis</p>
         </div>
       </div>
       <div className='container_ingredients'>
         <div className='image'>
-          <img src={recipe.recipe.image || repice} alt={recipe.recipe.title} />
+          <img src={image || repice} alt={title} />
         </div>
         <div className='text'>
           <h3>Ingrédients</h3>
           <ul>
-              {recipe.recipe.ingredients.map((ingredient, index) => {
-                  console.log(`Ingredient ${index}:`, ingredient);
-                  return (
-                      <li key={index}>
-                          <p>
-                              - {ingredient.name}
-                              {ingredient.quantity !== null && ingredient.quantity !== 0 && (
-                                  <> : {ingredient.quantity} {ingredient.unit}</>
-                              )}
-                          </p>
-                      </li>
-                  );
-              })}
+              {ingredients.map((ingredient, index) => (
+                  <li key={index}>
+                      <p>
+                          - {ingredient.name}
+                          {ingredient.quantity !== null && ingredient.quantity !== 0 && (
+                              <> : {ingredient.quantity} {ingredient.unit}</>
+                          )}
+                      </p>
+                  </li>
+              ))}
           </ul>
         </div>
       </div>
@@ -82,32 +87,32 @@ function RecipeBloc({ setRecipeTitle, setRecipeImage }) {
       <div className='container_timer'>
         <h3>Préparation</h3>
         <div className='bloc_timer'>
-          <h4><b>Total : </b>{recipe.recipe.total_time ? `${recipe.recipe.total_time} min` : '-'}</h4>
+          <h4><b>Total : </b>{total_time ? `${total_time} min` : '-'}</h4>
           <div className='all_timer'>
             <div className='timer'>
               <h4><b>Préparation :</b></h4>
-              <p>{recipe.recipe.preparation_time ? `${recipe.recipe.preparation_time} min` : '-'}</p>
+              <p>{preparation_time ? `${preparation_time} min` : '-'}</p>
             </div>
             <div className='timer'>
               <h4><b>Repos :</b></h4>
-              <p>{recipe.recipe.rest_time ? `${recipe.recipe.rest_time} min` : '-'}</p>
+              <p>{rest_time ? `${rest_time} min` : '-'}</p>
             </div>
             <div className='timer'>
               <h4><b>Cuisson :</b></h4>
-              <p>{recipe.recipe.cooking_time ? `${recipe.recipe.cooking_time} min` : '-'}</p>
+              <p>{cooking_time ? `${cooking_time} min` : '-'}</p>
             </div>
           </div>
         </div>
       </div>
 
       <div className='container_video'>
-        <div className='video' onClick={handleVideoClick} style={{ cursor: 'pointer', background: `url(${recipe.recipe.image || repice})` }}>
+        <div className='video' onClick={handleVideoClick} style={{ cursor: 'pointer', background: `url(${image || repice})` }}>
           <img className='start' src={start} alt='Play' />
         </div>
         {showVideo && (
           <div className='video_overlay' onClick={handleOverlayClick}>
             <div className='iframe_container'>
-              <iframe className='responsive_iframe' src={recipe.recipe.video} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+              <iframe className='responsive_iframe' src={video} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
             </div>
           </div>
         )}
@@ -115,16 +120,16 @@ function RecipeBloc({ setRecipeTitle, setRecipeImage }) {
 
       <div className='container_preparation'>
         <h3>Préparation</h3>
-        <p>{recipe.recipe.description}</p>
+        <p>{description}</p>
       </div>
 
       <Reference 
-        title_reference={recipe.recipe.title_reference}
-        episode_reference={recipe.recipe.episode_reference}
-        description_reference={recipe.recipe.description_reference}
-        repice_reference={recipe.recipe.image_repice_reference}
-        link_platform_reference={recipe.recipe.logo_platform_url_reference}
-        logo_platform_reference={recipe.recipe.logo_platform_reference}
+        title_reference={title_reference}
+        episode_reference={episode_reference}
+        description_reference={description_reference}
+        repice_reference={image_recipe_reference}
+        link_platform_reference={logo_platform_url_reference}
+        logo_platform_reference={logo_platform_reference}
       />
       
     </div>

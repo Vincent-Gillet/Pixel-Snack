@@ -7,7 +7,7 @@ function RecipePost() {
   const [error, setError] = useState(null);
   const [ingredients, setIngredients] = useState([]);
   const [diets, setDiets] = useState([]);
-  const [newIngredient, setNewIngredient] = useState({ name: '', quantity: '', unit: '' });
+  const [categories, setCategories] = useState([]);
   const [formData, setFormData] = useState({
     title: '',
     image: '',
@@ -20,12 +20,14 @@ function RecipePost() {
     title_reference: '',
     episode_reference: '',
     description_reference: '',
-    image_repice_reference: '',
+    image_recipe_reference: '',
     logo_platform_reference: '',
     logo_platform_url_reference: '',
     ingredients: [],
-    diet: ''
+    diet: '',
+    category_ids: [] 
   });
+  const [newIngredient, setNewIngredient] = useState({ name: '', quantity: '', unit: '' });
 
   useEffect(() => {
     const fetchIngredients = async () => {
@@ -46,8 +48,18 @@ function RecipePost() {
       }
     };
 
+    const fetchCategories = async () => {
+      try {
+        const response = await axios.get('http://127.0.0.1:8000/api/v1/categories');
+        setCategories(response.data.categories);
+      } catch (error) {
+        console.error('Erreur lors de la récupération des catégories:', error);
+      }
+    };
+
     fetchIngredients();
     fetchDiets();
+    fetchCategories();
   }, []);
 
   const handleInputChange = (e) => {
@@ -56,6 +68,17 @@ function RecipePost() {
       ...formData,
       [name]: value
     });
+  };
+
+  const handleCategoryChange = (e) => {
+    const { options } = e.target;
+    const selectedCategories = [];
+    for (let i = 0; i < options.length; i++) {
+      if (options[i].selected) {
+        selectedCategories.push(options[i].value);
+      }
+    }
+    setFormData({ ...formData, category_ids: selectedCategories });
   };
 
   const handleIngredientChange = (index, e) => {
@@ -82,7 +105,7 @@ function RecipePost() {
           unit: newIngredient.unit 
         }]
       });
-      setNewIngredient({ id: '', name: '', quantity: '', unit: '' });
+      setNewIngredient({ name: '', quantity: '', unit: '' });
     } else {
       console.error('Ingrédient sélectionné non trouvé');
     }
@@ -120,7 +143,8 @@ function RecipePost() {
           quantity: ingredient.quantity ? Number(ingredient.quantity) : 0, 
           unit: ingredient.unit ? String(ingredient.unit) : '' 
         })),
-        diets: formData.diet ? [{ id: formData.diet }] : []
+        diets: formData.diet ? [{ id: formData.diet }] : [],
+        category_ids: formData.category_ids.map(id => Number(id))
       };
   
       console.log('dataToSend:', dataToSend);
@@ -229,6 +253,16 @@ function RecipePost() {
           ))}
         </select>
         <div className='dashboard_input'>
+          <label>Catégories :</label>
+          <select multiple={true} value={formData.category_ids} onChange={handleCategoryChange}>
+            {categories.map(category => (
+              <option key={category.id} value={category.id}>
+                {category.title}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className='dashboard_input'>
           <label>Temps total :</label>
           <input type="text" name="total_time" value={formData.total_time} onChange={handleInputChange} />
         </div>
@@ -267,14 +301,14 @@ function RecipePost() {
         </div>
         <div className='dashboard_input'>
           <label>URL de l'Image :</label>
-          <input type="text" name="image_repice_reference" value={formData.image_repice_reference} onChange={handleInputChange} />
+          <input type="text" name="image_recipe_reference" value={formData.image_recipe_reference} onChange={handleInputChange} />
         </div>
         <div className='dashboard_input'>
           <label>Logo de la Platforme de visionnage :</label>
           <input type="text" name="logo_platform_reference" value={formData.logo_platform_reference} onChange={handleInputChange} />
         </div>
         <div className='dashboard_input'>
-          <label>Logo de la platforme :</label>
+          <label>URL du logo de la platforme :</label>
           <input type="text" name="logo_platform_url_reference" value={formData.logo_platform_url_reference} onChange={handleInputChange} />
         </div>
         <div className='button_dashboard'>

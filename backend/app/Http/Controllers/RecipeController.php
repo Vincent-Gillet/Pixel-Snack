@@ -19,7 +19,7 @@ class RecipeController extends Controller
 
     public function show($id): JsonResponse
     {
-        $recipe = Recipe::with(['ingredients', 'diets'])->find($id);
+        $recipe = Recipe::with(['ingredients', 'diets', 'categories', 'user'])->find($id);
         if (!$recipe) {
             return response()->json(['message' => 'Recipe not found'], 404);
         }
@@ -35,33 +35,42 @@ class RecipeController extends Controller
     
         $diets = $recipe->diets->map(function ($diet) {
             return [
+                'id' => $diet->id,
                 'name' => $diet->name,
             ];
         });
     
+        $categories = $recipe->categories->map(function ($category) {
+            return [
+                'id' => $category->id,
+                'title' => $category->title,
+                'image' => $category->image,
+            ];
+        });
+    
         return response()->json([
-            'recipe' => [
-                'id' => $recipe->id,
-                'title' => $recipe->title,
-                'description' => $recipe->description,
-                'image' => $recipe->image,
-                'video' => $recipe->video,
-                'total_time' => $recipe->total_time,
-                'preparation_time' => $recipe->preparation_time,
-                'rest_time' => $recipe->rest_time,
-                'cooking_time' => $recipe->cooking_time,
-                'title_reference' => $recipe->title_reference,
-                'episode_reference' => $recipe->episode_reference,
-                'description_reference' => $recipe->description_reference,
-                'logo_platform_reference' => $recipe->logo_platform_reference,
-                'logo_platform_url_reference' => $recipe->logo_platform_url_reference,
-                'image_repice_reference' => $recipe->image_repice_reference,
-                'created_at' => $recipe->created_at,
-                'updated_at' => $recipe->updated_at,
-                'user_id' => $recipe->user_id,
-                'ingredients' => $ingredients,
-                'diets' => $diets,
-            ]
+            'id' => $recipe->id,
+            'title' => $recipe->title,
+            'description' => $recipe->description,
+            'image' => $recipe->image,
+            'video' => $recipe->video,
+            'total_time' => $recipe->total_time,
+            'preparation_time' => $recipe->preparation_time,
+            'rest_time' => $recipe->rest_time,
+            'cooking_time' => $recipe->cooking_time,
+            'title_reference' => $recipe->title_reference,
+            'episode_reference' => $recipe->episode_reference,
+            'description_reference' => $recipe->description_reference,
+            'logo_platform_reference' => $recipe->logo_platform_reference,
+            'logo_platform_url_reference' => $recipe->logo_platform_url_reference,
+            'image_recipe_reference' => $recipe->image_recipe_reference,
+            'user' => [
+                'id' => $recipe->user->id,
+                'name' => $recipe->user->name,
+            ],
+            'ingredients' => $ingredients,
+            'diets' => $diets,
+            'categories' => $categories,
         ]);
     }
 
@@ -84,7 +93,7 @@ class RecipeController extends Controller
                 'description_reference' => 'nullable|string',
                 'logo_platform_reference' => 'nullable|string',
                 'logo_platform_url_reference' => 'nullable|string',
-                'image_repice_reference' => 'nullable|string',
+                'image_recipe_reference' => 'nullable|string',
                 'ingredients' => 'array',
                 'ingredients.*.id' => 'exists:ingredients,id',
                 'ingredients.*.quantity' => 'nullable|numeric',
@@ -142,17 +151,11 @@ class RecipeController extends Controller
             'preparation_time' => 'nullable|integer',
             'rest_time' => 'nullable|integer',
             'cooking_time' => 'nullable|integer',
-            'title_reference' => 'nullable|string',
-            'episode_reference' => 'nullable|string',
-            'description_reference' => 'nullable|string',
-            'logo_platform_reference' => 'nullable|string',
-            'logo_platform_url_reference' => 'nullable|string',
-            'image_repice_reference' => 'nullable|string',
-            'ingredients' => 'nullable|array',
+            'ingredients' => 'array',
             'ingredients.*.id' => 'exists:ingredients,id',
             'ingredients.*.quantity' => 'nullable|numeric',
             'ingredients.*.unit' => 'nullable|string',
-            'diets' => 'nullable|array',
+            'diets' => 'array',
             'diets.*.id' => 'exists:diets,id',
         ]);
     
@@ -166,48 +169,21 @@ class RecipeController extends Controller
             $ingredientsData = collect($data['ingredients'])->mapWithKeys(function ($ingredient) {
                 return [
                     $ingredient['id'] => [
-                        'quantity' => $ingredient['quantity'] !== null ? $ingredient['quantity'] : null,
-                        'unit' => $ingredient['unit'] !== null ? $ingredient['unit'] : null,
+                        'quantity' => $ingredient['quantity'],
+                        'unit' => $ingredient['unit'],
                     ],
                 ];
-            });
-    
+            })->toArray();
             $recipe->ingredients()->sync($ingredientsData);
         }
     
         if (isset($data['diets'])) {
-            $dietIds = collect($data['diets'])->pluck('id')->toArray();
-            $recipe->diets()->sync($dietIds);
+            $recipe->diets()->sync(collect($data['diets'])->pluck('id')->toArray());
         }
     
-        $recipe->load('ingredients', 'diets');
-    
-        return response()->json([
-            'message' => 'Recipe updated successfully',
-            'recipe' => [
-                'id' => $recipe->id,
-                'title' => $recipe->title,
-                'description' => $recipe->description,
-                'image' => $recipe->image,
-                'video' => $recipe->video,
-                'total_time' => $recipe->total_time,
-                'preparation_time' => $recipe->preparation_time,
-                'rest_time' => $recipe->rest_time,
-                'cooking_time' => $recipe->cooking_time,
-                'title_reference' => $recipe->title_reference,
-                'episode_reference' => $recipe->episode_reference,
-                'description_reference' => $recipe->description_reference,
-                'logo_platform_reference' => $recipe->logo_platform_reference,
-                'logo_platform_url_reference' => $recipe->logo_platform_url_reference,
-                'image_repice_reference' => $recipe->image_repice_reference,
-                'created_at' => $recipe->created_at,
-                'updated_at' => $recipe->updated_at,
-                'user_id' => $recipe->user_id,
-                'ingredients' => $recipe->ingredients,
-                'diets' => $recipe->diets,
-            ]
-        ]);
+        return response()->json(['message' => 'Recipe updated successfully', 'recipe' => $recipe], 200);
     }
+    
     
 
     public function destroy($id): JsonResponse
@@ -242,7 +218,11 @@ class RecipeController extends Controller
         }
 
         if ($title) {
-            $recipeQuery->where('title', 'LIKE', "%{$title}%");
+            $recipeQuery->where(function($query) use ($title) {
+                $query->where('title', 'LIKE', "%{$title}%")
+                      ->orWhere('title_reference', 'LIKE', "%{$title}%")
+                      ->orWhere('description_reference', 'LIKE', "%{$title}%");
+            });
         }
 
         $recipes = $recipeQuery->get();

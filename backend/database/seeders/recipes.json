@@ -1,0 +1,977 @@
+[
+    {
+        "title": "La Ratatouille du chef Rémy",
+        "description": "Préchauffez le four à 180°C. Coupez les courgettes, l'aubergine, le poivron et les tomates en fines rondelles. Émincez l'ail. Disposez les légumes dans un plat à gratin en alternant les couches. Arrosez d'huile d'olive, salez légèrement et enfournez pendant environ 1 heure. Mélangez doucement à mi-cuisson pour bien enrober les légumes d'huile. Servez chaud, avec une pincée de sel supplémentaire si besoin.",
+        "image": "https://www.kikkoman.fr/fileadmin/user_upload/Recipes/Bilder_EU/1075-recipe-page-Saffron-scented-Ratatouille_desktop.jpg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 90,
+        "preparation_time": 30,
+        "rest_time": 0,
+        "cooking_time": 60,
+        "title_reference": "Ratatouille",
+        "episode_reference": "",
+        "description_reference": "Dans le film d'animation 'Ratatouille', le petit chef Rémy prépare ce plat emblématique pour impressionner les critiques culinaires.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://i-mom.unimedias.fr/2020/09/16/la-ratatouille-de-remy.jpg?auto=format,compress&crop=faces&cs=tinysrgb&fit=crop&h=501&w=890",
+        "ingredients": [
+            { "id": 24, "quantity": 2, "unit": "pièces" }, 
+            { "id": 23, "quantity": 1, "unit": "pièce" }, 
+            { "id": 27, "quantity": 1, "unit": "pièce" },  
+            { "id": 3, "quantity": 2, "unit": "pièces" }, 
+            { "id": 13, "quantity": 1, "unit": "gousse" },  
+            { "id": 18, "quantity": 3, "unit": "c. à soupe" }, 
+            { "id": 12, "quantity": 1, "unit": "pincée" }  
+        ],
+        "diets": [
+            { "id": 1 }
+        ],
+        "categories": [
+            {
+                "id": 4
+            },
+            {
+                "id": 7
+            }
+        ],
+        "user_id": 2
+    },
+    {
+        "title": "Sandwich Beurre de Cacahuète et Confiture",
+        "description": "Prenez deux tranches de pain. Étalez le beurre de cacahuète sur une tranche, et la confiture de fraise sur l'autre. Assemblez les deux tranches pour former un sandwich. Pour ajouter un peu de texture, saupoudrez de noix de coco râpée ou ajoutez une fine couche de beurre d'amande à la place du beurre de cacahuète si vous préférez. Servez immédiatement.",
+        "image": "https://www.bestbagels.fr/wp-content/uploads/2017/12/beurre-de-cacahuete-best-bagels.jpg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 10,
+        "preparation_time": 5,
+        "rest_time": 0,
+        "cooking_time": 5,
+        "title_reference": "Spider-Man: Homecoming",
+        "episode_reference": "",
+        "description_reference": "Dans Spider-Man: Homecoming, Peter Parker aime prendre un sandwich beurre de cacahuète et confiture pour un déjeuner rapide.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://www.premiere.fr/sites/default/files/styles/partage_rs/public/2018-05/spider-man-homecoming-sandwich.png",
+        "ingredients": [
+            { "id": 19, "quantity": 2, "unit": "tranches" },  
+            { "id": 66, "quantity": 2, "unit": "c. à soupe" }, 
+            { "id": 50, "quantity": 1, "unit": "c. à soupe" }, 
+            { "id": 66, "quantity": 2, "unit": "c. à soupe" }  
+        ],
+        "diets": [
+            { "id": 1 }
+        ],
+        "categories": [
+            {
+                "id": 4
+            },
+            {
+                "id": 8
+            }
+        ],
+        "user_id": 1
+    },
+    {
+        "title": "Boulettes de viande géantes",
+        "description": "Dans un grand bol, mélangez le bœuf haché avec l'œuf, la farine, le sel, l'ail et l'oignon finement émincé. Formez de grosses boulettes et faites-les revenir dans une poêle chaude avec un peu d'huile d'olive jusqu'à ce qu'elles soient dorées de tous les côtés. Dans une casserole, préparez une sauce tomate en faisant mijoter des tomates fraîches coupées en dés. Ajoutez les boulettes dans la sauce et laissez cuire à feu doux pendant environ 30 minutes. Servez avec des pâtes ou du riz.",
+        "image": "https://images.bfmtv.com/fg4Cv8Mrg2CzSQH3bHu-EGWhwkM=/0x187:2000x1312/2000x0/images/1762813.jpg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 80,
+        "preparation_time": 20,
+        "rest_time": 10,
+        "cooking_time": 50,
+        "title_reference": "Cloudy with a Chance of Meatballs",
+        "episode_reference": "",
+        "description_reference": "Dans 'Cloudy with a Chance of Meatballs', la nourriture tombe du ciel, y compris ces énormes boulettes de viande.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://nsm08.casimages.com/img/2014/02/11/14021103094717207911973186.jpg",
+        "ingredients": [
+            { "id": 6, "quantity": 500, "unit": "g" },     
+            { "id": 9, "quantity": 1, "unit": "pièce" },    
+            { "id": 10, "quantity": 50, "unit": "g" },      
+            { "id": 12, "quantity": 1, "unit": "pincée" },  
+            { "id": 13, "quantity": 1, "unit": "pincée" }, 
+            { "id": 14, "quantity": 1, "unit": "pièce" },   
+            { "id": 3, "quantity": 3, "unit": "pièces" }    
+        ],
+        "diets": [
+            { "id": 2 }
+        ],
+        "categories": [
+            {
+                "id": 4
+            },
+            {
+                "id": 7
+            }
+        ],
+        "user_id": 2
+    },
+    {
+        "title": "Le pain de lembas – Le Seigneur des Anneaux (2001)",
+        "description": "Dans un bol, mélangez la farine, le beurre, le miel, et la crème. Pétrissez pour obtenir une pâte souple. Étalez la pâte en un rectangle et découpez-la en carrés. Cuisez les carrés à 180°C pendant 20 minutes jusqu’à ce qu’ils soient légèrement dorés. Laissez refroidir et emballez dans des feuilles de vigne pour la touche elfique.",
+        "image": "https://www.planete-cuisine.com/img/illustrations/recettes/112/112-lembas.jpeg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 40,
+        "preparation_time": 15,
+        "rest_time": 5,
+        "cooking_time": 20,
+        "title_reference": "Le Seigneur des Anneaux",
+        "episode_reference": "",
+        "description_reference": "Le pain elfique nourrissant porté par les héros dans 'Le Seigneur des Anneaux'.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://lanidinette.blog/wp-content/uploads/2021/09/maxresdefault.jpg?w=1024",
+        "ingredients": [
+            { "id": 7, "quantity": 200, "unit": "g" },     
+            { "id": 18, "quantity": 50, "unit": "g" },    
+            { "id": 66, "quantity": 2, "unit": "c. à soupe" }, 
+            { "id": 15, "quantity": 2, "unit": "c. à soupe" }   
+        ],
+        "diets": [
+            { "id": 1 }
+        ],
+        "categories": [
+            {
+                "id": 4
+            },
+            {
+                "id": 9
+            }
+        ],
+        "user_id": 1
+    },
+    {
+        "title": "Les chocolats de Willy Wonka – Charlie et la Chocolaterie (2005)",
+        "description": "Faites fondre du chocolat noir au bain-marie. Ajoutez du beurre et du sucre pour un effet brillant. Versez le mélange dans des moules à chocolat et laissez refroidir au réfrigérateur pendant 2 heures. Démoulez et emballez les chocolats dans du papier doré pour recréer les célèbres chocolats de Willy Wonka.",
+        "image": "https://i.etsystatic.com/31508729/r/il/9844f0/3289189770/il_1080xN.3289189770_inuz.jpg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 150,
+        "preparation_time": 20,
+        "rest_time": 120,
+        "cooking_time": 10,
+        "title_reference": "Charlie et la Chocolaterie",
+        "episode_reference": "",
+        "description_reference": "Les célèbres chocolats créés par Willy Wonka dans 'Charlie et la Chocolaterie'.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/ena_16_9_extra_big/2021/01/20/node_922955/50236940/public/2021/01/20/B9725872358Z.1_20210120134305_000%2BGF8HEJVUH.2-0.jpg?itok=G4Udfr2z1611217532",
+        "ingredients": [
+            { "id": 22, "quantity": 200, "unit": "g" },   
+            { "id": 18, "quantity": 50, "unit": "g" },
+            { "id": 20, "quantity": 50, "unit": "g" }       
+        ],
+        "diets": [
+            { "id": 3 }
+        ],
+        "categories": [
+            {
+                "id": 4
+            }
+        ],
+        "user_id": 2
+    },
+    {
+        "title": "Le Boeuf Bourguignon – Julie & Julia (2009)",
+        "description": "Dans une grande cocotte, faites revenir des morceaux de bœuf avec de l'oignon et de l'ail dans du beurre. Ajoutez des carottes, du vin rouge et des herbes aromatiques. Laissez mijoter à feu doux pendant 3 heures, jusqu’à ce que la viande soit fondante. Servez avec des pommes de terre vapeur ou du pain.",
+        "image": "https://img.tastelife.tv/assets/uploads/2022/04/Beef_Bourguignon_from_Julie__Julia.jpg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 240,
+        "preparation_time": 30,
+        "rest_time": 0,
+        "cooking_time": 210,
+        "title_reference": "Julie & Julia",
+        "episode_reference": "",
+        "description_reference": "La recette iconique réalisée par Julie en hommage à Julia Child dans 'Julie & Julia'.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://images.squarespace-cdn.com/content/v1/5d1277b4649fbe0001b6fb20/1575218825870-OL4GAI2T4SP78TKDWMEM/julie-julia-2.jpg",
+        "ingredients": [
+            { "id": 6, "quantity": 1, "unit": "kg" },   
+            { "id": 14, "quantity": 2, "unit": "pièces" },  
+            { "id": 13, "quantity": 3, "unit": "gousses" }, 
+            { "id": 9, "quantity": 4, "unit": "pièces" },  
+            { "id": 57, "quantity": 750, "unit": "ml" }   
+        ],
+        "diets": [
+            { "id": 2 }
+        ],
+        "categories": [
+            {
+                "id": 4
+            }
+        ],
+        "user_id": 1
+    },
+    {
+        "title": "Les donuts de Homer Simpson – The Simpsons Movie (2007)",
+        "description": "Dans un bol, mélangez la farine, le sucre, et la levure. Ajoutez le lait, les œufs, et le beurre fondu pour former une pâte. Laissez reposer la pâte pendant 1 heure. Façonnez des donuts et faites-les frire dans de l'huile chaude jusqu'à ce qu'ils soient dorés. Laissez refroidir et glacez avec un glaçage rose et des vermicelles.",
+        "image": "https://cache.marieclaire.fr/data/photo/w1000_ci/1pf/recette-donuts-homer-simpson.jpg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 120,
+        "preparation_time": 20,
+        "rest_time": 60,
+        "cooking_time": 40,
+        "title_reference": "The Simpsons Movie",
+        "episode_reference": "",
+        "description_reference": "Bien qu'il soit issu d'une série, Homer adore ses donuts, popularisés aussi dans le film 'The Simpsons Movie'.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://intrld.com/wp-content/uploads/2018/03/les-simpson-donut.jpg",
+        "ingredients": [
+            { "id": 7, "quantity": 300, "unit": "g" },    
+            { "id": 20, "quantity": 100, "unit": "g" },  
+            { "id": 17, "quantity": 50, "unit": "g" },  
+            { "id": 9, "quantity": 2, "unit": "pièces" }, 
+            { "id": 15, "quantity": 250, "unit": "ml" }   
+        ],
+        "diets": [
+            { "id": 3 }
+        ],
+        "categories": [
+            {
+                "id": 7
+            },
+            {
+                "id": 12
+            }
+        ],
+        "user_id": 2
+    },
+    {
+        "title": "La tarte aux myrtilles – My Blueberry Nights (2007)",
+        "description": "Préparez une pâte brisée avec de la farine, du beurre et un peu d'eau. Étalez-la dans un moule à tarte. Garnissez-la de myrtilles fraîches mélangées à du sucre et un peu de jus de citron. Enfournez à 180°C pendant 40 minutes. Laissez refroidir avant de servir avec une boule de glace à la vanille.",
+        "image": "https://img.cuisineaz.com/1024x1024/2015/04/24/i39348-le-gateau-aux-myrtilles-de-my-blueberry-nights.webp",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 60,
+        "preparation_time": 20,
+        "rest_time": 0,
+        "cooking_time": 40,
+        "title_reference": "My Blueberry Nights",
+        "episode_reference": "",
+        "description_reference": "Une tarte douce servie dans ce film romantique 'My Blueberry Nights'.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://www.cinematheque.fr/cache/media/programmation/films/my-blueberry-nights/s,910-a27da2.jpg",
+        "ingredients": [
+            { "id": 7, "quantity": 200, "unit": "g" },
+            { "id": 18, "quantity": 100, "unit": "g" },
+            { "id": 19, "quantity": 300, "unit": "g" },
+            { "id": 20, "quantity": 50, "unit": "g" },
+            { "id": 21, "quantity": 1, "unit": "c. à soupe" }
+        ],
+        "diets": [
+            { "id": 3 }
+        ],
+        "categories": [
+            {
+                "id": 4
+            },
+            {
+                "id": 14
+            }
+        ],
+        "user_id": 1
+    },
+    {
+        "title": "Le poulet au romarin de Lorelai Gilmore – Gilmore Girls",
+        "description": "Dans une grande poêle, faites dorer des morceaux de poulet avec de l'huile d'olive. Ajoutez du romarin frais, de l'ail et des tranches de citron. Couvrez et laissez mijoter à feu doux pendant 40 minutes. Servez avec des pommes de terre rôties ou une salade verte.",
+        "image": "https://images.mrcook.app/recipe-image/018e91e0-a426-746f-8e76-1bc082023d91",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 60,
+        "preparation_time": 10,
+        "rest_time": 0,
+        "cooking_time": 50,
+        "title_reference": "Gilmore Girls",
+        "episode_reference": "",
+        "description_reference": "Un des plats faits par Lorelai, connue pour ses repas en famille dans 'Gilmore Girls'.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://flathatnews.com/wp-content/uploads/2024/09/gilmore-girls.jpg",
+        "ingredients": [
+            { "id": 6, "quantity": 500, "unit": "g" },
+            { "id": 18, "quantity": 2, "unit": "c. à soupe" },
+            { "id": 13, "quantity": 2, "unit": "gousses" },
+            { "id": 14, "quantity": 1, "unit": "pièce" },
+            { "id": 45, "quantity": 3, "unit": "branches" }
+        ],
+        "diets": [
+            { "id": 2 }
+        ],
+        "categories": [
+            {
+                "id": 5
+            }
+        ],
+        "user_id": 2
+    },
+    {
+        "title": "Les pancakes de Eleven – Stranger Things",
+        "description": "Dans un bol, mélangez la farine, le lait, les œufs et une pincée de sel. Faites cuire des petites portions de pâte dans une poêle chaude beurrée. Laissez cuire jusqu'à ce que des bulles se forment, puis retournez les pancakes et cuisez jusqu'à ce qu'ils soient dorés. Servez avec du sirop d’érable et une noisette de beurre.",
+        "image": "https://www.how-tasty.com/wp-content/uploads/2022/06/insta-min-3-500x375-1200x720.jpg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 20,
+        "preparation_time": 10,
+        "rest_time": 0,
+        "cooking_time": 10,
+        "title_reference": "Stranger Things",
+        "episode_reference": "",
+        "description_reference": "Les pancakes adorés par Eleven dans 'Stranger Things', accompagnés de sirop d’érable.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://i.ytimg.com/vi/b5O3_qwFE4w/maxresdefault.jpg",
+        "ingredients": [
+            { "id": 7, "quantity": 200, "unit": "g" },
+            { "id": 15, "quantity": 250, "unit": "ml" },
+            { "id": 9, "quantity": 2, "unit": "pièces" },
+            { "id": 12, "quantity": 1, "unit": "pincée" },
+            { "id": 16, "quantity": 50, "unit": "g" }
+        ],
+        "diets": [
+            { "id": 1 }
+        ],
+        "categories": [
+            {
+                "id": 5
+            }
+        ],
+        "user_id": 1
+    },
+    {
+        "title": "Les 'Chili Dogs' de Sonic – Sonic the Hedgehog",
+        "description": "Grillez des saucisses de bœuf ou de porc dans une poêle. Dans une casserole, préparez un chili avec de la viande hachée, des haricots rouges, de l’oignon et du cumin. Placez les saucisses dans des pains à hot-dog, garnissez-les de chili et saupoudrez de fromage râpé. Servez immédiatement.",
+        "image": "https://i.ytimg.com/vi/iaT5rurlVBg/maxresdefault.jpg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 30,
+        "preparation_time": 15,
+        "rest_time": 0,
+        "cooking_time": 15,
+        "title_reference": "Sonic the Hedgehog",
+        "episode_reference": "",
+        "description_reference": "Les hot-dogs que Sonic adore manger, tirés à l'origine de la série animée.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://i.ytimg.com/vi/Vhvnvtgjycc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDlQFQm-t4k1pfWFDmhB52uL6AWYw",
+        "ingredients": [
+            { "id": 4, "quantity": 4, "unit": "pièces" },
+            { "id": 6, "quantity": 200, "unit": "g" },
+            { "id": 9, "quantity": 1, "unit": "pièce" },
+            { "id": 46, "quantity": 200, "unit": "g" },
+            { "id": 47, "quantity": 100, "unit": "g" }
+        ],
+        "diets": [
+            { "id": 2 }
+        ],
+        "categories": [
+            {
+                "id": 5
+            }
+        ],
+        "user_id": 2
+    },
+    {
+        "title": "Le 'Krabby Patty' – SpongeBob SquarePants",
+        "description": "Préparez des steaks hachés à base de bœuf ou de poisson. Faites-les cuire dans une poêle bien chaude. Montez le burger avec un pain à burger, du fromage, de la laitue, des cornichons et une sauce au choix. Servez avec des frites croustillantes.",
+        "image": "https://www.wikihow.com/images/thumb/b/b1/Make-a-Krabby-Patty-Step-14-Version-5.jpg/aid1004609-v4-1200px-Make-a-Krabby-Patty-Step-14-Version-5.jpg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 25,
+        "preparation_time": 10,
+        "rest_time": 0,
+        "cooking_time": 15,
+        "title_reference": "SpongeBob SquarePants",
+        "episode_reference": "",
+        "description_reference": "Le burger secret de la série animée 'SpongeBob SquarePants' que tout le monde adore.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://www.themarysue.com/wp-content/uploads/2024/09/spongebob-squarepants-krabby-patty.jpg",
+        "ingredients": [
+            { "id": 6, "quantity": 200, "unit": "g" },
+            { "id": 19, "quantity": 2, "unit": "pièces" },
+            { "id": 52, "quantity": 2, "unit": "tranches" },
+            { "id": 53, "quantity": 4, "unit": "feuilles" },
+            { "id": 54, "quantity": 50, "unit": "g" }
+        ],
+        "diets": [
+            { "id": 2 }
+        ],
+        "categories": [
+            {
+                "id": 5
+            }
+        ],
+        "user_id": 2
+    },
+    {
+        "title": "Le poulet frit de Gus Fring – Breaking Bad",
+        "description": "Dans un grand bol, mélangez du lait, des œufs, de la farine, du paprika et de l'ail en poudre. Trempez les morceaux de poulet dans le mélange, puis faites-les frire dans de l'huile chaude jusqu'à ce qu'ils soient bien dorés et croustillants. Servez avec une sauce piquante ou barbecue.",
+        "image": "https://cdn-www.konbini.com/files/2023/04/bonchon_1.jpg?auto=webp&width=3840&quality=75",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 40,
+        "preparation_time": 15,
+        "rest_time": 0,
+        "cooking_time": 25,
+        "title_reference": "Breaking Bad",
+        "episode_reference": "",
+        "description_reference": "Les plats servis chez Los Pollos Hermanos, un point clé dans la série 'Breaking Bad'.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://www.booska-p.com/wp-content/uploads/2021/06/un-cuisinier-francais-donne-la-recette-du-poulet-de-breaking-bad-649.jpg",
+        "ingredients": [
+            { "id": 6, "quantity": 500, "unit": "g" },
+            { "id": 9, "quantity": 2, "unit": "pièces" },
+            { "id": 7, "quantity": 150, "unit": "g" },
+            { "id": 55, "quantity": 1, "unit": "c. à soupe" },
+            { "id": 56, "quantity": 1, "unit": "c. à soupe" }
+        ],
+        "diets": [
+            { "id": 2 }
+        ],
+        "categories": [
+            {
+                "id": 5
+            }
+
+        ],
+        "user_id": 1
+    },
+    {
+        "title": "Les biscuits de Ted Lasso – Ted Lasso",
+        "description": "Dans un grand bol, mélangez le beurre, le sucre, la farine et une pincée de sel. Formez une pâte, étalez-la et découpez des biscuits de la forme de votre choix. Faites cuire au four à 180°C pendant 10 à 12 minutes. Laissez refroidir avant de déguster.",
+        "image": "https://www.jessicagavin.com/wp-content/uploads/2023/03/ted-lasso-biscuits-26-1200.jpg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 30,
+        "preparation_time": 15,
+        "rest_time": 0,
+        "cooking_time": 15,
+        "title_reference": "Ted Lasso",
+        "episode_reference": "",
+        "description_reference": "Les petits biscuits que Ted Lasso prépare pour sa patronne.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://cdn-www.konbini.com/files/2021/10/ted-3.jpg?auto=webp&width=2048&quality=75",
+        "ingredients": [
+            { "id": 16, "quantity": 100, "unit": "g" },
+            { "id": 18, "quantity": 200, "unit": "g" },
+            { "id": 7, "quantity": 250, "unit": "g" },
+            { "id": 12, "quantity": 1, "unit": "pincée" }
+        ],
+        "diets": [
+            { "id": 3 }
+        ],
+        "categories": [
+            {
+                "id": 5
+            },
+            {
+                "id": 3
+            }
+        ],
+        "user_id": 2
+    },
+    {
+        "title": "Le Katsudon – Yuri!!! on Ice",
+        "description": "Assaisonnez des côtelettes de porc avec du sel et du poivre, puis panez-les en les trempant dans de la farine, de l'œuf battu et de la chapelure. Faites frire dans une poêle avec de l'huile jusqu'à ce qu'elles soient dorées. Dans une casserole, mélangez du bouillon dashi, de la sauce soja et du sucre, puis ajoutez des oignons tranchés. Laissez mijoter, puis versez le mélange sur les côtelettes coupées en tranches. Servez sur un bol de riz chaud.",
+        "image": "https://www.justonecookbook.com/wp-content/uploads/2011/09/Katsudon.jpg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 40,
+        "preparation_time": 15,
+        "rest_time": 0,
+        "cooking_time": 25,
+        "title_reference": "Yuri!!! on Ice",
+        "episode_reference": "",
+        "description_reference": "Un plat japonais emblématique dans cet anime de patinage artistique 'Yuri!!! on Ice'.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://upload.wikimedia.org/wikipedia/en/2/26/Yuri_On_Ice_title.png",
+        "ingredients": [
+            { "id": 6, "quantity": 200, "unit": "g" },
+            { "id": 9, "quantity": 1, "unit": "pièce" },
+            { "id": 57, "quantity": 50, "unit": "g" },
+            { "id": 58, "quantity": 2, "unit": "c. à soupe" },
+            { "id": 59, "quantity": 1, "unit": "c. à soupe" },
+            { "id": 19, "quantity": 200, "unit": "g" }
+        ],
+        "diets": [
+            { "id": 2 }
+        ],
+        "categories": [
+            {
+                "id": 5
+            }
+        ],
+        "user_id": 1
+    },
+    {
+        "title": "Le Ramen de Naruto – Naruto",
+        "description": "Faites bouillir des nouilles ramen dans de l'eau bouillante jusqu'à ce qu'elles soient tendres. Préparez un bouillon avec du miso, de la sauce soja, du bouillon de poulet et de l'eau. Ajoutez des tranches de porc, des œufs mollets et des légumes comme des oignons verts et du nori. Versez le bouillon sur les nouilles et servez immédiatement.",
+        "image": "https://www.itadakimasu.fr/wp-content/uploads/2019/04/Ramen-Naruto-15.jpg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 30,
+        "preparation_time": 10,
+        "rest_time": 0,
+        "cooking_time": 20,
+        "title_reference": "Naruto",
+        "episode_reference": "",
+        "description_reference": "Le plat préféré de Naruto, le ramen du restaurant Ichiraku, tiré de l'anime 'Naruto'.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://focus.telerama.fr/2022/12/01/0/0/2500/1775/1200/0/60/0/f3d9322_1669899973798-naruto-kushina-minato.jpg",
+        "ingredients": [
+            { "id": 19, "quantity": 200, "unit": "g" },
+            { "id": 60, "quantity": 500, "unit": "ml" },
+            { "id": 59, "quantity": 1, "unit": "c. à soupe" },
+            { "id": 61, "quantity": 2, "unit": "c. à soupe" },
+            { "id": 6, "quantity": 100, "unit": "g" },
+            { "id": 9, "quantity": 2, "unit": "pièces" }
+        ],
+        "diets": [
+            { "id": 2 }
+        ],
+        "categories": [
+            {
+                "id": 5
+            }
+        ],
+        "user_id": 2
+    },
+    {
+        "title": "Le Bento de Totoro – Mon Voisin Totoro (1988)",
+        "description": "Préparez du riz japonais et façonnez-le en petites boules. Ajoutez des légumes variés, des œufs durs, et quelques morceaux de poulet ou de tofu grillé. Disposez le tout dans un bento, en plaçant soigneusement les aliments pour créer un repas équilibré et visuellement agréable.",
+        "image": "https://www.justonecookbook.com/wp-content/uploads/2021/05/Charaben-Totoro-Bento-0265-I-1.jpg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 30,
+        "preparation_time": 20,
+        "rest_time": 0,
+        "cooking_time": 10,
+        "title_reference": "Mon Voisin Totoro",
+        "episode_reference": "",
+        "description_reference": "Le bento emporté par Satsuki pour nourrir Mei dans 'Mon Voisin Totoro'.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://upload.wikimedia.org/wikipedia/en/d/d0/My_Neighbor_Totoro_-_title_screen.png",
+        "ingredients": [
+            { "id": 19, "quantity": 200, "unit": "g" },
+            { "id": 62, "quantity": 50, "unit": "g" },
+            { "id": 9, "quantity": 2, "unit": "pièces" },
+            { "id": 6, "quantity": 100, "unit": "g" }
+        ],
+        "diets": [
+            { "id": 3 }
+        ],
+        "categories": [
+            {
+                "id": 5
+            }
+        ],
+        "user_id": 1
+    },   
+    {
+        "title": "Le Chahan – Food Wars: Shokugeki no Soma",
+        "description": "Faites revenir des légumes variés (carottes, oignons, petits pois) dans une poêle chaude avec un peu d'huile. Ajoutez du riz cuit et mélangez bien. Assaisonnez avec de la sauce soja et du poivre. Servez chaud, avec un œuf mollet sur le dessus pour plus de richesse.",
+        "image": "https://www.justonecookbook.com/wp-content/uploads/2012/02/Japanese-Fried-Rice-Chahan.jpg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 20,
+        "preparation_time": 5,
+        "rest_time": 0,
+        "cooking_time": 15,
+        "title_reference": "Food Wars: Shokugeki no Soma",
+        "episode_reference": "",
+        "description_reference": "Le riz sauté japonais réalisé par Soma dans l’anime culinaire 'Food Wars: Shokugeki no Soma'.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://upload.wikimedia.org/wikipedia/en/d/d0/Shokugeki_no_Soma_logo.png",
+        "ingredients": [
+            { "id": 19, "quantity": 200, "unit": "g" },
+            { "id": 63, "quantity": 50, "unit": "g" },
+            { "id": 58, "quantity": 2, "unit": "c. à soupe" },
+            { "id": 9, "quantity": 1, "unit": "pièce" }
+        ],
+        "diets": [
+            { "id": 3 }
+        ],
+        "categories": [
+            {
+                "id": 5
+            }
+        ],
+        "user_id": 2
+    },
+    {
+        "title": "Le plat de pâtes de Lady et le Clochard – Lady and the Tramp (1955)",
+        "description": "Faites cuire des spaghettis dans de l'eau bouillante salée jusqu'à ce qu'ils soient al dente. Préparez une sauce tomate en faisant revenir de l'ail et de l'oignon dans de l'huile d'olive, puis ajoutez des tomates concassées et laissez mijoter. Servez les spaghettis avec la sauce tomate, des boulettes de viande et du parmesan râpé.",
+        "image": "https://www.justonecookbook.com/wp-content/uploads/2021/09/Spaghetti-Meatballs-Lady-and-the-Tramp.jpg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 40,
+        "preparation_time": 10,
+        "rest_time": 0,
+        "cooking_time": 30,
+        "title_reference": "Lady and the Tramp",
+        "episode_reference": "",
+        "description_reference": "L’iconique assiette de spaghetti avec boulettes de viande partagée par Lady et le Clochard dans ce classique Disney.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://upload.wikimedia.org/wikipedia/en/a/ae/Lady_and_the_Tramp_1955.jpg",
+        "ingredients": [
+            { "id": 19, "quantity": 200, "unit": "g" },
+            { "id": 18, "quantity": 2, "unit": "c. à soupe" },
+            { "id": 6, "quantity": 300, "unit": "g" },
+            { "id": 3, "quantity": 3, "unit": "pièces" },
+            { "id": 13, "quantity": 1, "unit": "gousse" }
+        ],
+        "diets": [
+            { "id": 2 }
+        ],
+        "categories": [
+            {
+                "id": 5
+            }
+        ],
+        "user_id": 2
+    },   
+    {
+        "title": "La pizza de Pizza Planet – Toy Story",
+        "description": "Préchauffez le four à 220°C. Étalez une pâte à pizza sur une plaque, garnissez de sauce tomate, de mozzarella et des garnitures de votre choix (pepperoni, champignons, poivrons). Enfournez pendant 15 minutes jusqu'à ce que la pâte soit dorée et le fromage fondu. Servez immédiatement.",
+        "image": "https://i.pinimg.com/originals/6f/89/b5/6f89b5b2196d5cf40184d4b4dfd19e26.jpg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 25,
+        "preparation_time": 10,
+        "rest_time": 0,
+        "cooking_time": 15,
+        "title_reference": "Toy Story",
+        "episode_reference": "",
+        "description_reference": "La pizza que Buzz et Woody adorent dans le film 'Toy Story', servie au Pizza Planet.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg",
+        "ingredients": [
+            { "id": 64, "quantity": 1, "unit": "pièce" },
+            { "id": 3, "quantity": 3, "unit": "pièces" },
+            { "id": 6, "quantity": 100, "unit": "g" },
+            { "id": 18, "quantity": 1, "unit": "c. à soupe" },
+            { "id": 27, "quantity": 1, "unit": "pièce" }
+        ],
+        "diets": [
+            { "id": 3 }
+        ],
+        "categories": [
+            {
+                "id": 4
+            }
+        ],
+        "user_id": 1
+    },
+    {
+        "title": "Le poulet au romarin de Lorelai Gilmore – Gilmore Girls",
+        "description": "Dans une grande poêle, faites chauffer un peu d'huile d'olive. Ajoutez des morceaux de poulet, assaisonnez avec du sel, du poivre et des brins de romarin frais. Faites cuire jusqu'à ce que le poulet soit bien doré et cuit à l'intérieur. Servez avec des légumes de saison.",
+        "image": "https://www.cookingclassy.com/wp-content/uploads/2020/02/rosemary-chicken-8.jpg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 45,
+        "preparation_time": 10,
+        "rest_time": 0,
+        "cooking_time": 35,
+        "title_reference": "Gilmore Girls",
+        "episode_reference": "",
+        "description_reference": "Un des plats faits par Lorelai, connue pour ses repas en famille.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://www.spoonforkbacon.com/wp-content/uploads/2013/03/rosemary-chicken.jpg",
+        "ingredients": [
+            { "id": 6, "quantity": 500, "unit": "g" },
+            { "id": 12, "quantity": 1, "unit": "pièce" },
+            { "id": 18, "quantity": 2, "unit": "c. à soupe" },
+            { "id": 13, "quantity": 2, "unit": "gousses" }
+        ],
+        "diets": [
+            { "id": 1 }
+        ],
+        "categories": [
+            {
+                "id": 5
+            }
+        ],
+        "user_id": 1
+    },
+    {
+        "title": "Les pancakes de Eleven – Stranger Things",
+        "description": "Dans un grand bol, mélangez la farine, le lait, les œufs et une pincée de sel jusqu'à obtenir une pâte lisse. Faites chauffer une poêle antiadhésive et versez une louche de pâte pour chaque pancake. Faites cuire jusqu'à ce que des bulles apparaissent à la surface, puis retournez et cuisez l'autre côté. Servez avec du sirop d’érable et des fruits frais.",
+        "image": "https://www.how-tasty.com/wp-content/uploads/2022/06/insta-min-3-500x375-1200x720.jpg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 30,
+        "preparation_time": 10,
+        "rest_time": 0,
+        "cooking_time": 20,
+        "title_reference": "Stranger Things",
+        "episode_reference": "",
+        "description_reference": "Les pancakes adorés par Eleven, accompagnés de sirop d’érable.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://i.ytimg.com/vi/b5O3_qwFE4w/maxresdefault.jpg",
+        "ingredients": [
+            { "id": 48, "quantity": 200, "unit": "g" },
+            { "id": 18, "quantity": 2, "unit": "c. à soupe" },
+            { "id": 13, "quantity": 1, "unit": "pièce" },
+            { "id": 16, "quantity": 300, "unit": "ml" }
+        ],
+        "diets": [
+            { "id": 1 }
+        ],
+        "categories": [
+            {
+                "id": 5
+            }
+        ],
+        "user_id": 2
+    },
+    {
+        "title": "Les \"Chili Dogs\" de Sonic – Sonic the Hedgehog (série et film)",
+        "description": "Faites cuire des saucisses dans une poêle ou sur le grill. Pendant ce temps, faites chauffer des haricots chili dans une casserole. Une fois les saucisses cuites, placez-les dans des pains à hot-dog, ajoutez une généreuse cuillerée de chili et garnissez avec du fromage râpé et des oignons hachés.",
+        "image": "https://www.dinneratthezoo.com/wp-content/uploads/2021/04/chili-dogs-6.jpg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 20,
+        "preparation_time": 10,
+        "rest_time": 0,
+        "cooking_time": 10,
+        "title_reference": "Sonic the Hedgehog",
+        "episode_reference": "",
+        "description_reference": "Les hot-dogs que Sonic adore manger, tirés à l'origine de la série animée.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://static01.nyt.com/images/2020/01/15/dining/15simi/15simi-articleLarge-v2.jpg",
+        "ingredients": [
+            { "id": 19, "quantity": 4, "unit": "pièces" },
+            { "id": 41, "quantity": 200, "unit": "g" },
+            { "id": 10, "quantity": 1, "unit": "c. à soupe" },
+            { "id": 5, "quantity": 50, "unit": "g" }
+        ],
+        "diets": [
+            { "id": 3 }
+        ],
+        "categories": [
+            { "id": 1, "title": "Série", "image": "https://example.com/category_image1.jpg" }
+        ],
+        "user_id": 1
+    },
+    {
+        "title": "La tarte à la cerise – Twin Peaks",
+        "description": "Préparez une croûte à tarte en mélangeant la farine, le beurre et l'eau froide. Étalez-la dans un moule à tarte. Dans un bol, mélangez des cerises fraîches avec du sucre et de la maïzena. Versez le mélange sur la croûte et recouvrez d'une seconde couche de pâte. Faites cuire au four jusqu'à ce que la croûte soit dorée.",
+        "image": "https://img.cuisineaz.com/1280x720/2019/12/04/i151589-tarte-a-la-cerise-cherry-pie-twin-peaks-par-fast-oche.jpeg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 90,
+        "preparation_time": 30,
+        "rest_time": 0,
+        "cooking_time": 60,
+        "title_reference": "Twin Peaks",
+        "episode_reference": "",
+        "description_reference": "La fameuse tarte commandée par l'agent Cooper au Double R Diner.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://www.deuxiemepage.fr/wp-content/uploads/2017/07/Twin-Peaks-3-1440x864.jpg",
+        "ingredients": [
+            { "id": 48, "quantity": 250, "unit": "g" },
+            { "id": 39, "quantity": 300, "unit": "g" },
+            { "id": 18, "quantity": 100, "unit": "g" },
+            { "id": 16, "quantity": 100, "unit": "ml" }
+        ],
+        "diets": [
+            { "id": 1 }
+        ],
+        "categories": [
+            {
+                "id": 5
+            },
+            {
+                "id": 3
+            }
+        ],
+        "user_id": 2
+    },
+    {
+        "title": "Le \"Krabby Patty\" – SpongeBob SquarePants",
+        "description": "Dans une poêle, faites cuire des galettes de viande ou de légumes. Assemblez le burger avec du pain, de la laitue, des tomates, des cornichons et la sauce spéciale. Servez avec des frites pour un repas complet et savoureux.",
+        "image": "https://static.wikia.nocookie.net/spongebob/images/f/f3/Krabby_Patty.png",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 30,
+        "preparation_time": 10,
+        "rest_time": 0,
+        "cooking_time": 20,
+        "title_reference": "SpongeBob SquarePants",
+        "episode_reference": "",
+        "description_reference": "Le burger secret de la série animée que tout le monde adore.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://static.wikia.nocookie.net/spongebob/images/f/f3/Krabby_Patty.png",
+        "ingredients": [
+            { "id": 19, "quantity": 2, "unit": "pièces" },
+            { "id": 15, "quantity": 50, "unit": "g" },
+            { "id": 12, "quantity": 1, "unit": "pièce" },
+            { "id": 5, "quantity": 1, "unit": "c. à soupe" }
+        ],
+        "diets": [
+            { "id": 3 }
+        ],
+        "categories": [
+            {
+                "id": 5
+            }
+        ],
+        "user_id": 1
+    },   
+    {
+        "title": "Le poulet frit de Gus Fring – Breaking Bad",
+        "description": "Préparez une pâte à frire avec de la farine, du sel, et des épices. Trempez les morceaux de poulet dans la pâte puis faites-les frémir dans l'huile chaude jusqu'à ce qu'ils soient croustillants et dorés. Servez avec une sauce piquante.",
+        "image": "https://www.simplyrecipes.com/thmb/sAa4sJrrgoNz9AynS8JtpJQY8n0=/1600x0/filters:no_upscale,quality:100/Simply-Recipes-Breaking-Bad-Chicken-Overhead-LEAD-2-8885-6c3f00a96d8e41d9b97a15f9e0eb03ff.jpg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 60,
+        "preparation_time": 20,
+        "rest_time": 0,
+        "cooking_time": 40,
+        "title_reference": "Breaking Bad",
+        "episode_reference": "",
+        "description_reference": "Les plats servis chez Los Pollos Hermanos, un point clé dans la série.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://www.simplyrecipes.com/thmb/Rm7x5Vye99qNDSSdCqYX4Bhyh2I=/1500x0/filters:no_upscale,quality:100/Simply-Recipes-Breaking-Bad-Chicken-Pieces-LEAD-1-59e557fa095b413bb1b160ba0da4342d.jpg",
+        "ingredients": [
+            { "id": 6, "quantity": 1, "unit": "kg" },
+            { "id": 18, "quantity": 100, "unit": "g" },
+            { "id": 13, "quantity": 2, "unit": "gousses" },
+            { "id": 40, "quantity": 500, "unit": "ml" }
+        ],
+        "diets": [
+            { "id": 2 }
+        ],
+        "categories": [
+            {
+                "id": 5
+            }
+        ],
+        "user_id": 2
+    },
+    {
+        "title": "Les biscuits de Ted Lasso – Ted Lasso",
+        "description": "Dans un bol, mélangez la farine, le beurre, le sucre et les pépites de chocolat. Formez des petites boules de pâte et déposez-les sur une plaque de cuisson. Faites cuire au four jusqu'à ce que les bords soient dorés. Laissez refroidir avant de déguster.",
+        "image": "https://images.immediate.co.uk/production/volatile/sites/2/2021/09/chocolate-chip-cookies-7eb7f85.jpg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 45,
+        "preparation_time": 15,
+        "rest_time": 0,
+        "cooking_time": 30,
+        "title_reference": "Ted Lasso",
+        "episode_reference": "",
+        "description_reference": "Les petits biscuits qu’il prépare pour sa patronne.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://images.immediate.co.uk/production/volatile/sites/2/2021/09/chocolate-chip-cookies-7eb7f85.jpg",
+        "ingredients": [
+            { "id": 18, "quantity": 150, "unit": "g" },
+            { "id": 48, "quantity": 250, "unit": "g" },
+            { "id": 5, "quantity": 100, "unit": "g" },
+            { "id": 40, "quantity": 100, "unit": "ml" }
+        ],
+        "diets": [
+            { "id": 1 }
+        ],
+        "categories": [
+            {
+                "id": 5
+            },
+            {
+                "id": 3
+            }
+        ],
+        "user_id": 1
+    },
+    {
+        "title": "Le Katsudon – Yuri!!! on Ice",
+        "description": "Faites cuire des côtelettes de porc panées jusqu'à ce qu'elles soient croustillantes. Dans un bol, mélangez des œufs avec un peu de sauce soja. Disposez le riz dans un bol, ajoutez la côtelette de porc et versez l'œuf battu sur le dessus. Faites cuire à feu doux jusqu'à ce que l'œuf soit juste pris.",
+        "image": "",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 60,
+        "preparation_time": 20,
+        "rest_time": 0,
+        "cooking_time": 40,
+        "title_reference": "Yuri!!! on Ice",
+        "episode_reference": "",
+        "description_reference": "Un plat japonais emblématique dans cet anime de patinage artistique.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://www.mysweetmission.com/wp-content/uploads/2020/04/Katsudon-e1587766706925-768x512.jpg",
+        "ingredients": [
+            { "id": 6, "quantity": 300, "unit": "g" },
+            { "id": 18, "quantity": 100, "unit": "g" },
+            { "id": 12, "quantity": 2, "unit": "pièces" },
+            { "id": 40, "quantity": 200, "unit": "ml" }
+        ],
+        "diets": [
+            { "id": 2 }
+        ],
+        "categories": [
+            {
+                "id": 5
+            }
+        ],
+        "user_id": 2
+    },
+    {
+        "title": "Le Ramen de Naruto – Naruto",
+        "description": "Faites bouillir des nouilles ramen selon les instructions du paquet. Dans un bol, ajoutez le bouillon chaud, les nouilles, des tranches de porc, un œuf mariné et des oignons verts. Servez avec des algues pour une touche finale.",
+        "image": "https://www.itadakimasu.fr/wp-content/uploads/2019/04/Ramen-Naruto-12.jpg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 40,
+        "preparation_time": 10,
+        "rest_time": 0,
+        "cooking_time": 30,
+        "title_reference": "Naruto",
+        "episode_reference": "",
+        "description_reference": "Le plat préféré de Naruto, le ramen du restaurant Ichiraku.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://focus.telerama.fr/2022/12/01/0/0/2500/1775/1200/0/60/0/f3d9322_1669899973798-naruto-kushina-minato.jpg",
+        "ingredients": [
+            { "id": 48, "quantity": 200, "unit": "g" },
+            { "id": 39, "quantity": 1, "unit": "l" },
+            { "id": 13, "quantity": 1, "unit": "pièce" },
+            { "id": 12, "quantity": 2, "unit": "gousses" }
+        ],
+        "diets": [
+            { "id": 2 }
+        ],
+        "categories": [
+            {
+                "id": 5
+            }
+        ],
+        "user_id": 1
+    },
+    {
+        "title": "Le plat de pâtes de Lady et le Clochard – Lady and the Tramp (1955)",
+        "description": "Faites cuire des spaghetti selon les instructions. Préparez une sauce tomate maison avec des tomates, de l'ail, et des herbes. Mélangez les pâtes avec la sauce, servez avec du parmesan et du basilic frais.",
+        "image": "https://www.jessicagavin.com/wp-content/uploads/2020/06/spaghetti-and-meatballs-5-1200.jpg",
+        "video": "https://www.youtube.com/embed/example",
+        "total_time": 40,
+        "preparation_time": 10,
+        "rest_time": 0,
+        "cooking_time": 30,
+        "title_reference": "Lady and the Tramp",
+        "episode_reference": "",
+        "description_reference": "Le fameux plat de spaghetti partagé par Lady et le Clochard.",
+        "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
+        "logo_platform_url_reference": "https://www.netflix.com/browse",
+        "image_recipe_reference": "https://www.jessicagavin.com/wp-content/uploads/2020/06/spaghetti-and-meatballs-5-1200.jpg",
+        "ingredients": [
+            { "id": 18, "quantity": 300, "unit": "g" },
+            { "id": 12, "quantity": 400, "unit": "g" },
+            { "id": 5, "quantity": 1, "unit": "c. à soupe" },
+            { "id": 40, "quantity": 200, "unit": "ml" }
+        ],
+        "diets": [
+            { "id": 2 }
+        ],
+        "categories": [
+            {
+                "id": 4
+            }
+        ],
+        "user_id": 1
+    }    
+]

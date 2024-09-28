@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->string('image')->nullable();
+            $table->string('image', 512)->nullable();
             $table->string('video')->nullable();
             $table->integer('total_time')->nullable();
             $table->integer('preparation_time')->nullable();
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->text('description_reference')->nullable();
             $table->string('logo_platform_reference')->nullable();
             $table->string('logo_platform_url_reference')->nullable();
-            $table->string('image_repice_reference')->nullable();
+            $table->string('image_recipe_reference', 512)->nullable();
             $table->timestamps();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
 

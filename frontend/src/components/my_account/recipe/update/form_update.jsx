@@ -4,6 +4,7 @@ function FormUpdate({
   formData,
   ingredients,
   diets,
+  categories,
   newIngredient,
   handleInputChange,
   handleIngredientChange,
@@ -12,8 +13,13 @@ function FormUpdate({
   handleFormSubmit,
   setNewIngredient,
   setIsEditing,
-  handleDietChange
+  handleDietChange,
+  handleCategoryChange
 }) {
+
+  if (!formData) {
+    return <div>Chargement...</div>;
+  }
 
   return (
     <form className='form_dashboard' onSubmit={handleFormSubmit}>
@@ -27,7 +33,7 @@ function FormUpdate({
         <input type="text" name="image" value={formData.image} onChange={handleInputChange} />
       </div>
       <div className='dashboard_input'>
-        <h3>Ingredients</h3>
+        <h3>Ingrédients</h3>
         <ul>
           {formData.ingredients && formData.ingredients.map((ingredient, index) => (
             <li key={index}>
@@ -37,12 +43,9 @@ function FormUpdate({
                 onChange={(e) => handleIngredientChange(index, e)}
               >
                 {ingredients.map((ing) => (
-                  <>
-                    <option key={ing.id} value={ing.name}>
-                      {ing.name}
-                    </option>
-                    <p>{ing.id}</p>                  
-                  </>
+                  <option key={ing.id} value={ing.name}>
+                    {ing.name}
+                  </option>
                 ))}
               </select>
               <input
@@ -77,14 +80,14 @@ function FormUpdate({
           <input
             type="number"
             name="quantity"
-            placeholder="Quantity"
+            placeholder="Quantité"
             value={newIngredient.quantity}
             onChange={(e) => setNewIngredient({ ...newIngredient, quantity: e.target.value })}
           />
           <input
             type="text"
             name="unit"
-            placeholder="Unit"
+            placeholder="Unité"
             value={newIngredient.unit}
             onChange={(e) => setNewIngredient({ ...newIngredient, unit: e.target.value })}
           />
@@ -98,6 +101,16 @@ function FormUpdate({
           {diets.map((diet) => (
             <option key={diet.id} value={diet.id}>
               {diet.name}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div className='dashboard_input'>
+        <label>Catégories :</label>
+        <select multiple name="categories" value={formData.categories.map(cat => cat.id)} onChange={handleCategoryChange}>
+          {categories.map((category) => (
+            <option key={category.id} value={category.id}>
+              {category.title}
             </option>
           ))}
         </select>
@@ -122,7 +135,7 @@ function FormUpdate({
         <label>URL de la vidéo :</label>
         <input type="text" name="video" value={formData.video} onChange={handleInputChange} />
       </div>
-      <h3>Oeuvre lier</h3>
+      <h3>Oeuvre liée</h3>
       <div className='dashboard_input'>
         <label>Titre :</label>
         <input type="text" name="title_reference" value={formData.title_reference} onChange={handleInputChange} />
@@ -137,7 +150,7 @@ function FormUpdate({
       </div>
       <div className='dashboard_input'>
         <label>URL de l'Image :</label>
-        <input type="text" name="image_repice_reference" value={formData.image_repice_reference} onChange={handleInputChange} />
+        <input type="text" name="image_recipe_reference" value={formData.image_recipe_reference} onChange={handleInputChange} />
       </div>
       <div className='dashboard_input'>
         <label>Logo de la Platforme de visionnage :</label>
