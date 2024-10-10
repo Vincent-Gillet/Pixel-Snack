@@ -7,7 +7,7 @@ function BestRecipe() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/v1/recipes')
+    axios.get(`${import.meta.env.VITE_API_URL}/recipes`)
       .then(response => {
         if (response.data && response.data.length > 0) {
           setBestRecipe(response.data[0]); 

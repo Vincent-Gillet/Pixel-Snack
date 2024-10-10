@@ -11,7 +11,7 @@ function Parternship() {
     <div className="App-parternship container">
         <h2>Partenaires</h2>
         <div className='container_logo'>
-            <p>Ils nous font condiance</p>
+            <p>Ils nous font confiance</p>
             <div className='box_hidden'>
                 <div className='box_logo'>
                 <div className='logo_carrousel'>

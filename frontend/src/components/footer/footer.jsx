@@ -1,24 +1,34 @@
-import React from 'react';
+import { React, useEffect } from 'react';
 import logo from '../../assets/logo/logo_pixel_snack.svg';
+import { NavLink, useLocation } from 'react-router-dom';
 
 function Footer() {
+    const location = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0);    
+    }, [location]);
+
   return (
     <footer className="App-footer container">
         <div className="top-footer">
-            <a href="#accueil" className='footer-logo'>
+            <NavLink to="/" className='footer-logo'>
                 <img src={logo} className="App-logo" alt="logo" />
-            </a>
+            </NavLink>
             <nav>
                 <h3>Navigation</h3>
                 <ul>
                 <li>
-                    <a href="#recettes">Recettes</a>
+                    <NavLink to="/recettes">Recettes</NavLink>
                 </li>
                 <li>
-                    <a href="#categories">Catégories</a>
+                    <NavLink to="/categories">Catégories</NavLink>
                 </li>
                 <li>
-                    <a href="#contact">Contact</a>
+                    <NavLink to="/contact">Contact</NavLink>
+                </li>
+                <li>
+                    <NavLink to="/cgu">C.G.U.</NavLink>
                 </li>
                 </ul>
             </nav>
@@ -41,10 +51,7 @@ function Footer() {
             </div>
         </div>
         <div className='bottom-footer'>
-            <a href="#LegalesMentions">Mentions Légales</a>
-            <a href="#CGU">Conditions Générales d'Utilisation</a>
-            <a href="#RGPD">Politique de protection des données personnelles</a>
-            <a href="#CoohiesChoice">Vos choix concernant l'utilisation de cookies</a>
+            <p>© 2021 Pixel Snack - Tous droits réservés</p>
         </div>
 
 

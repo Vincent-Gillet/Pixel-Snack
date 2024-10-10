@@ -35,7 +35,7 @@ function UpdateRecipe() {
 
   const fetchRecipe = async () => {
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/api/v1/recipes/${id}`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/recipes/${id}`);
       console.log('Recipe data:', response.data); 
       setRecipe(response.data);
       setFormData({
@@ -66,7 +66,7 @@ function UpdateRecipe() {
     fetchRecipe();
     const fetchIngredients = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/v1/ingredients');
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/ingredients`);
         console.log('Ingredients data:', response.data.ingredients);
         setIngredients(response.data.ingredients);
       } catch (error) {
@@ -76,7 +76,7 @@ function UpdateRecipe() {
 
     const fetchDiets = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/v1/diets');
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/diets`);
         console.log('Diets data:', response.data.diets);
         setDiets(response.data.diets);
       } catch (error) {
@@ -86,7 +86,7 @@ function UpdateRecipe() {
 
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/v1/categories');
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/categories`);
         console.log('Categories data:', response.data.categories);
         setCategories(response.data.categories);
       } catch (error) {
@@ -102,7 +102,7 @@ function UpdateRecipe() {
   const handleDeleteRecipe = async () => {
     try {
       const token = localStorage.getItem('accessToken');
-      await axios.delete(`http://127.0.0.1:8000/api/v1/recipes/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/recipes/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -191,7 +191,7 @@ function UpdateRecipe() {
       console.log('Data to Send:', dataToSend);
   
       const token = localStorage.getItem('accessToken');
-      const response = await axios.put(`http://127.0.0.1:8000/api/v1/recipes/${id}`, dataToSend, {
+      const response = await axios.put(`${import.meta.env.VITE_API_URL}/recipes/${id}`, dataToSend, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'

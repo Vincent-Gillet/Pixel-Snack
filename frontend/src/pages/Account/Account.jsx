@@ -6,7 +6,7 @@ import DashboardUsers from '../../components/my_account/users/users';
 import DashboardMyRecipes from '../../components/my_account/my_recipes';
 import UserGet from '../../components/my_account/user/get';
 
-function DashboardAdmin() {
+function Account() {
   const [activeComponent, setActiveComponent] = useState('recipes');
   const [role, setRole] = useState(null);
 
@@ -18,7 +18,7 @@ function DashboardAdmin() {
           throw new Error('No token found');
         }
 
-        const response = await axios.get('http://127.0.0.1:8000/api/v1/user', {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/user`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -100,4 +100,4 @@ function DashboardAdmin() {
   );
 }
 
-export default DashboardAdmin;
+export default Account;

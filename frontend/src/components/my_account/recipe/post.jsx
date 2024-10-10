@@ -32,7 +32,7 @@ function RecipePost() {
   useEffect(() => {
     const fetchIngredients = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/v1/ingredients');
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/ingredients`);
         setIngredients(response.data.ingredients);
       } catch (error) {
         console.error('Erreur lors de la récupération des ingrédients:', error);
@@ -41,7 +41,7 @@ function RecipePost() {
 
     const fetchDiets = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/v1/diets');
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/diets`);
         setDiets(response.data.diets);
       } catch (error) {
         console.error('Erreur lors de la récupération des régimes:', error);
@@ -50,7 +50,7 @@ function RecipePost() {
 
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/v1/categories');
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/categories`);
         setCategories(response.data.categories);
       } catch (error) {
         console.error('Erreur lors de la récupération des catégories:', error);
@@ -149,7 +149,7 @@ function RecipePost() {
   
       console.log('dataToSend:', dataToSend);
     
-      await axios.post('http://127.0.0.1:8000/api/v1/recipes', dataToSend, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/recipes`, dataToSend, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'

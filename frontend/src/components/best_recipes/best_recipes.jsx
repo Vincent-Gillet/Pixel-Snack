@@ -9,7 +9,7 @@ const BestRecipes = () => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/v1/recipes')
+    axios.get(`${import.meta.env.VITE_API_URL}/recipes`)
       .then(response => {
         const recipesWithFakeRatings = response.data.map(recipe => ({
           ...recipe,

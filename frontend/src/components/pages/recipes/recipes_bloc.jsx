@@ -16,8 +16,8 @@ function RecipesBloc({ recipes, setRecipes, categoryId }) {
       try {
         const token = localStorage.getItem('accessToken');
         const url = categoryId 
-          ? `http://127.0.0.1:8000/api/v1/categories/${categoryId}/recipes`
-          : 'http://127.0.0.1:8000/api/v1/recipes';
+          ? `${import.meta.env.VITE_API_URL}/categories/${categoryId}/recipes`
+          : `${import.meta.env.VITE_API_URL}/recipes`;
 
         const response = await axios.get(url, {
           headers: {

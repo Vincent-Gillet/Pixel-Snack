@@ -15,7 +15,7 @@ function CategoriesBloc({ categories, setCategories }) {
     const fetchCategories = async () => {
       try {
         const token = localStorage.getItem('accessToken');
-        const url = 'http://127.0.0.1:8000/api/v1/categories';
+        const url = `${import.meta.env.VITE_API_URL}/categories`;
 
         const response = await axios.get(url, {
           headers: {

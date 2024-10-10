@@ -23,7 +23,7 @@ function UserGet() {
           throw new Error('No token found');
         }
 
-        const response = await axios.get('http://127.0.0.1:8000/api/v1/user', {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/user`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -55,7 +55,7 @@ function UserGet() {
     e.preventDefault();
     try {
       const token = localStorage.getItem('accessToken');
-      const response = await axios.put(`http://127.0.0.1:8000/api/v1/users/${user.id}`, formData, {
+      const response = await axios.put(`${import.meta.env.VITE_API_URL}/users/${user.id}`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'

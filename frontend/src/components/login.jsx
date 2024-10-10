@@ -12,13 +12,12 @@ function LoginBloc() {
     event.preventDefault();
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/v1/login', {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/login`, {
         email,
         password,
       });
 
-      console.log('Connexion réussie:', response.data);
-      const { accessToken, role, user_id } = response.data;
+      const { accessToken } = response.data;
       localStorage.setItem('accessToken', accessToken);
       navigate('/dashboard');
     } catch (error) {
@@ -47,7 +46,7 @@ function LoginBloc() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Connexion</button>
-        <p className=''>Vous n’avez pas de compte ? <NavLink to="/subscription" >S'Inscrire</NavLink></p>
+        <p className=''>Vous n’avez pas de compte ? <NavLink to="/register" >S'Inscrire</NavLink></p>
       </form>
     </div>
   );

@@ -1,8 +1,8 @@
 @import './variables';
+@import './fonts';
 @import '../components/header/header';
 @import '../components/footer/footer';
 @import '../components/first_slider/fisrt-slider';
-@import '../components/filter_recipes/searchbar/searchbar';
 @import '../components/pages/homepage/categories/categories';
 @import '../components/pages/homepage/second_slider/second-slider';
 @import '../components/pages/homepage/best_recipe/best-recipe';
@@ -21,6 +21,7 @@
 @import '../components/cards/category_card/category_card';
 @import '../components/my_account/dashboard.scss';
 @import '../components/banner/banner.scss';
+@import '../pages/CGU/cgu';
 
 body {
   margin: 0;
@@ -84,13 +85,16 @@ a {
 
 p, label, input {
   color: $dark;
-  text-align: center;
   font-family: $font-family;
   font-size: $font-size-p;
   font-style: normal;
   font-weight: 400;
   line-height: 25px; /* 178.571% */
   margin: 0;
+}
+
+label, input {
+  text-align: center;
 }
 
 .main_button, button {
@@ -248,6 +252,7 @@ i {
 
       span {
         color: $dark;
+        font-family: $font-family;
       }
     }
 
@@ -299,7 +304,6 @@ i {
 }
 
 .App {
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -460,3 +464,11 @@ i {
     }
   }
 // }
+
+.error-message {
+  color: $dark;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: $font-family;
+  text-align: center;
+}

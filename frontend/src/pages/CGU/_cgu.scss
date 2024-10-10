@@ -1,0 +1,15 @@
+.cgu {
+    display: flex;
+    flex-direction: column;
+    row-gap: $spacing-medium;
+    padding: $spacing-small;
+
+
+    h2, h3 {
+        text-align: center;
+    }
+
+    li {
+        font-family: $font-family;
+    }
+}

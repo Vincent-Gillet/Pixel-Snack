@@ -13,7 +13,7 @@ function CategoriesBloc() {
     const fetchCategories = async () => {
       try {
         const token = localStorage.getItem('accessToken');
-        const url = 'http://127.0.0.1:8000/api/v1/categories';
+        const url = `${import.meta.env.VITE_API_URL}/categories`;
 
         const response = await axios.get(url, {
           headers: {
@@ -34,7 +34,7 @@ function CategoriesBloc() {
       <img className='element_background plat' src={element1} alt="plat" />
       <img className='element_background salad_bowl' src={element2} alt="plat" />
       <div className='title'>
-        <h2>Categories</h2>
+        <h2>Catégories</h2>
       </div>
       {error && <div className="error">{error}</div>}
       <div className="App-Categories-Categories">

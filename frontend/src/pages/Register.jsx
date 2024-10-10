@@ -1,15 +1,15 @@
 import React from 'react';
-import SubscriptionBloc from '../components/subscription';
+import RegisterBloc from '../components/register';
 import Newsletter from '../components/newsletter/newsletter';
 
-function Subscription() {
+function Register() {
   return (
     <div className="App container">
-        <SubscriptionBloc />
+        <RegisterBloc />
         <Newsletter />
     </div>
 
   );
 }
 
-export default Subscription;
+export default Register;

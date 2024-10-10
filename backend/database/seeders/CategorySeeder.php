@@ -11,7 +11,7 @@ class CategorySeeder extends Seeder
     {
         $categories = [
             ['title' => 'Entrée', 'image' => 'https://img-3.journaldesfemmes.fr/KX37xZuExSWZtfhyN7iS-AYL3jU=/1240x/smart/a99c4f96ccfa47cc830cbde4f896eaa8/ccmcms-jdf/39957548.jpg'],
-            ['title' => 'Plats Principal', 'image' => 'https://www.fruitdor.fr/-/media/Project/Upfield/Brands/Becel-NL/Becel-FR/Assets/Recipes/New-recipe-images/Varumarkesida_831x554px_Plantbased-recipe-ideas_4.jpg?rev=41d1610c0bbf426e9de99559728f7da5&w=1920'],
+            ['title' => 'Plats Principal', 'image' => 'https://belorta.be/uploads/resized/recipes/159446/Groene-lasagne_2726a8b5105abdb5b8147234128bcb01.jpg'],
             ['title' => 'Dessert', 'image' => 'https://s3.amazonaws.com/gmi-digital-library/d4b45de8-1878-4deb-ae0e-a69807c42f2b.jpg'],
             ['title' => 'Film', 'image' => 'https://media.lesechos.com/api/v1/images/view/617520ce3e454671c141ae94/1280x720/070172591054-web-tete.jpg'],
             ['title' => 'Série', 'image' => 'https://www.radiofrance.fr/s3/cruiser-production-eu3/2022/10/cda4f4f8-a9f8-49f3-a43f-0fecfe60de8d/640x340_4527633-jpg-r-1920-1080-f-jpg-q-x-xxyxx.jpg'],

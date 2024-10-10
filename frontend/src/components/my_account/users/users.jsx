@@ -18,7 +18,7 @@ function DashboardUsers() {
         if (!token) {
           throw new Error('No token found');
         }
-        const response = await axios.get(`http://127.0.0.1:8000/api/v1/admin/users?page=${page}`, {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/admin/users?page=${page}`, {
           headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -68,7 +68,7 @@ function DashboardUsers() {
       if (!token) {
         throw new Error('No token found');
       }
-      await axios.delete(`http://127.0.0.1:8000/api/v1/admin/users/${userId}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/admin/users/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'

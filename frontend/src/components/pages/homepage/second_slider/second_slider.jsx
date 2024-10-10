@@ -10,7 +10,7 @@ function SecondSlider() {
   const [selectedRecipe, setSelectedRecipe] = useState(null);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/v1/recipes')
+    axios.get(`${import.meta.env.VITE_API_URL}/recipes`)
       .then(response => {
         console.log(response.data); // Vérifiez les données de la réponse
         // Trier les recettes par date de publication décroissante
@@ -82,7 +82,7 @@ function SecondSlider() {
       </div>
       <div className='container_lastRecipes'>
         <Slider {...settings}>
-          {recipes.slice(0, 6).map((recipe, index) => {
+          {recipes.slice(0, 3).map((recipe, index) => {
             const truncatedTitle = recipe.title.length > 20 
               ? recipe.title.slice(0, 20) + '...' 
               : recipe.title;
@@ -92,8 +92,8 @@ function SecondSlider() {
                 <RecipeCard
                   title={truncatedTitle}
                   image={recipe.image}
-                  reviews={Math.floor(Math.random() * 5) + 1} // Génère des avis aléatoires pour l'exemple
-                  reviewCount={Math.floor(Math.random() * 100)} // Génère un nombre d'avis aléatoire pour l'exemple
+                  reviews={Math.floor(Math.random() * 5) + 1}
+                  reviewCount={Math.floor(Math.random() * 100)}
                 />
               </div>
             );

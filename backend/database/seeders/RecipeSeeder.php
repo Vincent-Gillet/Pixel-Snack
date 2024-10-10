@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Recipe;
 use App\Models\Ingredient;
 use App\Models\Diet;
+use App\Models\Category;
 use Illuminate\Support\Facades\DB;
 
 class RecipeSeeder extends Seeder
@@ -15,7 +16,6 @@ class RecipeSeeder extends Seeder
         $filePath = database_path('seeders/recipes.json');
         $json = file_get_contents($filePath);
         $recipes = json_decode($json, true);
-
         DB::transaction(function () use ($recipes) {
             foreach ($recipes as $recipeData) {
                 $recipe = Recipe::create([
@@ -35,7 +35,12 @@ class RecipeSeeder extends Seeder
                     'image_recipe_reference' => $recipeData['image_recipe_reference'],
                     'user_id' => $recipeData['user_id'],
                 ]);
-
+                foreach ($recipeData['categories'] as $categoryData) {
+                    $category = Category::find($categoryData['id']);
+                    if ($category) {
+                        $recipe->categories()->attach($category->id);
+                    }
+                }
                 foreach ($recipeData['ingredients'] as $ingredientData) {
                     $ingredient = Ingredient::find($ingredientData['id']);
                     if ($ingredient) {
@@ -45,7 +50,6 @@ class RecipeSeeder extends Seeder
                         ]);
                     }
                 }
-
                 foreach ($recipeData['diets'] as $dietData) {
                     $diet = Diet::find($dietData['id']);
                     if ($diet) {

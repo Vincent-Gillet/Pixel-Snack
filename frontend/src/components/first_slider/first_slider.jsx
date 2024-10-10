@@ -14,7 +14,7 @@ function FirstSlider() {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/v1/recipes');
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/recipes`);
         setRecipes(response.data);
       } catch (error) {
         console.error('Error fetching recipes:', error);

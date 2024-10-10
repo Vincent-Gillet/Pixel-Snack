@@ -14,10 +14,10 @@ function Category() {
   useEffect(() => {
     const fetchCategoryAndRecipes = async () => {
       try {
-        const categoryResponse = await axios.get(`http://127.0.0.1:8000/api/v1/categories/${id}`);
+        const categoryResponse = await axios.get(`${import.meta.env.VITE_API_URL}/categories/${id}`);
         setCategory(categoryResponse.data.category);
 
-        const recipesResponse = await axios.get(`http://127.0.0.1:8000/api/v1/categories/${id}/recipes`);
+        const recipesResponse = await axios.get(`${import.meta.env.VITE_API_URL}/categories/${id}/recipes`);
         setRecipes(recipesResponse.data);
       } catch (error) {
         if (error.response && error.response.status === 404) {

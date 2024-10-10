@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import placeholderImage from '../../../assets/logo/placeholder.png';
 
 const RecipeCard = ({ title, image, reviews, reviewCount, link }) => {
+  
+  const imageUrl = (!image || image === "" || image === "image_url") ? placeholderImage : image;
+
   return (
     <a href={link} className='card_recipe card'>
       <div className='card_image'>
-        <img src={image} alt={title} />
+        <img src={imageUrl} alt={title} />
       </div>
       <div className='card_content'>
         <h3>{title}</h3>

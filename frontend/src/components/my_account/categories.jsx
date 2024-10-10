@@ -15,7 +15,7 @@ function DashboardCategories() {
     const fetchCategories = async () => {
       try {
         const token = 'accessToken'; 
-        const response = await axios.get('http://127.0.0.1:8000/api/v1/categories', {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/categories`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -62,7 +62,7 @@ function DashboardCategories() {
   const handleDelete = async (id) => {
     try {
       const token = localStorage.getItem('accessToken');
-      const response = await axios.delete(`http://127.0.0.1:8000/api/v1/admin/categories/${id}`, {
+      const response = await axios.delete(`${import.meta.env.VITE_API_URL}/admin/categories/${id}`, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,

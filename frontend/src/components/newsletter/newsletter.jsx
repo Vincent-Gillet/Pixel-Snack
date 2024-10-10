@@ -11,7 +11,7 @@ function Newsletter() {
     <div className="App-newsletter container" style={newletterStyle}>
         <div className="newsletter_content">
             <h2>Newsletter</h2>
-            <p>Inscrivez-vous à notre Newsletter pour découvrir nos dernières recette !!!</p>
+            <p>Inscrivez-vous à notre Newsletter pour découvrir nos dernières recettes !!!</p>
             <div className="newsletter_form">
                 <input type="text" placeholder="Votre adresse mail" />
                 <button className='normal_button'>S'inscrire</button>

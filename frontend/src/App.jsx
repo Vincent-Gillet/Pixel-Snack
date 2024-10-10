@@ -4,7 +4,7 @@ import Footer from './components/footer/footer';
 
 import Home from './pages/Home';
 import Login from './pages/Login';
-import Subscription from './pages/Subscription';
+import Register from './pages/Register';
 import Recettes from './pages/Recipes';
 import Categories from './pages/Categories';
 import Category from './pages/Category';
@@ -13,11 +13,11 @@ import Contact from './pages/Contact';
 import Recipe from './pages/Recipe';
 import RecipeEdit from './components/my_account/recipe/update/update';
 import RecipePost from './components/my_account/recipe/post';
+import CGU from './pages/CGU/CGU';
 
 import Account from './pages/Account/Account';
 
 import UserGet from './components/my_account/user/get'; 
-
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -29,7 +29,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/subscription" element={<Subscription />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/recettes" element={<Recettes />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/categorie/:id" element={<Category />} />
@@ -40,6 +40,7 @@ function App() {
           <Route path="/user/:id" element={<UserGet />} />
           <Route path="/categories/:id/edit" element={<CategoryUpdate />} />
           <Route path="/recipe/create" element={<RecipePost />} />
+          <Route path="/cgu" element={<CGU />} />
         </Routes>
         <Footer />
       </Router>

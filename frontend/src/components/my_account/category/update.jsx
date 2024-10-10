@@ -17,7 +17,7 @@ function CategoryUpdate() {
     const fetchCategory = async () => {
       try {
         const token = localStorage.getItem('accessToken'); 
-        const response = await axios.get(`http://127.0.0.1:8000/api/v1/admin/categories/${id}`, {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/categories/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -52,7 +52,7 @@ function CategoryUpdate() {
         image: formData.image,
       };
 
-      const response = await axios.put(`http://127.0.0.1:8000/api/v1/admin/categories/${id}`, dataToSend, {
+      const response = await axios.put(`${import.meta.env.VITE_API_URL}/admin/categories/${id}`, dataToSend, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -74,7 +74,7 @@ function CategoryUpdate() {
   const handleDeleteCategory = async () => {
     try {
       const token = localStorage.getItem('accessToken');
-      await axios.delete(`http://127.0.0.1:8000/api/v1/admin/categories/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/admin/categories/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
@@ -13,16 +12,16 @@ use App\Http\Controllers\DietController;
 Route::group(['prefix' => 'v1'], function () {
     Route::post('/login', [AuthController::class, 'login']);
     Route::post('/register', [AuthController::class, 'register']); 
+
     Route::get('/recipes', [RecipeController::class, 'index'])->name('recipes.index');
     Route::get('/recipes/{id}', [RecipeController::class, 'show'])->name('recipes.show');
     Route::get('/recipes/filter/recipes', [RecipeController::class, 'filter']);
+    Route::get('/recipes/search', [RecipeController::class, 'search']);
+    Route::get('/recipes/{id}/categories', [RecipeController::class, 'show']);
 
     Route::get('/categories/{id}', [CategoryController::class, 'show'])->name('categories.show');
-    Route::get('/recipes/{id}/categories', [RecipeController::class, 'show']);
     Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
     Route::get('/categories/{id}/recipes', [CategoryController::class, 'recipesByCategory'])->name('categories.recipes');
-    
-    Route::get('/recipes/search', [RecipeController::class, 'search']);
 
     Route::get('/ingredients', [IngredientController::class, 'index'])->name('ingredients.index');
 

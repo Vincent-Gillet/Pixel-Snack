@@ -11,7 +11,7 @@ const FilterBloc = ({ setRecipes }) => {
   useEffect(() => {
     const fetchIngredients = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/v1/ingredients');
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/ingredients`);
         setIngredients(response.data.ingredients);
       } catch (error) {
         console.error('Erreur lors de la récupération des ingrédients:', error);
@@ -20,7 +20,7 @@ const FilterBloc = ({ setRecipes }) => {
 
     const fetchDiets = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/v1/diets');
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/diets`);
         setDiets(response.data.diets);
       } catch (error) {
         console.error('Erreur lors de la récupération des régimes:', error);
@@ -38,7 +38,7 @@ const FilterBloc = ({ setRecipes }) => {
       if (diet) params.diet = diet;
       if (query) params.title = query;
 
-      const response = await axios.get('http://127.0.0.1:8000/api/v1/recipes/filter/recipes', { params });
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/recipes/filter/recipes`, { params });
       setRecipes(response.data.recipes);
     } catch (error) {
       console.error('Erreur lors de la récupération des recettes:', error);
