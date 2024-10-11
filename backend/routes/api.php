@@ -16,7 +16,6 @@ Route::group(['prefix' => 'v1'], function () {
     Route::get('/recipes', [RecipeController::class, 'index'])->name('recipes.index');
     Route::get('/recipes/{id}', [RecipeController::class, 'show'])->name('recipes.show');
     Route::get('/recipes/filter/recipes', [RecipeController::class, 'filter']);
-    Route::get('/recipes/search', [RecipeController::class, 'search']);
     Route::get('/recipes/{id}/categories', [RecipeController::class, 'show']);
 
     Route::get('/categories/{id}', [CategoryController::class, 'show'])->name('categories.show');
@@ -42,8 +41,6 @@ Route::group(['prefix' => 'v1'], function () {
         Route::delete('/recipes/{id}', [RecipeController::class, 'destroy'])->name('recipes.destroy');
 
         Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'admin']], function () {
-            Route::get('/', [AdminController::class, 'index'])->name('admin.index');
-            Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
             Route::get('/users', [AdminController::class, 'listUsers'])->name('admin.users');
             Route::post('/create-user', [AdminController::class, 'createUser'])->name('admin.createUser');
             Route::delete('/delete-user/{id}', [AdminController::class, 'deleteUser'])->name('admin.deleteUser');
@@ -59,6 +56,15 @@ Route::group(['prefix' => 'v1'], function () {
             Route::post('/categories', [CategoryController::class, 'store'])->name('admin.categories.store');
             Route::put('/categories/{id}', [CategoryController::class, 'update'])->name('admin.categories.update');
             Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
+
+            Route::get('/ingredients/{id}', [IngredientController::class, 'show'])->name('ingredients.show');
+            Route::post('/ingredients', [IngredientController::class, 'store'])->name('ingredients.store');
+            Route::put('/ingredients/{id}', [IngredientController::class, 'update'])->name('ingredients.update');
+            Route::delete('/ingredients/{id}', [IngredientController::class, 'destroy'])->name('ingredients.destroy');
+
+            Route::post('/diets', [DietController::class, 'store'])->name('diets.store');
+            Route::put('/diets/{id}', [DietController::class, 'update'])->name('diets.update');
+            Route::delete('/diets/{id}', [DietController::class, 'destroy'])->name('diets.destroy');
         });
     });
 });

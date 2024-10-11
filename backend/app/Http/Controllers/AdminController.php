@@ -6,26 +6,41 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Recipe;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
-    public function index()
-    {
-        return response()->json(['message' => 'Welcome to the admin panel']);
-    }
 
-    public function dashboard()
-    {
-        return response()->json(['message' => 'Admin dashboard']);
-    }
+    /**
+     * @OA\Get(
+     *     path="/api/v1/admin/users",
+     *     summary="List all users",
+     *     tags={"Admin"},
+     *     @OA\Response(response=200, description="List of users")
+     * )
+     */
 
-    public function listUsers(Request $request)
-    {
-        $users = User::paginate(10);
-        return response()->json($users);
-    }
+     public function listUsers(Request $request)
+     {
+         $users = User::all();
+         return response()->json(['data' => $users]);
+     }
 
+    /**
+     * @OA\Get(
+     *     path="/api/v1/admin/users/{id}",
+     *     summary="Show user details",
+     *     tags={"Admin"},
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\Response(response=200, description="User details"),
+     *     @OA\Response(response=404, description="User not found")
+     * )
+     */
 
     public function showUser($id)
     {
@@ -38,6 +53,15 @@ class AdminController extends Controller
         return response()->json(['user' => $user]);
     }
 
+    /**
+     * @OA\Get(
+     *     path="/api/v1/admin/recipes",
+     *     summary="List all recipes",
+     *     tags={"Admin"},
+     *     @OA\Response(response=200, description="List of recipes")
+     * )
+     */
+
     public function showRecipes()
     {
         $user = Auth::user();
@@ -45,9 +69,6 @@ class AdminController extends Controller
         if (!$user) {
             return response()->json(['message' => 'Unauthorized'], 401);
         }
-
-        Log::info('User:', ['user' => $user]);
-        Log::info('User Role:', ['role' => $user->role]);
 
         if ($user->role === 'admin') {
             $recipes = Recipe::all();
@@ -58,6 +79,22 @@ class AdminController extends Controller
         return response()->json(['recipes' => $recipes]);
     }
 
+        /**
+     * @OA\Post(
+     *     path="/api/v1/admin/create-user",
+     *     summary="Create a new user",
+     *     tags={"Admin"},
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(
+     *             @OA\Property(property="name", type="string"),
+     *             @OA\Property(property="email", type="string"),
+     *             @OA\Property(property="password", type="string")
+     *         )
+     *     ),
+     *     @OA\Response(response=201, description="User created successfully")
+     * )
+     */
 
     public function createUser(Request $request)
     {
@@ -75,6 +112,22 @@ class AdminController extends Controller
 
         return response()->json(['message' => 'User created successfully', 'user' => $user], 201);
     }
+
+    /**
+     * @OA\Delete(
+     *     path="/api/v1/admin/delete-user/{id}",
+     *     summary="Delete a user",
+     *     tags={"Admin"},
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\Response(response=200, description="User deleted successfully"),
+     *     @OA\Response(response=404, description="User not found")
+     * )
+     */
 
     public function deleteUser($token)
     {

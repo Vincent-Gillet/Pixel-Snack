@@ -10,6 +10,123 @@
         }
     ],
     "paths": {
+        "/api/v1/admin/users": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "List all users",
+                "operationId": "0a2ca4c514708b76480714300e763498",
+                "responses": {
+                    "200": {
+                        "description": "List of users"
+                    }
+                }
+            }
+        },
+        "/api/v1/admin/users/{id}": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Show user details",
+                "operationId": "90c9f4c403032ef8a512f92bd61e18e4",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User details"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
+        "/api/v1/admin/recipes": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "List all recipes",
+                "operationId": "a6c492190c821d7c8fa26f693a037896",
+                "responses": {
+                    "200": {
+                        "description": "List of recipes"
+                    }
+                }
+            }
+        },
+        "/api/v1/admin/create-user": {
+            "post": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Create a new user",
+                "operationId": "1077838ef7933cbdaf7fcb93f1401d21",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "User created successfully"
+                    }
+                }
+            }
+        },
+        "/api/v1/admin/delete-user/{id}": {
+            "delete": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Delete a user",
+                "operationId": "47492d81a5c7c1df22777bb1b0b51433",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User deleted successfully"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
         "/register": {
             "post": {
                 "tags": [
@@ -1692,35 +1809,6 @@
                 }
             }
         },
-        "/users": {
-            "get": {
-                "tags": [
-                    "Users"
-                ],
-                "summary": "Get all users",
-                "operationId": "7e2f5799553ec93c9c43e2a58490d447",
-                "responses": {
-                    "200": {
-                        "description": "Users retrieved successfully",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "users": {
-                                            "type": "array",
-                                            "items": {
-                                                "$ref": "#/components/schemas/User"
-                                            }
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "/user": {
             "get": {
                 "tags": [
@@ -2153,6 +2241,10 @@
                         "type": "string",
                         "example": "admin"
                     },
+                    "termsAccepted": {
+                        "type": "boolean",
+                        "example": true
+                    },
                     "created_at": {
                         "type": "string",
                         "format": "date-time",
@@ -2176,6 +2268,10 @@
         }
     },
     "tags": [
+        {
+            "name": "Admin",
+            "description": "Admin"
+        },
         {
             "name": "Auth",
             "description": "Auth"

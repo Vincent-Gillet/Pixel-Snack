@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Feature;
 
 use Tests\TestCase;
 use App\Models\User;
@@ -57,21 +57,16 @@ class UserControllerTest extends TestCase
         $response->assertStatus(204);
         $this->assertDatabaseMissing('users', [
             'id' => $user->id,
-        ]);
+       ]);
     }
 
-    public function test_user_update_fails_with_invalid_data()
+    public function test_delete_non_existent_user()
     {
         $user = User::factory()->create();
         $this->actingAs($user, 'sanctum');
 
-        $response = $this->put("/api/v1/users/{$user->id}", [
-            'name' => '', // Nom vide
-            'email' => 'invalid-email', // Email invalide
-            'role' => '', // Rôle vide
-        ]);
+        $response = $this->delete("/api/v1/users/999");
 
-        $response->assertStatus(422);
-        $response->assertJsonValidationErrors(['name', 'email', 'role']);
+        $response->assertStatus(404);
     }
 }

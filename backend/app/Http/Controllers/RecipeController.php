@@ -7,8 +7,6 @@ use App\Models\Recipe;
 use App\Models\Ingredient;
 use App\Models\Diet;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Log;
-
 
 /**
  * @OA\Schema(

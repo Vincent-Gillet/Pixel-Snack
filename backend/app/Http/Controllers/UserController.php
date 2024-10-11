@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Auth;
  *         @OA\Property(property="email", type="string", format="email", example="john.doe@example.com"),
  *         @OA\Property(property="password", type="string", example="hashed_password"),
  *         @OA\Property(property="role", type="string", example="admin"),
+ *         @OA\Property(property="termsAccepted", type="boolean", example=true),
  *         @OA\Property(property="created_at", type="string", format="date-time", example="2024-09-27T18:41:01.000000Z"),
  *         @OA\Property(property="updated_at", type="string", format="date-time", example="2024-09-27T18:41:01.000000Z"),
  *     }
@@ -27,29 +28,11 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    /**
-     * @OA\Get(
-     *     path="/users",
-     *     summary="Get all users",
-     *     tags={"Users"},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Users retrieved successfully",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="users", type="array", @OA\Items(ref="#/components/schemas/User"))
-     *         )
-     *     )
-     * )
-     */
 
-    public function index(): JsonResponse
+    public function index()
     {
         $users = User::all();
-
-        return response()->json([
-            'users' => $users,
-        ]);
+        return response()->json(['data' => $users]);
     }
 
     /**
