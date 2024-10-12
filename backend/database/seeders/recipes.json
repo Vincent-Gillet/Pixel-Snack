@@ -18,7 +18,7 @@
             { "id": 24, "quantity": 2, "unit": "pièces" }, 
             { "id": 23, "quantity": 1, "unit": "pièce" }, 
             { "id": 27, "quantity": 1, "unit": "pièce" },  
-            { "id": 3, "quantity": 2, "unit": "pièces" }, 
+            { "id": 4, "quantity": 2, "unit": "pièces" },
             { "id": 13, "quantity": 1, "unit": "gousse" },  
             { "id": 18, "quantity": 3, "unit": "c. à soupe" }, 
             { "id": 12, "quantity": 1, "unit": "pincée" }  
@@ -52,10 +52,10 @@
         "logo_platform_url_reference": "https://www.netflix.com/browse",
         "image_recipe_reference": "https://www.premiere.fr/sites/default/files/styles/partage_rs/public/2018-05/spider-man-homecoming-sandwich.png",
         "ingredients": [
-            { "id": 19, "quantity": 2, "unit": "tranches" },  
+            { "id": 20, "quantity": 2, "unit": "tranches" },  
             { "id": 66, "quantity": 2, "unit": "c. à soupe" }, 
             { "id": 50, "quantity": 1, "unit": "c. à soupe" }, 
-            { "id": 66, "quantity": 2, "unit": "c. à soupe" }  
+            { "id": 69, "quantity": 2, "unit": "c. à soupe" }  
         ],
         "diets": [
             { "id": 1 }
@@ -92,7 +92,7 @@
             { "id": 12, "quantity": 1, "unit": "pincée" },  
             { "id": 13, "quantity": 1, "unit": "pincée" }, 
             { "id": 14, "quantity": 1, "unit": "pièce" },   
-            { "id": 3, "quantity": 3, "unit": "pièces" }    
+            { "id": 4, "quantity": 3, "unit": "pièces" }
         ],
         "diets": [
             { "id": 2 }
@@ -108,7 +108,7 @@
         "user_id": 2
     },
     {
-        "title": "Le pain de lembas – Le Seigneur des Anneaux (2001)",
+        "title": "Le pain de lembas",
         "description": "Dans un bol, mélangez la farine, le beurre, le miel, et la crème. Pétrissez pour obtenir une pâte souple. Étalez la pâte en un rectangle et découpez-la en carrés. Cuisez les carrés à 180°C pendant 20 minutes jusqu’à ce qu’ils soient légèrement dorés. Laissez refroidir et emballez dans des feuilles de vigne pour la touche elfique.",
         "image": "https://www.planete-cuisine.com/img/illustrations/recettes/112/112-lembas.jpeg",
         "video": "https://www.youtube.com/embed/example",
@@ -116,16 +116,16 @@
         "preparation_time": 15,
         "rest_time": 5,
         "cooking_time": 20,
-        "title_reference": "Le Seigneur des Anneaux",
+        "title_reference": "Le Seigneur des Anneaux (2001)",
         "episode_reference": "",
         "description_reference": "Le pain elfique nourrissant porté par les héros dans 'Le Seigneur des Anneaux'.",
         "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
         "logo_platform_url_reference": "https://www.netflix.com/browse",
         "image_recipe_reference": "https://lanidinette.blog/wp-content/uploads/2021/09/maxresdefault.jpg?w=1024",
         "ingredients": [
-            { "id": 7, "quantity": 200, "unit": "g" },     
-            { "id": 18, "quantity": 50, "unit": "g" },    
-            { "id": 66, "quantity": 2, "unit": "c. à soupe" }, 
+            { "id": 10, "quantity": 200, "unit": "g" },     
+            { "id": 16, "quantity": 50, "unit": "g" },    
+            { "id": 18, "quantity": 2, "unit": "c. à soupe" }, 
             { "id": 15, "quantity": 2, "unit": "c. à soupe" }   
         ],
         "diets": [
@@ -142,7 +142,7 @@
         "user_id": 1
     },
     {
-        "title": "Les chocolats de Willy Wonka – Charlie et la Chocolaterie (2005)",
+        "title": "Les chocolats de Willy Wonka",
         "description": "Faites fondre du chocolat noir au bain-marie. Ajoutez du beurre et du sucre pour un effet brillant. Versez le mélange dans des moules à chocolat et laissez refroidir au réfrigérateur pendant 2 heures. Démoulez et emballez les chocolats dans du papier doré pour recréer les célèbres chocolats de Willy Wonka.",
         "image": "https://i.etsystatic.com/31508729/r/il/9844f0/3289189770/il_1080xN.3289189770_inuz.jpg",
         "video": "https://www.youtube.com/embed/example",
@@ -150,16 +150,16 @@
         "preparation_time": 20,
         "rest_time": 120,
         "cooking_time": 10,
-        "title_reference": "Charlie et la Chocolaterie",
+        "title_reference": "Charlie et la Chocolaterie (2005)",
         "episode_reference": "",
         "description_reference": "Les célèbres chocolats créés par Willy Wonka dans 'Charlie et la Chocolaterie'.",
         "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
         "logo_platform_url_reference": "https://www.netflix.com/browse",
         "image_recipe_reference": "https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/ena_16_9_extra_big/2021/01/20/node_922955/50236940/public/2021/01/20/B9725872358Z.1_20210120134305_000%2BGF8HEJVUH.2-0.jpg?itok=G4Udfr2z1611217532",
         "ingredients": [
-            { "id": 22, "quantity": 200, "unit": "g" },   
-            { "id": 18, "quantity": 50, "unit": "g" },
-            { "id": 20, "quantity": 50, "unit": "g" }       
+            { "id": 103, "quantity": 200, "unit": "g" },   
+            { "id": 16, "quantity": 50, "unit": "g" },
+            { "id": 11, "quantity": 50, "unit": "g" }       
         ],
         "diets": [
             { "id": 3 }
@@ -172,7 +172,7 @@
         "user_id": 2
     },
     {
-        "title": "Le Boeuf Bourguignon – Julie & Julia (2009)",
+        "title": "Le Boeuf Bourguignon",
         "description": "Dans une grande cocotte, faites revenir des morceaux de bœuf avec de l'oignon et de l'ail dans du beurre. Ajoutez des carottes, du vin rouge et des herbes aromatiques. Laissez mijoter à feu doux pendant 3 heures, jusqu’à ce que la viande soit fondante. Servez avec des pommes de terre vapeur ou du pain.",
         "image": "https://img.tastelife.tv/assets/uploads/2022/04/Beef_Bourguignon_from_Julie__Julia.jpg",
         "video": "https://www.youtube.com/embed/example",
@@ -180,7 +180,7 @@
         "preparation_time": 30,
         "rest_time": 0,
         "cooking_time": 210,
-        "title_reference": "Julie & Julia",
+        "title_reference": "Julie & Julia (2009)",
         "episode_reference": "",
         "description_reference": "La recette iconique réalisée par Julie en hommage à Julia Child dans 'Julie & Julia'.",
         "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
@@ -204,7 +204,7 @@
         "user_id": 1
     },
     {
-        "title": "Les donuts de Homer Simpson – The Simpsons Movie (2007)",
+        "title": "Les donuts de Homer Simpson",
         "description": "Dans un bol, mélangez la farine, le sucre, et la levure. Ajoutez le lait, les œufs, et le beurre fondu pour former une pâte. Laissez reposer la pâte pendant 1 heure. Façonnez des donuts et faites-les frire dans de l'huile chaude jusqu'à ce qu'ils soient dorés. Laissez refroidir et glacez avec un glaçage rose et des vermicelles.",
         "image": "https://cache.marieclaire.fr/data/photo/w1000_ci/1pf/recette-donuts-homer-simpson.jpg",
         "video": "https://www.youtube.com/embed/example",
@@ -212,7 +212,7 @@
         "preparation_time": 20,
         "rest_time": 60,
         "cooking_time": 40,
-        "title_reference": "The Simpsons Movie",
+        "title_reference": "The Simpsons Movie (2007)",
         "episode_reference": "",
         "description_reference": "Bien qu'il soit issu d'une série, Homer adore ses donuts, popularisés aussi dans le film 'The Simpsons Movie'.",
         "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
@@ -239,7 +239,7 @@
         "user_id": 2
     },
     {
-        "title": "La tarte aux myrtilles – My Blueberry Nights (2007)",
+        "title": "La tarte aux myrtilles",
         "description": "Préparez une pâte brisée avec de la farine, du beurre et un peu d'eau. Étalez-la dans un moule à tarte. Garnissez-la de myrtilles fraîches mélangées à du sucre et un peu de jus de citron. Enfournez à 180°C pendant 40 minutes. Laissez refroidir avant de servir avec une boule de glace à la vanille.",
         "image": "https://img.cuisineaz.com/1024x1024/2015/04/24/i39348-le-gateau-aux-myrtilles-de-my-blueberry-nights.webp",
         "video": "https://www.youtube.com/embed/example",
@@ -247,7 +247,7 @@
         "preparation_time": 20,
         "rest_time": 0,
         "cooking_time": 40,
-        "title_reference": "My Blueberry Nights",
+        "title_reference": "My Blueberry Nights (2007)",
         "episode_reference": "",
         "description_reference": "Une tarte douce servie dans ce film romantique 'My Blueberry Nights'.",
         "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
@@ -274,7 +274,7 @@
         "user_id": 1
     },
     {
-        "title": "Le poulet au romarin de Lorelai Gilmore – Gilmore Girls",
+        "title": "Le poulet au romarin de Lorelai Gilmore",
         "description": "Dans une grande poêle, faites dorer des morceaux de poulet avec de l'huile d'olive. Ajoutez du romarin frais, de l'ail et des tranches de citron. Couvrez et laissez mijoter à feu doux pendant 40 minutes. Servez avec des pommes de terre rôties ou une salade verte.",
         "image": "https://images.mrcook.app/recipe-image/018e91e0-a426-746f-8e76-1bc082023d91",
         "video": "https://www.youtube.com/embed/example",
@@ -306,7 +306,7 @@
         "user_id": 2
     },
     {
-        "title": "Les pancakes de Eleven – Stranger Things",
+        "title": "Les pancakes de Eleven",
         "description": "Dans un bol, mélangez la farine, le lait, les œufs et une pincée de sel. Faites cuire des petites portions de pâte dans une poêle chaude beurrée. Laissez cuire jusqu'à ce que des bulles se forment, puis retournez les pancakes et cuisez jusqu'à ce qu'ils soient dorés. Servez avec du sirop d’érable et une noisette de beurre.",
         "image": "https://www.how-tasty.com/wp-content/uploads/2022/06/insta-min-3-500x375-1200x720.jpg",
         "video": "https://www.youtube.com/embed/example",
@@ -338,7 +338,7 @@
         "user_id": 1
     },
     {
-        "title": "Les 'Chili Dogs' de Sonic – Sonic the Hedgehog",
+        "title": "Les 'Chili Dogs' de Sonic",
         "description": "Grillez des saucisses de bœuf ou de porc dans une poêle. Dans une casserole, préparez un chili avec de la viande hachée, des haricots rouges, de l’oignon et du cumin. Placez les saucisses dans des pains à hot-dog, garnissez-les de chili et saupoudrez de fromage râpé. Servez immédiatement.",
         "image": "https://i.ytimg.com/vi/iaT5rurlVBg/maxresdefault.jpg",
         "video": "https://www.youtube.com/embed/example",
@@ -370,7 +370,7 @@
         "user_id": 2
     },
     {
-        "title": "Le 'Krabby Patty' – SpongeBob SquarePants",
+        "title": "Le 'Krabby Patty'",
         "description": "Préparez des steaks hachés à base de bœuf ou de poisson. Faites-les cuire dans une poêle bien chaude. Montez le burger avec un pain à burger, du fromage, de la laitue, des cornichons et une sauce au choix. Servez avec des frites croustillantes.",
         "image": "https://www.wikihow.com/images/thumb/b/b1/Make-a-Krabby-Patty-Step-14-Version-5.jpg/aid1004609-v4-1200px-Make-a-Krabby-Patty-Step-14-Version-5.jpg",
         "video": "https://www.youtube.com/embed/example",
@@ -402,7 +402,7 @@
         "user_id": 2
     },
     {
-        "title": "Le poulet frit de Gus Fring – Breaking Bad",
+        "title": "Le poulet frit de Gus Fring",
         "description": "Dans un grand bol, mélangez du lait, des œufs, de la farine, du paprika et de l'ail en poudre. Trempez les morceaux de poulet dans le mélange, puis faites-les frire dans de l'huile chaude jusqu'à ce qu'ils soient bien dorés et croustillants. Servez avec une sauce piquante ou barbecue.",
         "image": "https://cdn-www.konbini.com/files/2023/04/bonchon_1.jpg?auto=webp&width=3840&quality=75",
         "video": "https://www.youtube.com/embed/example",
@@ -435,7 +435,7 @@
         "user_id": 1
     },
     {
-        "title": "Les biscuits de Ted Lasso – Ted Lasso",
+        "title": "Les biscuits de Ted Lasso",
         "description": "Dans un grand bol, mélangez le beurre, le sucre, la farine et une pincée de sel. Formez une pâte, étalez-la et découpez des biscuits de la forme de votre choix. Faites cuire au four à 180°C pendant 10 à 12 minutes. Laissez refroidir avant de déguster.",
         "image": "https://www.jessicagavin.com/wp-content/uploads/2023/03/ted-lasso-biscuits-26-1200.jpg",
         "video": "https://www.youtube.com/embed/example",
@@ -451,8 +451,8 @@
         "image_recipe_reference": "https://cdn-www.konbini.com/files/2021/10/ted-3.jpg?auto=webp&width=2048&quality=75",
         "ingredients": [
             { "id": 16, "quantity": 100, "unit": "g" },
-            { "id": 18, "quantity": 200, "unit": "g" },
-            { "id": 7, "quantity": 250, "unit": "g" },
+            { "id": 11, "quantity": 200, "unit": "g" },
+            { "id": 10, "quantity": 250, "unit": "g" },
             { "id": 12, "quantity": 1, "unit": "pincée" }
         ],
         "diets": [
@@ -469,7 +469,7 @@
         "user_id": 2
     },
     {
-        "title": "Le Katsudon – Yuri!!! on Ice",
+        "title": "Le Katsudon",
         "description": "Assaisonnez des côtelettes de porc avec du sel et du poivre, puis panez-les en les trempant dans de la farine, de l'œuf battu et de la chapelure. Faites frire dans une poêle avec de l'huile jusqu'à ce qu'elles soient dorées. Dans une casserole, mélangez du bouillon dashi, de la sauce soja et du sucre, puis ajoutez des oignons tranchés. Laissez mijoter, puis versez le mélange sur les côtelettes coupées en tranches. Servez sur un bol de riz chaud.",
         "image": "https://i.ytimg.com/vi/eEUUlThWDE0/maxresdefault.jpg",
         "video": "https://www.youtube.com/embed/example",
@@ -502,7 +502,7 @@
         "user_id": 1
     },
     {
-        "title": "Le Ramen de Naruto – Naruto",
+        "title": "Le Ramen de Naruto",
         "description": "Faites bouillir des nouilles ramen dans de l'eau bouillante jusqu'à ce qu'elles soient tendres. Préparez un bouillon avec du miso, de la sauce soja, du bouillon de poulet et de l'eau. Ajoutez des tranches de porc, des œufs mollets et des légumes comme des oignons verts et du nori. Versez le bouillon sur les nouilles et servez immédiatement.",
         "image": "https://www.itadakimasu.fr/wp-content/uploads/2019/04/Ramen-Naruto-15.jpg",
         "video": "https://www.youtube.com/embed/example",
@@ -535,7 +535,7 @@
         "user_id": 2
     },
     {
-        "title": "Le Bento de Totoro – Mon Voisin Totoro (1988)",
+        "title": "Le Bento de Totoro",
         "description": "Préparez du riz japonais et façonnez-le en petites boules. Ajoutez des légumes variés, des œufs durs, et quelques morceaux de poulet ou de tofu grillé. Disposez le tout dans un bento, en plaçant soigneusement les aliments pour créer un repas équilibré et visuellement agréable.",
         "image": "https://www.lachineuse.com/15062-thickbox_default/boite-a-bento-mon-voisin-totoro.jpg",
         "video": "https://www.youtube.com/embed/example",
@@ -543,7 +543,7 @@
         "preparation_time": 20,
         "rest_time": 0,
         "cooking_time": 10,
-        "title_reference": "Mon Voisin Totoro",
+        "title_reference": "Mon Voisin Totoro (1988)",
         "episode_reference": "",
         "description_reference": "Le bento emporté par Satsuki pour nourrir Mei dans 'Mon Voisin Totoro'.",
         "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
@@ -566,7 +566,7 @@
         "user_id": 1
     },   
     {
-        "title": "Le Chahan – Food Wars: Shokugeki no Soma",
+        "title": "Le Chahan",
         "description": "Faites revenir des légumes variés (carottes, oignons, petits pois) dans une poêle chaude avec un peu d'huile. Ajoutez du riz cuit et mélangez bien. Assaisonnez avec de la sauce soja et du poivre. Servez chaud, avec un œuf mollet sur le dessus pour plus de richesse.",
         "image": "https://cookingwithdog.com/wp-content/uploads/2017/09/chahan-11.jpg",
         "video": "https://www.youtube.com/embed/example",
@@ -597,7 +597,7 @@
         "user_id": 2
     },
     {
-        "title": "Le plat de pâtes de Lady et le Clochard – Lady and the Tramp (1955)",
+        "title": "Le plat de pâtes de Lady et le Clochard",
         "description": "Faites cuire des spaghettis dans de l'eau bouillante salée jusqu'à ce qu'ils soient al dente. Préparez une sauce tomate en faisant revenir de l'ail et de l'oignon dans de l'huile d'olive, puis ajoutez des tomates concassées et laissez mijoter. Servez les spaghettis avec la sauce tomate, des boulettes de viande et du parmesan râpé.",
         "image": "https://img.over-blog-kiwi.com/1/02/97/00/20141127/ob_9a3653_b262282.JPG",
         "video": "https://www.youtube.com/embed/example",
@@ -605,7 +605,7 @@
         "preparation_time": 10,
         "rest_time": 0,
         "cooking_time": 30,
-        "title_reference": "Lady and the Tramp",
+        "title_reference": "la belle et le clochard (1955)",
         "episode_reference": "",
         "description_reference": "L’iconique assiette de spaghetti avec boulettes de viande partagée par Lady et le Clochard dans ce classique Disney.",
         "logo_platform_reference": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png",
@@ -613,10 +613,12 @@
         "image_recipe_reference": "https://resize.programme-television.org/landscape_1280/var/premiere/storage/images/tele-7-jours/news-tv/le-belle-et-le-clochard-m6-pourquoi-walt-disney-voulait-retirer-la-celebre-scene-des-spaghetti-4667179/99342417-1-fre-FR/Le-Belle-et-le-Clochard-M6-pourquoi-Walt-Disney-voulait-retirer-la-celebre-scene-des-spaghetti.jpg",
         "ingredients": [
             { "id": 19, "quantity": 200, "unit": "g" },
-            { "id": 18, "quantity": 2, "unit": "c. à soupe" },
-            { "id": 6, "quantity": 300, "unit": "g" },
-            { "id": 3, "quantity": 3, "unit": "pièces" },
-            { "id": 13, "quantity": 1, "unit": "gousse" }
+            { "id": 17, "quantity": 2, "unit": "c. à soupe" }, 
+            { "id": 4, "quantity": 300, "unit": "g" },
+            { "id": 6, "quantity": 300, "unit": "g" }, 
+            { "id": 15, "quantity": 1, "unit": "pièce" }, 
+            { "id": 14, "quantity": 1, "unit": "gousse" },
+            { "id": 21, "quantity": 50, "unit": "g" }
         ],
         "diets": [
             { "id": 2 }
@@ -629,7 +631,7 @@
         "user_id": 2
     },   
     {
-        "title": "La pizza de Pizza Planet – Toy Story",
+        "title": "La pizza de Pizza Planet",
         "description": "Préchauffez le four à 220°C. Étalez une pâte à pizza sur une plaque, garnissez de sauce tomate, de mozzarella et des garnitures de votre choix (pepperoni, champignons, poivrons). Enfournez pendant 15 minutes jusqu'à ce que la pâte soit dorée et le fromage fondu. Servez immédiatement.",
         "image": "https://cdn.hercampus.com/SH6M70M3/as/xpgqgfn3ksgh3b93fmgzjwwb/Pizza_Planet_Pizza_-_Toy_Story_copy?width=734&height=489&fit=crop&auto=webp&dpr=4",
         "video": "https://www.youtube.com/embed/example",
@@ -644,11 +646,12 @@
         "logo_platform_url_reference": "https://www.netflix.com/browse",
         "image_recipe_reference": "https://assets.teenvogue.com/photos/5abce80b6d36ed4396878521/16:9/w_2560%2Cc_limit/pizza-planet-opening-in-disneyland.jpg",
         "ingredients": [
-            { "id": 64, "quantity": 1, "unit": "pièce" },
-            { "id": 3, "quantity": 3, "unit": "pièces" },
-            { "id": 6, "quantity": 100, "unit": "g" },
-            { "id": 18, "quantity": 1, "unit": "c. à soupe" },
-            { "id": 27, "quantity": 1, "unit": "pièce" }
+            { "id": 104, "quantity": 1, "unit": "pièce" },
+            { "id": 105, "quantity": 3, "unit": "pièces" },
+            { "id": 106, "quantity": 100, "unit": "g" }, 
+            { "id": 107, "quantity": 100, "unit": "g" },
+            { "id": 24, "quantity": 1, "unit": "c. à soupe" },
+            { "id": 27, "quantity": 1, "unit": "pièce" }  
         ],
         "diets": [
             { "id": 3 }
@@ -661,7 +664,7 @@
         "user_id": 1
     },
     {
-        "title": "La tarte à la cerise – Twin Peaks",
+        "title": "La tarte à la cerise",
         "description": "Préparez une croûte à tarte en mélangeant la farine, le beurre et l'eau froide. Étalez-la dans un moule à tarte. Dans un bol, mélangez des cerises fraîches avec du sucre et de la maïzena. Versez le mélange sur la croûte et recouvrez d'une seconde couche de pâte. Faites cuire au four jusqu'à ce que la croûte soit dorée.",
         "image": "https://img.cuisineaz.com/1280x720/2019/12/04/i151589-tarte-a-la-cerise-cherry-pie-twin-peaks-par-fast-oche.jpeg",
         "video": "https://www.youtube.com/embed/example",
@@ -676,10 +679,11 @@
         "logo_platform_url_reference": "https://www.netflix.com/browse",
         "image_recipe_reference": "https://www.deuxiemepage.fr/wp-content/uploads/2017/07/Twin-Peaks-3-1440x864.jpg",
         "ingredients": [
-            { "id": 48, "quantity": 250, "unit": "g" },
-            { "id": 39, "quantity": 300, "unit": "g" },
-            { "id": 18, "quantity": 100, "unit": "g" },
-            { "id": 16, "quantity": 100, "unit": "ml" }
+            { "id": 10, "quantity": 250, "unit": "g" },
+            { "id": 16, "quantity": 100, "unit": "g" },
+            { "id": 51, "quantity": 300, "unit": "g" },
+            { "id": 11, "quantity": 100, "unit": "g" },
+            { "id": 104, "quantity": 1, "unit": "c. à soupe" }
         ],
         "diets": [
             { "id": 1 }

@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\IngredientController;
 use App\Http\Controllers\DietController;
+use App\Http\Controllers\NewsletterController;
 
 Route::group(['prefix' => 'v1'], function () {
     Route::post('/login', [AuthController::class, 'login']);
@@ -26,6 +27,8 @@ Route::group(['prefix' => 'v1'], function () {
 
     Route::get('/diets', [DietController::class, 'index']);
     Route::get('/diets/{id}', [DietController::class, 'show']);
+
+    Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
 
     Route::middleware('auth:sanctum')->group(function () {
         Route::post('/logout', [AuthController::class, 'logout']);
@@ -65,6 +68,8 @@ Route::group(['prefix' => 'v1'], function () {
             Route::post('/diets', [DietController::class, 'store'])->name('diets.store');
             Route::put('/diets/{id}', [DietController::class, 'update'])->name('diets.update');
             Route::delete('/diets/{id}', [DietController::class, 'destroy'])->name('diets.destroy');
+
+            Route::get('/newsletter/subscribers', [NewsletterController::class, 'index'])->name('newsletter.index');
         });
     });
 });

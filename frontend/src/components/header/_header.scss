@@ -7,12 +7,6 @@
   margin-bottom: -40px;
   position: relative;
 
-  .App-logo {
-    height: 25px;
-    pointer-events: none;
-    width: 220px;
-  }
-
   .navigation {
     width: 100%;
     max-width: 842px;
@@ -51,6 +45,12 @@
           font-weight: 400;
           line-height: 25px;
           list-style: none;
+          border-radius: 20px;
+          padding: 6px;
+        }
+        
+        a:hover {
+          background-color: $orange;
         }
 
         .sub-menu {
@@ -128,11 +128,16 @@
 
     .bm-burger-button {
       position: fixed;
-      width: 36px;
-      height: 30px;
+      top: 100px;
       right: 50%;
       left: 50%;
-      top: 100px;
+      transition: all 0.3s ease;
+
+      &.scrolled {
+        right: 36px;
+        top: 36px;
+        left: auto;
+      }
     }
   }
 
@@ -143,10 +148,15 @@
 /* HeaderBurger.css */
 .bm-burger-button {
   position: fixed;
-  width: 36px;
-  height: 30px;
+  width: 40px;
+  height: 36px;
   right: 36px;
   top: 36px;
+  background-color: $light;
+  box-sizing: border-box;
+  padding: 10px; 
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .bm-burger-bars {
@@ -175,18 +185,23 @@
 .bm-item-list {
   color: #b8b7ad;
   padding: 0.8em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .bm-item {
   display: inline-block;
   text-decoration: none;
-  margin-bottom: 10px;
-  color: #d1d1d1;
+  color: $dark;
   transition: color 0.2s;
+  border-radius: 20px;
+  padding: 6px;
 }
 
-.bm-item:hover {
-  color: white;
+.bm-item:hover:not(:last-child) {
+  background-color: $orange;
 }
 
 .bm-overlay {
@@ -218,4 +233,22 @@
 
   }
 
+}
+
+.bm-burger-bars {
+  width: 32px;
+  left: 4px !important;
+}
+
+.bm-burger-bars:nth-child(1) {
+  top: 4px !important;
+}
+
+// .bm-burger-bars:nth-child(2) {
+//   top: 50%;
+// }
+
+.bm-burger-bars:nth-child(3) {
+  top: initial !important;
+  bottom: 4px !important;
 }

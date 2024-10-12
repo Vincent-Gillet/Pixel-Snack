@@ -1,19 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import HeaderBurger from './HeaderBurger';
 import HeaderDisplay from './HeaderDisplay';
+import { UserContext } from '../../context/UserContext';
 
 function Header() {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
-    const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+    const { isUserLoggedIn, logout } = useContext(UserContext);
     const navigate = useNavigate();
-
-    useEffect(() => {
-        const token = localStorage.getItem('accessToken');
-        if (token) {
-            setIsUserLoggedIn(true);
-        }
-    }, []);
 
     useEffect(() => {
         const handleResize = () => {
@@ -27,11 +21,26 @@ function Header() {
     }, []);
 
     const handleLogout = () => {
-        localStorage.clear();
-        setIsUserLoggedIn(false);
+        logout();
         navigate('/');
         window.location.reload();
     };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const burgerButton = document.querySelector('.bm-burger-button');
+            if (window.scrollY > 50) {
+                burgerButton.classList.add('scrolled');
+            } else {
+                burgerButton.classList.remove('scrolled');
+            }
+        };
+
+        document.addEventListener('scroll', handleScroll);
+        return () => {
+            document.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
         isMobile ? (

@@ -115,6 +115,11 @@ class IngredientSeeder extends Seeder
             ['name' => 'Glace au chocolat'],
             ['name' => 'Crème chantilly'],
             ['name' => 'Glace'],
+            ['name' => 'Chocolat noir'],
+            ['name' => 'Pâte à pizza'],
+            ['name' => 'Sauce tomate'],
+            ['name' => 'Mozzarella'],
+            ['name' => 'Pepperoni']
         ];
 
         foreach ($ingredients as $ingredient) {

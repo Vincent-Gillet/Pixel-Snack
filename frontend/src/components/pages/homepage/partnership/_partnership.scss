@@ -4,6 +4,10 @@
   flex-direction: column;
   row-gap: $spacing-xlarge;
 
+  h2 {
+    text-align: center;
+  }
+
   .container_logo {
     display: flex;
     align-items: center;

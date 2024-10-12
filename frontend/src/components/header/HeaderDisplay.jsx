@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 import logo from '../../assets/logo/logo_pixel_snack.svg';
 
 function HeaderDisplay({ isUserLoggedIn, handleLogout }) {

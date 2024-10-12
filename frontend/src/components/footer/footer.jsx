@@ -37,7 +37,7 @@ function Footer() {
                     <i className="fa-brands fa-youtube"></i>
                 </a>
                 <a href="#instagram" target='_blank'>
-                    <i class="fa-brands fa-instagram"></i>
+                    <i className="fa-brands fa-instagram"></i>
                 </a>
                 <a href="#printerest" target='_blank'>
                     <i className="fa-brands fa-pinterest"></i>

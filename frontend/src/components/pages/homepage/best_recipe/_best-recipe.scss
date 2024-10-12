@@ -4,6 +4,10 @@
   flex-direction: column;
   row-gap: $spacing-large;
 
+  h2 {
+    text-align: center;
+  }
+
   .bestRecipe {
     display: flex;
     justify-content: center;

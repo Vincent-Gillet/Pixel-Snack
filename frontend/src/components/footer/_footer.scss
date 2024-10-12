@@ -45,6 +45,8 @@
       justify-content: center;
       align-items: center;
       column-gap: 9px;
+      row-gap: 9px;
+      flex-wrap: wrap;
 
       a {
         display: flex;
@@ -73,6 +75,11 @@
   .bottom-footer {
     display: flex;
     justify-content: center;
+    margin: 5px;
+
+    p {
+      text-align: center;
+    }
 
     a {
       color: $dark;

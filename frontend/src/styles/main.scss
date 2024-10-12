@@ -65,10 +65,7 @@ h3 {
 
 form {
   display: flex;
-  flex-direction: column;
-  gap: $spacing-medium;
-  background-color: $orange;
-
+  
   h2 {
     color: $light;
   }
@@ -471,4 +468,11 @@ i {
   font-weight: bold;
   font-family: $font-family;
   text-align: center;
+}
+
+.App-logo {
+  max-height: 25px;
+  pointer-events: none;
+  width: 100%;
+  max-width: 220px;
 }

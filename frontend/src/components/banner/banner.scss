@@ -25,11 +25,10 @@
 
     h1 {
         color: $light;
+        margin: 5px;
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 100px;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
       }
-
-    h1 {
-    font-size: 64px;
-    font-weight: 700;
-    line-height: 100px;
-    }
 }

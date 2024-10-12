@@ -12,11 +12,9 @@ function SecondSlider() {
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_API_URL}/recipes`)
       .then(response => {
-        console.log(response.data); // Vérifiez les données de la réponse
-        // Trier les recettes par date de publication décroissante
         const sortedRecipes = response.data.sort((a, b) => new Date(b.date) - new Date(a.date));
         setRecipes(sortedRecipes);
-        setSelectedRecipe(sortedRecipes[0]); // Initialiser avec la première recette
+        setSelectedRecipe(sortedRecipes[0]);
       })
       .catch(error => console.error('Error fetching recipes:', error));
   }, []);
@@ -63,8 +61,6 @@ function SecondSlider() {
   const backgroundLastRecipes = selectedRecipe
     ? {
         background: `url(${selectedRecipe.image})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
       }
     : {};
 
@@ -82,7 +78,7 @@ function SecondSlider() {
       </div>
       <div className='container_lastRecipes'>
         <Slider {...settings}>
-          {recipes.slice(0, 3).map((recipe, index) => {
+          {recipes.slice(0, 6).map((recipe, index) => {
             const truncatedTitle = recipe.title.length > 20 
               ? recipe.title.slice(0, 20) + '...' 
               : recipe.title;

@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import placeholderImage from '../../../assets/logo/placeholder.png';
 
-const RecipeCard = ({ title, image, reviews, reviewCount, link }) => {
+const RecipeCard = ({ title, image, reviews, reviewCount, link = null }) => {
   
   const imageUrl = (!image || image === "" || image === "image_url") ? placeholderImage : image;
 
-  return (
-    <a href={link} className='card_recipe card'>
+  const CardContent = () => (
+    <>
       <div className='card_image'>
         <img src={imageUrl} alt={title} />
       </div>
@@ -25,16 +25,26 @@ const RecipeCard = ({ title, image, reviews, reviewCount, link }) => {
           <span>{reviewCount} avis</span>
         </div>
       </div>
+    </>
+  );
+
+  return link ? (
+    <a href={link} className='card_recipe card'>
+      <CardContent />
     </a>
+  ) : (
+    <div className='card_recipe card'>
+      <CardContent />
+    </div>
   );
 };
 
 RecipeCard.propTypes = {
   title: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string,
   reviews: PropTypes.number.isRequired,
   reviewCount: PropTypes.number.isRequired,
-  link: PropTypes.string.isRequired,
+  link: PropTypes.string,
 };
 
 export default RecipeCard;

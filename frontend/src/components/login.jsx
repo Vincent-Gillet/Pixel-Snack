@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { UserContext } from '../context/UserContext';
+
 
 function LoginBloc() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  
+  const { login } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
@@ -18,7 +20,7 @@ function LoginBloc() {
       });
 
       const { accessToken } = response.data;
-      localStorage.setItem('accessToken', accessToken);
+      login(accessToken);
       navigate('/dashboard');
     } catch (error) {
       console.error('Erreur lors de la connexion:', error);

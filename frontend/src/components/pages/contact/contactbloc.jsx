@@ -36,15 +36,15 @@ function ContactBloc() {
 
       <div className='information'>
         <a href="tel:0123456789" className='phone'>
-          <i class="fa-solid fa-phone"></i>
+          <i className="fa-solid fa-phone"></i>
           <p>01 23 45 67 89</p>
         </a>
         <a href="mailto:pixelsnack@contact.fr" className='mail'>
-          <i class="fa-solid fa-envelope"></i>
+          <i className="fa-solid fa-envelope"></i>
           <p>pixelsnack@contact.fr</p>
         </a>
         <a href="https://goo.gl/maps/1bZ8L6QV6j2vNf6w9" className='adress'>
-          <i class="fa-solid fa-map-marker-alt"></i>
+          <i className="fa-solid fa-map-marker-alt"></i>
           <p>1 rue de la Paix, 75000 Paris</p>
         </a>
       </div>
