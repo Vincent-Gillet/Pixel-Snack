@@ -57,9 +57,9 @@
             width: 100%;
             p {
                 width: 100%;
-                overflow: hidden; // Masque le contenu qui dépasse
-                text-overflow: ellipsis; // Ajoute des points de suspension pour le texte qui dépasse
-                white-space: nowrap; // Empêche le texte de se diviser en plusieurs lignes
+                overflow: hidden;
+                text-overflow: ellipsis; 
+                white-space: nowrap; 
             }          
         }
 

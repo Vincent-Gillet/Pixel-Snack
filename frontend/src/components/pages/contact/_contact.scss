@@ -2,19 +2,87 @@
   .App-ContactBloc {
     display: flex;
     column-gap: $spacing-medium;
+    justify-content: center;
 
     form {
-      max-width: 540px;
+      max-width: 520px;
       width: 100%;
-      padding: 47px 65px;
+      padding: 20px 20px;
       border-radius: $border-radius-medium;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: $spacing-medium;
+      box-sizing: border-box;
+      background-color: $orange;
+
+      .label_input_solo { 
+        width: 100%; 
+
+        #email {
+          max-width: 540px !important;
+          width: 100% !important;
+          box-sizing: border-box;
+        }
+      }
+
+      input {
+        font-size: 16px;
+        border: none;
+        border-radius: $border-radius-medium;
+        height: 55px;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; 
+        max-width: 478px; 
+      }
 
       .Name_Username {
-        .firstname, .lastname {
-          display: flex;
-          flex-direction: column;
-          align-items: start;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 540px;
+        width: 100%;
+
+        .label_input { 
+          width: max-content; 
+
+          #firstname, #lastname {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            width: 225px;
+            box-sizing: border-box;
+          }
         }
+      }
+
+      .cgu {
+        display: flex;
+        flex-direction: row;
+        column-gap: 5px;
+
+        input {
+          position: relative;
+          top: 7px;
+          width: 10px;
+          height: 10px;
+        }
+        label {
+          font-size: $font-size-p !important;
+        }
+      }
+
+      textarea {
+        font-size: 16px;
+        border: none;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 458px; 
+        min-height: 200px;
+        padding: 10px;
       }
     }
 
@@ -32,7 +100,8 @@
         gap: 32px;
         border-radius: $border-radius-medium;
         padding: 40px 20px;
-        width: 340px;
+        max-width: 340px;
+        width: 100%;
 
         i::before {
           font-size: 40px;
@@ -44,7 +113,79 @@
           font-size: 20px;
           font-style: normal;
           font-weight: 700;
-          line-height: 25px; /* 125% */
+          line-height: 25px; 
+        }
+      }
+    }
+
+    button {
+      border: none;
+      background: $light;
+      color: $dark !important;
+      background-color: $light !important;
+      border: 1px solid $orange;
+      border-radius: $border-radius-medium;
+      width: 123px;
+      height: 35px;
+    }
+  }
+
+  @media screen and (max-width: 920px) {
+    .App-ContactBloc {
+      flex-direction: column-reverse;
+      align-items: center;
+      row-gap: $spacing-medium;
+
+      form {
+        max-width: 540px;
+        width: 100%;
+        padding: 20px 20px;
+        border-radius: $border-radius-medium;
+  
+        .Name_Username {
+          display: flex;
+          flex-direction: column;
+          row-gap: $spacing-medium;
+  
+          .label_input {
+            width: 100%;
+
+            #firstname, #lastname {
+              max-width: 540px !important;
+              width: 100% !important;
+              box-sizing: border-box;
+              
+            }
+          }
+        }
+  
+        .cgu {
+          display: flex;
+          flex-direction: row;
+        }
+  
+        textarea {
+          font-size: 16px;
+          border: none;
+          border-radius: 20px;
+          width: 100%; 
+          max-width: none; 
+          min-height: 200px;
+          box-sizing: border-box;
+        }
+      }
+
+      .information {
+        row-gap: $spacing-medium;
+
+        a {
+          padding: 20px 10px;
+          gap: 16px;
+
+          p {
+            color: $light;
+            font-size: 15px;
+          }
         }
       }
     }

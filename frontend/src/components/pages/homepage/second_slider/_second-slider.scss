@@ -37,9 +37,9 @@
     left: 0;
     right: 0;
     height: 100%;
-    background-size: cover;
+    background-size: cover !important;
     background-repeat: no-repeat !important;
-    background-position: center;
+    background-position: center !important;
     z-index: -2;
   }
 

@@ -240,6 +240,10 @@ i {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    box-sizing: border-box;
+
 
     .reviews {
       display: flex;
@@ -255,6 +259,7 @@ i {
 
     h3, p { 
       color: $dark;
+      text-align: center;
     }
 
     .button_card {
@@ -280,19 +285,6 @@ i {
 
 .card_recipe:hover {
   background-color: $light !important;
-
-  // .card_content {
-  //   h3, p { 
-  //     color: $orange !important;
-  //   }
-  //   .reviews {
-  //     .stars {
-  //       i {
-  //         color: $orange !important;
-  //       }
-  //     }
-  //   }
-  // }
 }
 
 .container {
@@ -305,20 +297,15 @@ i {
   flex-direction: column;
   align-items: center;
   row-gap: $spacing-large;
-  min-height: 100vh;
   justify-content: space-between;
 
   /* Inscription et Connexion */
-
-  .App-login, .App-subscribe {
-    margin-top: 130px;
-  }
 
   .App-ContactBloc {
     margin: 50px 0;
   }
 
-  .App-login, .App-subscribe, .App-ContactBloc {
+  .App-login, .App-subscribe {
     display: flex;
     justify-content: center;
 
@@ -327,12 +314,13 @@ i {
       flex-direction: column;
       align-items: center;
       gap: $spacing-medium;
-      max-width: 300px;
-      padding: 30px 10px;
+      max-width: 500px;
+      padding: 30px 30px;
       border-radius: 10px;
       box-sizing: border-box;
       background-color: $orange;
       gap: $spacing-medium; 
+      width: 100%;
 
       h2 {
         color: $light;
@@ -347,7 +335,8 @@ i {
         font-size: 16px;
         border: none;
         border-radius: $border-radius-medium;
-        width: 225px;
+        width: 100%;
+        max-width: 350px;
         height: 55px;
         flex-shrink: 0;
         display: flex;
@@ -357,6 +346,8 @@ i {
 
       .cgu {
         display: flex;
+        flex-direction: row;
+
         input {
           position: relative;
           top: 7px;
@@ -385,6 +376,12 @@ i {
         border-radius: $border-radius-medium;
         width: 123px;
         height: 35px;
+      }
+
+      .switch_register_login {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
     }
   }

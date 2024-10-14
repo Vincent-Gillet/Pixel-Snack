@@ -5,6 +5,8 @@ import DashboardCategories from '../../components/my_account/categories';
 import DashboardUsers from '../../components/my_account/users/users';
 import DashboardMyRecipes from '../../components/my_account/my_recipes';
 import UserGet from '../../components/my_account/user/get';
+import Banner from '../../components/banner/banner';
+import customImage from '../../assets/image/recettes/foodwars.jpeg';
 
 function Account() {
   const [activeComponent, setActiveComponent] = useState('recipes');
@@ -51,6 +53,7 @@ function Account() {
   return (
     <>
       <div className="container dashboard">
+      <Banner title="Mon Compte" image={customImage} />
         <nav className='nav_dashboard'>
           <ul>
             <li>
@@ -86,7 +89,7 @@ function Account() {
                 className={activeComponent === 'account' ? 'active' : ''}
                 onClick={() => setActiveComponent('account')}
               >
-                Mon Compte
+                Profile
               </button>
             </li>
           </ul>

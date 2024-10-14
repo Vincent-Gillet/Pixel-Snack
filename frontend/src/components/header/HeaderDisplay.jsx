@@ -21,7 +21,7 @@ function HeaderDisplay({ isUserLoggedIn, handleLogout }) {
           </li>
           {isUserLoggedIn && (
             <li className="dashboard-menu">
-              <NavLink to="/dashboard" className=''>Dashboard</NavLink>
+              <NavLink to="/dashboard" className=''>Mon Compte</NavLink>
             </li>
           )}
         </ul>

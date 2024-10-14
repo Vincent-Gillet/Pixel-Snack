@@ -1,37 +1,113 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import axios from 'axios';
 
 function ContactBloc() {
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [termsAccepted, setTermsAccepted] = useState(false);
+  const [status, setStatus] = useState('');
+  const [errors, setErrors] = useState({});
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    setErrors({});
+
+    const newErrors = {};
+    if (!firstname) newErrors.firstname = 'Veuillez entrer votre prénom.';
+    if (!lastname) newErrors.lastname = 'Veuillez entrer votre nom.';
+    if (!email) newErrors.email = 'Veuillez entrer votre email.';
+    if (!message) newErrors.message = 'Veuillez entrer votre message.';
+    if (!termsAccepted) newErrors.terms = 'Vous devez accepter les termes et conditions.';
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    try {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/send-email`, {
+        firstname,
+        lastname,
+        email,
+        message,
+      });
+
+      if (response.status === 200) {
+        setStatus('Message envoyé avec succès!');
+      } else {
+        setStatus('Erreur lors de l\'envoi du message.');
+      }
+    } catch (error) {
+      console.error('Erreur lors de l\'envoi du message:', error);
+      setStatus('Erreur lors de l\'envoi du message.');
+    }
+  };
 
   return (
     <div className="App-ContactBloc container">
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className='Name_Username'>
-          <div className='firstname'>
-            <label for="username">Nom</label>
-            <input type="text" placeholder="Nom" />            
+          <div className='label_input'>
+            <label htmlFor="firstname">Nom</label>
+            <input
+              type="text"
+              id="firstname"
+              placeholder="Nom"
+              value={firstname}
+              onChange={(e) => setFirstname(e.target.value)}
+            />
+            {errors.firstname && <span className="error-message">{errors.firstname}</span>}
           </div>
-          <div className='lastname'>
-            <label for="username">Prénom</label>
-            <input type="text" placeholder="Prénom" />          
-          </div>            
-
+          <div className='label_input'>
+            <label htmlFor="lastname">Prénom</label>
+            <input
+              type="text"
+              id="lastname"
+              placeholder="Prénom"
+              value={lastname}
+              onChange={(e) => setLastname(e.target.value)}
+            />
+            {errors.lastname && <span className="error-message">{errors.lastname}</span>}
+          </div>
         </div>
-
-
-
-        <label for="username">Email</label>
-        <input type="text" placeholder="Nom d'utilisateur" />
-        <label for="textarea">Message</label>
-        <textarea placeholder="Votre message"></textarea>
-
+        <div className='label_input_solo'>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          {errors.email && <span className="error-message">{errors.email}</span>}
+        </div>
+        <div className='label_input_solo'>
+          <label htmlFor="message">Message</label>
+          <textarea
+            id="message"
+            placeholder="Votre message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
+          {errors.message && <span className="error-message">{errors.message}</span>}
+        </div>
         <div className="cgu">
-          <input type="checkbox" id="terms" />
+          <input
+            type="checkbox"
+            id="terms"
+            checked={termsAccepted}
+            onChange={(e) => setTermsAccepted(e.target.checked)}
+          />
           <label htmlFor="terms">
             J’accepte que les informations renseignées ci-dessus soient exploitées dans le cadre de mes échanges avec Pixel Snack. *
           </label>
-        </div>        
+          {errors.terms && <span className="error-message">{errors.terms}</span>}
+        </div>
         <button type="submit">Envoyer</button>
+        {status && <p>{status}</p>}
       </form>
 
       <div className='information'>
@@ -39,9 +115,9 @@ function ContactBloc() {
           <i className="fa-solid fa-phone"></i>
           <p>01 23 45 67 89</p>
         </a>
-        <a href="mailto:pixelsnack@contact.fr" className='mail'>
+        <a href="mailto:pixel-snack@vincentgillet.fr" className='mail'>
           <i className="fa-solid fa-envelope"></i>
-          <p>pixelsnack@contact.fr</p>
+          <p>pixel-snack@vincentgillet.fr</p>
         </a>
         <a href="https://goo.gl/maps/1bZ8L6QV6j2vNf6w9" className='adress'>
           <i className="fa-solid fa-map-marker-alt"></i>

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Banner from '../../../components/banner/banner';
+import customImage from '../../../assets/image/recettes/foodwarsterrinedelégumes.png';
 
 function CategoryUpdate() {
   const { id } = useParams();
@@ -98,10 +100,10 @@ function CategoryUpdate() {
   }
 
   return (
-    <div className="">
+    <div className="App container">
       {isEditing ? (
         <>
-          <h1>Catégorie</h1>
+          <Banner title="Modifier la catégorie" image={customImage} />
           <form className='form_dashboard' onSubmit={handleFormSubmit}>
             <div className='dashboard_input'>
               <label>Nom : </label>
@@ -120,7 +122,7 @@ function CategoryUpdate() {
         </>
       ) : (
         <>
-          <h1>Catégorie</h1>
+          <Banner title="Catégorie" image={customImage} />
           <div className='form_dashboard'>
             <span><h2>Nom :</h2><p>{category.category.title}</p></span>
             {category.category.image && <img src={category.category.image} alt={category.category.title} style={{ width: '200px', height: 'auto' }} />}

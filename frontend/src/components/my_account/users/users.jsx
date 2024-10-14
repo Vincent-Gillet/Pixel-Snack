@@ -25,9 +25,9 @@ function DashboardUsers() {
           }
         });
         console.log('Données récupérées:', response.data); 
-        if (response.data && Array.isArray(response.data.users)) {
-          setUsers(response.data.users);
-          console.log('État des utilisateurs après mise à jour:', response.data.users);
+        if (response.data && Array.isArray(response.data.data)) {
+          setUsers(response.data.data); // Accéder à la clé `data` pour obtenir le tableau d'utilisateurs
+          console.log('État des utilisateurs après mise à jour:', response.data.data);
         } else {
           console.error('Structure des données inattendue:', response.data);
         }
@@ -60,7 +60,6 @@ function DashboardUsers() {
   const handleViewUser = (userId) => {
     navigate(`/user/${userId}`);
   };
-
 
   const handleDeleteUser = async (userId) => {
     try {

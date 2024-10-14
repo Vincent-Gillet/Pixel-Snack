@@ -9,6 +9,7 @@ use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\IngredientController;
 use App\Http\Controllers\DietController;
 use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\ContactController;
 
 Route::group(['prefix' => 'v1'], function () {
     Route::post('/login', [AuthController::class, 'login']);
@@ -29,6 +30,8 @@ Route::group(['prefix' => 'v1'], function () {
     Route::get('/diets/{id}', [DietController::class, 'show']);
 
     Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
+    
+    Route::post('/send-email', [ContactController::class, 'sendEmail']);
 
     Route::middleware('auth:sanctum')->group(function () {
         Route::post('/logout', [AuthController::class, 'logout']);

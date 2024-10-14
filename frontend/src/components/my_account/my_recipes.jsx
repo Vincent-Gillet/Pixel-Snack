@@ -138,7 +138,7 @@ function DashboardRecipes() {
                 );
               })
             ) : (
-              <div>Aucune recette trouvée</div>
+              <p>Ajouter vos recettes</p>
             )}
             <Pagination
               currentPage={currentPage}

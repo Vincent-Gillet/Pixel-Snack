@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Banner from '../../banner/banner';
+import customImage from '../../../assets/image/recettes/foodwarsterrinedelégumes.png';
 
 function RecipePost() {
   const navigate = useNavigate();
@@ -167,7 +169,7 @@ function RecipePost() {
 
   return (
     <div className="App-PostRecipe container">
-      <h1>Ajouter une nouvelle recette</h1>
+      <Banner title="Nouvelle recette" image={customImage} />
       {error && <p className="error">Erreur: {error}</p>}
       <form className='form_dashboard' onSubmit={handleFormSubmit}>
         <h2>Recette</h2>

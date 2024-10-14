@@ -58,7 +58,6 @@ function RegisterBloc() {
   return (
 <div className="App-login container">
       <form onSubmit={handleSubmit}>
-        <h2>Inscription</h2>
         {errors.message && <div className="error-message">{errors.message}</div>}
         <label htmlFor="name">Pseudo</label>
         <input
@@ -108,7 +107,7 @@ function RegisterBloc() {
         </div>
         {errors.termsAccepted && <div className="error-message">{errors.termsAccepted[0]}</div>}
         <button type="submit">S'inscrire</button>
-        <p className=''>Vous avez déjà un compte ? <NavLink to="/login" >Se connecter</NavLink></p>
+        <p className='switch_register_login'>Vous avez déjà un compte ? <NavLink to="/login" >Se connecter</NavLink></p>
       </form>
     </div>
   );

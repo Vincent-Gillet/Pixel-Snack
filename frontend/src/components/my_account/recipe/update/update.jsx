@@ -3,6 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import RecipeInfo from './informations_recipe';
 import FormUpdate from './form_update';
+import Banner from '../../../banner/banner';
+import customImage from '../../../../assets/image/recettes/foodwarsterrinedelégumes.png';
 
 function UpdateRecipe() {
   const { id } = useParams();
@@ -218,30 +220,36 @@ function UpdateRecipe() {
   return (
     <div className="App-UpdateRecipe container">
       {isEditing ? (
-        <FormUpdate
-          formData={formData}
-          ingredients={ingredients}
-          diets={diets}
-          categories={categories}
-          newIngredient={newIngredient}
-          handleInputChange={handleInputChange}
-          handleIngredientChange={handleIngredientChange}
-          handleAddIngredient={handleAddIngredient}
-          handleRemoveIngredient={handleRemoveIngredient}
-          handleFormSubmit={handleFormSubmit}
-          setNewIngredient={setNewIngredient}
-          setIsEditing={setIsEditing}
-          handleDietChange={handleDietChange}
-          handleCategoryChange={handleCategoryChange}
-        />
+        <>
+          <Banner title="Modifier la recette" image={customImage} />
+          <FormUpdate
+            formData={formData}
+            ingredients={ingredients}
+            diets={diets}
+            categories={categories}
+            newIngredient={newIngredient}
+            handleInputChange={handleInputChange}
+            handleIngredientChange={handleIngredientChange}
+            handleAddIngredient={handleAddIngredient}
+            handleRemoveIngredient={handleRemoveIngredient}
+            handleFormSubmit={handleFormSubmit}
+            setNewIngredient={setNewIngredient}
+            setIsEditing={setIsEditing}
+            handleDietChange={handleDietChange}
+            handleCategoryChange={handleCategoryChange}
+          />
+        </>
       ) : (
-        <RecipeInfo
-          recipe={recipe}
-          setIsEditing={setIsEditing}
-          handleDeleteRecipe={handleDeleteRecipe}
-          diet={diets}
-          categories={categories}
-        />
+        <>
+          <Banner title="Recette" image={customImage} />
+          <RecipeInfo
+            recipe={recipe}
+            setIsEditing={setIsEditing}
+            handleDeleteRecipe={handleDeleteRecipe}
+            diet={diets}
+            categories={categories}
+          />
+        </>
       )}
     </div>
   );

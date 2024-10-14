@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
+import Banner from '../../../components/banner/banner';
+import customImage from '../../../assets/image/recettes/foodwarsterrinedelégumes.png';
 
 function UserGet() {
   const { id: paramId } = useParams();
@@ -12,6 +14,7 @@ function UserGet() {
     name: '',
     email: '',
     password: '',
+    password_confirmation: '',
     role: ''
   });
 
@@ -33,6 +36,7 @@ function UserGet() {
           name: response.data.user.name,
           email: response.data.user.email,
           password: '',
+          password_confirmation: '', 
           role: response.data.user.role
         });
       } catch (error) {
@@ -53,6 +57,12 @@ function UserGet() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+
+    if (formData.password !== formData.password_confirmation) {
+      setError('Les mots de passe ne correspondent pas.');
+      return;
+    }
+
     try {
       const token = localStorage.getItem('accessToken');
       const response = await axios.put(`${import.meta.env.VITE_API_URL}/users/${user.id}`, formData, {
@@ -76,8 +86,13 @@ function UserGet() {
     return <p>Chargement...</p>;
   }
 
+  const isUserPage = paramId !== undefined;
+
   return (
-    <div>
+    <div className='App container'>
+      {isUserPage && (
+        <Banner title={isEditing ? "Modifier le compte utilisateur" : "Compte utilisateur"} image={customImage} />
+      )}
       {isEditing ? (
         <form className='form_dashboard' onSubmit={handleFormSubmit}>
           <div className='dashboard_input'>
@@ -92,6 +107,10 @@ function UserGet() {
             <label>Mot de passe :</label>
             <input type="password" name="password" value={formData.password} onChange={handleInputChange} />
           </div>
+          <div className='dashboard_input'>
+            <label>Confirmer le mot de passe :</label>
+            <input type="password" name="password_confirmation" value={formData.password_confirmation} onChange={handleInputChange} />
+          </div>
           {localStorage.getItem('role') === 'admin' && (
             <div className='dashboard_input'>
               <label>Rôle:</label>
@@ -102,7 +121,7 @@ function UserGet() {
             <button type="submit">Enregistrer</button>
             <button type="button" onClick={() => setIsEditing(false)}>Annuler</button>
           </div>
-        </form>
+        </form>        
       ) : (
         <div className='form_dashboard'>
           <span><h2>Nom :</h2><p>{user.name}</p></span>
@@ -112,7 +131,7 @@ function UserGet() {
           )}
           <div className='button_dashboard'>
             <button onClick={() => setIsEditing(true)}>Modifier</button>
-          </div>
+          </div>        
         </div>
       )}
     </div>

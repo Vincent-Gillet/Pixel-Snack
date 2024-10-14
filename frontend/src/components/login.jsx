@@ -30,7 +30,6 @@ function LoginBloc() {
   return (
     <div className="App-login container">
       <form onSubmit={handleSubmit}>
-        <h2>Connexion</h2>
         <label htmlFor="email">Email</label>
         <input
           type="email"
@@ -48,7 +47,7 @@ function LoginBloc() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Connexion</button>
-        <p className=''>Vous n’avez pas de compte ? <NavLink to="/register" >S'Inscrire</NavLink></p>
+        <p className='switch_register_login'>Vous n’avez pas de compte ? <NavLink to="/register" >S'Inscrire</NavLink></p>
       </form>
     </div>
   );

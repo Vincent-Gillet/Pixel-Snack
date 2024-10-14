@@ -7,9 +7,7 @@ const RecipeInfo = ({ recipe, setIsEditing, handleDeleteRecipe }) => {
 
   return (
     <>
-      <h1>Info Recette</h1>
       <div className='form_dashboard'>
-        <h2>Recette</h2>
         <span><h2>Nom :</h2><p>{recipe.title}</p></span>
         <span className='url'><h2>Image :</h2><p>{recipe.image}</p></span>
         {recipe.image && <img src={recipe.image} alt={recipe.title} />}

@@ -23,7 +23,6 @@ function FormUpdate({
 
   return (
     <form className='form_dashboard' onSubmit={handleFormSubmit}>
-      <h2>Recette</h2>
       <div className='dashboard_input'>
         <label>Titre :</label>
         <input type="text" name="title" value={formData.title} onChange={handleInputChange} />

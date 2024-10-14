@@ -12,7 +12,7 @@ function CGU() {
                 <p>En vigueur au 01/01/2023</p>
 
                 <p>
-                    Les présentes conditions générales d'utilisation (dites « CGU ») ont pour objet l'encadrement juridique des modalités de mise à disposition du site et des services par _______________ et de définir les conditions d’accès et d’utilisation des services par « l'Utilisateur ».
+                    Les présentes conditions générales d'utilisation (dites « CGU ») ont pour objet l'encadrement juridique des modalités de mise à disposition du site et des services par Vincent Gillet et de définir les conditions d’accès et d’utilisation des services par « l'Utilisateur ».
                 </p>
                 <p>
                     Les présentes CGU sont accessibles sur le site à la rubrique «CGU».
@@ -24,26 +24,26 @@ function CGU() {
                     En cas de non-acceptation des CGU stipulées dans le présent contrat, l'Utilisateur se doit de renoncer à l'accès des services proposés par le site.
                 </p>
                 <p>
-                    http://pixel-snacks.atwebpages.com/ se réserve le droit de modifier unilatéralement et à tout moment le contenu des présentes CGU.
+                    https://api-pixel-snack.vincentgillet.fr se réserve le droit de modifier unilatéralement et à tout moment le contenu des présentes CGU.
                 </p>
 
                 <h3>Article 1 : Les mentions légales</h3>
                 <p>
-                    L’édition et la direction de la publication du site http://pixel-snacks.atwebpages.com/ est assurée par John Deo, domicilié Pépinière d’entreprises Pascalis, 10 All. Evariste Galois,.
+                    L’édition et la direction de la publication du site https://api-pixel-snack.vincentgillet.fr est assurée par John Deo, domicilié Pépinière d’entreprises Pascalis, 10 All. Evariste Galois,.
                 </p>
                 <p>
                     Numéro de téléphone est 01.02.03.04.05
                 </p>
                 <p>
-                    Adresse e-mail pixel-snack@gmail.com.
+                    Adresse e-mail pixel-snack@vincentgillet.fr.
                 </p>
                 <p>
-                    L'hébergeur du site http://pixel-snacks.atwebpages.com/ est la société Netlify, dont le siège social est situé au 610 22nd Street, Suite 315 CA 94107 San Francisco, avec le numéro de téléphone : +1 844-899-7312.
+                    L'hébergeur du site https://api-pixel-snack.vincentgillet.fr est la société Netlify, dont le siège social est situé au 610 22nd Street, Suite 315 CA 94107 San Francisco, avec le numéro de téléphone : +1 844-899-7312.
                 </p>
 
                 <h3>ARTICLE 2 : Accès au site</h3>
                 <p>
-                    Le site http://pixel-snacks.atwebpages.com/ permet à l'Utilisateur un accès gratuit aux services suivants :
+                    Le site https://api-pixel-snack.vincentgillet.fr permet à l'Utilisateur un accès gratuit aux services suivants :
                 </p>
                 <ul>
                     <li>Création de recettes</li>
@@ -61,7 +61,7 @@ function CGU() {
                     Tout Utilisateur membre régulièrement inscrit pourra également solliciter sa désinscription en se rendant à la page dédiée sur son espace personnel. Celle-ci sera effective dans un délai raisonnable.
                 </p>
                 <p>
-                    Tout événement dû à un cas de force majeure ayant pour conséquence un dysfonctionnement du site ou serveur et sous réserve de toute interruption ou modification en cas de maintenance, n'engage pas la responsabilité de http://pixel-snacks.atwebpages.com/. Dans ces cas, l’Utilisateur accepte ainsi ne pas tenir rigueur à l’éditeur de toute interruption ou suspension de service, même sans préavis.
+                    Tout événement dû à un cas de force majeure ayant pour conséquence un dysfonctionnement du site ou serveur et sous réserve de toute interruption ou modification en cas de maintenance, n'engage pas la responsabilité de https://api-pixel-snack.vincentgillet.fr. Dans ces cas, l’Utilisateur accepte ainsi ne pas tenir rigueur à l’éditeur de toute interruption ou suspension de service, même sans préavis.
                 </p>
                 <p>
                     L'Utilisateur a la possibilité de contacter le site par messagerie électronique à l’adresse email de l’éditeur communiqué à l’ARTICLE 1.
@@ -96,16 +96,16 @@ function CGU() {
 
                 <h3>ARTICLE 5 : Responsabilité</h3>
                 <p>
-                    Les sources des informations diffusées sur le site http://pixel-snacks.atwebpages.com/ sont réputées fiables mais le site ne garantit pas qu’il soit exempt de défauts, d’erreurs ou d'omissions.
+                    Les sources des informations diffusées sur le site https://api-pixel-snack.vincentgillet.fr sont réputées fiables mais le site ne garantit pas qu’il soit exempt de défauts, d’erreurs ou d'omissions.
                 </p>
                 <p>
-                    Les informations communiquées sont présentées à titre indicatif et général sans valeur contractuelle. Malgré des mises à jour régulières, le site http://pixel-snacks.atwebpages.com/ ne peut être tenu responsable de la modification des dispositions administratives et juridiques survenant après la publication. De même, le site ne peut être tenue responsable de l’utilisation et de l’interprétation de l’information contenue dans ce site.
+                    Les informations communiquées sont présentées à titre indicatif et général sans valeur contractuelle. Malgré des mises à jour régulières, le site https://api-pixel-snack.vincentgillet.fr ne peut être tenu responsable de la modification des dispositions administratives et juridiques survenant après la publication. De même, le site ne peut être tenue responsable de l’utilisation et de l’interprétation de l’information contenue dans ce site.
                 </p>
                 <p>
                     L'Utilisateur s'assure de garder son mot de passe secret. Toute divulgation du mot de passe, quelle que soit sa forme, est interdite. Il assume les risques liés à l'utilisation de son identifiant et mot de passe. Le site décline toute responsabilité.
                 </p>
                 <p>
-                    Le site http://pixel-snacks.atwebpages.com/ ne peut être tenu pour responsable d’éventuels virus qui pourraient infecter l’ordinateur ou tout matériel informatique de l’Internaute, suite à une utilisation, à l’accès, ou au téléchargement provenant de ce site.
+                    Le site https://api-pixel-snack.vincentgillet.fr ne peut être tenu pour responsable d’éventuels virus qui pourraient infecter l’ordinateur ou tout matériel informatique de l’Internaute, suite à une utilisation, à l’accès, ou au téléchargement provenant de ce site.
                 </p>
                 <p>
                     La responsabilité du site ne peut être engagée en cas de force majeure ou du fait imprévisible et insurmontable d'un tiers.
@@ -113,7 +113,7 @@ function CGU() {
 
                 <h3>ARTICLE 6 : Liens hypertextes</h3>
                 <p>
-                    Des liens hypertextes peuvent être présents sur le site. L’Utilisateur est informé qu’en cliquant sur ces liens, il sortira du site http://pixel-snacks.atwebpages.com/. Ce dernier n’a pas de contrôle sur les pages web sur lesquelles aboutissent ces liens et ne saurait, en aucun cas, être responsable de leur contenu.
+                    Des liens hypertextes peuvent être présents sur le site. L’Utilisateur est informé qu’en cliquant sur ces liens, il sortira du site https://api-pixel-snack.vincentgillet.fr. Ce dernier n’a pas de contrôle sur les pages web sur lesquelles aboutissent ces liens et ne saurait, en aucun cas, être responsable de leur contenu.
                 </p>
 
                 <h3>ARTICLE 7 : Cookies</h3>
@@ -121,10 +121,10 @@ function CGU() {
                     L’Utilisateur est informé que lors de ses visites sur le site, un cookie peut s’installer automatiquement sur son logiciel de navigation.
                 </p>
                 <p>
-                    Les cookies sont de petits fichiers stockés temporairement sur le disque dur de l’ordinateur de l’Utilisateur par votre navigateur et qui sont nécessaires à l’utilisation du site http://pixel-snacks.atwebpages.com/. Les cookies ne contiennent pas d’information personnelle et ne peuvent pas être utilisés pour identifier quelqu’un. Un cookie contient un identifiant unique, généré aléatoirement et donc anonyme. Certains cookies expirent à la fin de la visite de l’Utilisateur, d’autres restent.
+                    Les cookies sont de petits fichiers stockés temporairement sur le disque dur de l’ordinateur de l’Utilisateur par votre navigateur et qui sont nécessaires à l’utilisation du site https://api-pixel-snack.vincentgillet.fr. Les cookies ne contiennent pas d’information personnelle et ne peuvent pas être utilisés pour identifier quelqu’un. Un cookie contient un identifiant unique, généré aléatoirement et donc anonyme. Certains cookies expirent à la fin de la visite de l’Utilisateur, d’autres restent.
                 </p>
                 <p>
-                    L’information contenue dans les cookies est utilisée pour améliorer le site http://pixel-snacks.atwebpages.com/.
+                    L’information contenue dans les cookies est utilisée pour améliorer le site https://api-pixel-snack.vincentgillet.fr.
                 </p>
                 <p>
                     En naviguant sur le site, L’Utilisateur les accepte.

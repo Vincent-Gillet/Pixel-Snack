@@ -28,7 +28,7 @@ function HeaderBurger({ isUserLoggedIn, handleLogout }) {
                 <NavLink to="/categories" onClick={closeMenu}>Catégories</NavLink>
                 <NavLink to="/contact" onClick={closeMenu}>Contact</NavLink>
                 {isUserLoggedIn && (
-                    <NavLink to="/dashboard" onClick={closeMenu}>Dashboard</NavLink>
+                    <NavLink to="/dashboard" onClick={closeMenu}>Mon Compte</NavLink>
                 )}
                 <div>
                     {isUserLoggedIn ? (

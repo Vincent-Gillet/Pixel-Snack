@@ -5,6 +5,8 @@
   align-items: center;
 
   .nav_dashboard {
+    margin-top: $spacing-medium;
+
     ul {
       display: flex;
       margin: 0;
@@ -44,15 +46,55 @@
       }
     }
   }
+
+  @media screen and (max-width: 768px) {
+
+    .nav_dashboard {
+      margin-bottom: $spacing-medium;
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: $spacing-small;
+        margin: 0;
+        padding: 0;
+    
+        li {
+          list-style: none;
+    
+          button {
+            font-size: 18px;
+            border-radius: 30px;
+    
+            &:hover {
+              background: $light;
+            }
+    
+            &.active {
+              background: $light;
+            }
+          }
+        }
+      }
+    }
+  
+  }
 }
 
 .dashboard-content {
   position: relative;
   border-radius: 30px;
   background: $light;
-  padding: 40px 40px 0 40px; 
+  padding: 40px; 
   transition: border-radius 0.3s;
   width: 100%;
   max-width: 1060px;
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard-content {
+    padding: 30px 10px;
+  }
 }
