@@ -8,7 +8,7 @@ use App\Models\Recipe;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class CategoryControllerTest extends TestCase
+class CategoryControllerFunctionalTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -94,7 +94,7 @@ class CategoryControllerTest extends TestCase
 
     public function test_destroy()
     {
-        $user = User::factory()->create(['role' => 'admin']);        
+        $user = User::factory()->create(['role' => 'admin']);
         $this->actingAs($user, 'sanctum');
 
         $category = Category::factory()->create();
@@ -108,7 +108,7 @@ class CategoryControllerTest extends TestCase
 
     public function test_destroy_not_found()
     {
-        $user = User::factory()->create(['role' => 'admin']);        
+        $user = User::factory()->create(['role' => 'admin']);
         $this->actingAs($user, 'sanctum');
 
         $response = $this->withExceptionHandling()->delete('/api/v1/admin/categories/999');
@@ -123,9 +123,9 @@ class CategoryControllerTest extends TestCase
         $category = Category::factory()->create();
         $recipe = Recipe::factory()->create(['user_id' => $user->id]); // Associe l'utilisateur à la recette
         $category->recipes()->attach($recipe);
-    
+
         $response = $this->get("/api/v1/categories/{$category->id}/recipes");
-    
+
         $response->assertStatus(200);
         $response->assertJsonFragment(['id' => $recipe->id]);
     }

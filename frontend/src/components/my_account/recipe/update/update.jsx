@@ -221,7 +221,7 @@ function UpdateRecipe() {
     <div className="App-UpdateRecipe container">
       {isEditing ? (
         <>
-          <Banner title="Modifier la recette" image={customImage} />
+          <Banner title="Modifier la recette" image={recipe.image} alt={recipe.title} />
           <FormUpdate
             formData={formData}
             ingredients={ingredients}
@@ -241,7 +241,7 @@ function UpdateRecipe() {
         </>
       ) : (
         <>
-          <Banner title="Recette" image={customImage} />
+          <Banner title="Recette" image={recipe.image} alt={recipe.title} />
           <RecipeInfo
             recipe={recipe}
             setIsEditing={setIsEditing}

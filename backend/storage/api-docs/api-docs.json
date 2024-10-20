@@ -696,7 +696,7 @@
                     "Categories"
                 ],
                 "summary": "Get recipes by category ID",
-                "operationId": "8efb00d256e8a95aa24ee6be4d2ddcfe",
+                "operationId": "0f3e930ff73d5295ca9d5787852df249",
                 "parameters": [
                     {
                         "name": "id",
@@ -1771,7 +1771,7 @@
                     "Recipes"
                 ],
                 "summary": "Filter recipes",
-                "operationId": "5d394e75d913fe6cc6119b6f55e6a478",
+                "operationId": "ceaf7b5eeccf21e0a2234259598f2ce1",
                 "parameters": [
                     {
                         "name": "title",

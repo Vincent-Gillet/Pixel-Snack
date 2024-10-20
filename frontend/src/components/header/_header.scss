@@ -178,6 +178,7 @@
   background: #373a47;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
+  overflow: initial !important;
 }
 
 .bm-morph-shape {
@@ -200,6 +201,7 @@
   transition: color 0.2s;
   border-radius: 20px;
   padding: 6px;
+  text-align: center;
 }
 
 .bm-item:hover:not(:last-child) {

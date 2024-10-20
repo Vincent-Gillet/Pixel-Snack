@@ -7,7 +7,7 @@ import customImage from '../assets/image/recettes/ramen-poulet.jpg';
 function Contact() {
   return (
     <div className="App-Contact container">
-        <Banner title="Contact" image={customImage} />
+        <Banner title="Contact" image={customImage} altText="ramen" />
         <ContactBloc />
         <Newsletter />
     </div>

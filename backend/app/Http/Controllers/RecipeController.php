@@ -7,6 +7,8 @@ use App\Models\Recipe;
 use App\Models\Ingredient;
 use App\Models\Diet;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Log;
 
 /**
  * @OA\Schema(
@@ -197,63 +199,74 @@ class RecipeController extends Controller
      */
     
      public function store(Request $request): JsonResponse
-    {
-        try {
-            $data = $request->validate([
-                'title' => 'required|string|max:255',
-                'description' => 'nullable|string',
-                'image' => 'nullable|string',
-                'video' => 'nullable|string',
-                'category_ids' => 'array',
-                'category_ids.*' => 'exists:categories,id',
-                'total_time' => 'nullable|integer',
-                'preparation_time' => 'nullable|integer',
-                'rest_time' => 'nullable|integer',
-                'cooking_time' => 'nullable|integer',
-                'title_reference' => 'nullable|string',
-                'episode_reference' => 'nullable|string',
-                'description_reference' => 'nullable|string',
-                'logo_platform_reference' => 'nullable|string',
-                'logo_platform_url_reference' => 'nullable|string',
-                'image_recipe_reference' => 'nullable|string',
-                'ingredients' => 'array',
-                'ingredients.*.id' => 'exists:ingredients,id',
-                'ingredients.*.quantity' => 'nullable|numeric',
-                'ingredients.*.unit' => 'nullable|string',
-                'diets' => 'array',
-                'diets.*.id' => 'exists:diets,id',
-            ]);
-    
-            $data['user_id'] = $request->user()->id;
-    
-            $recipe = Recipe::create($data);
-    
-            if (isset($data['category_ids'])) {
-                $recipe->categories()->sync($data['category_ids']);
-            }
-    
-            if (isset($data['ingredients'])) {
-                $ingredientsData = collect($data['ingredients'])->mapWithKeys(function ($ingredient) {
-                    return [
-                        $ingredient['id'] => [
-                            'quantity' => $ingredient['quantity'],
-                            'unit' => $ingredient['unit'],
-                        ],
-                    ];
-                });
-    
-                $recipe->ingredients()->attach($ingredientsData);
-            }
-    
-            if (isset($data['diets'])) {
-                $recipe->diets()->sync(collect($data['diets'])->pluck('id')->toArray());
-            }
-    
-            return response()->json(['message' => 'Recipe created successfully', 'recipe' => $recipe], 201);
-        } catch (\Exception $e) {
-            return response()->json(['message' => 'Internal Server Error', 'error' => $e->getMessage()], 500);
-        }
-    }
+     {
+         try {
+             $data = $request->validate([
+                 'title' => 'required|string|max:255',
+                 'description' => 'nullable|string',
+                 'image' => 'nullable|string',
+                 'video' => 'nullable|string',
+                 'category_ids' => 'array',
+                 'category_ids.*' => 'exists:categories,id',
+                 'total_time' => 'nullable|integer',
+                 'preparation_time' => 'nullable|integer',
+                 'rest_time' => 'nullable|integer',
+                 'cooking_time' => 'nullable|integer',
+                 'title_reference' => 'nullable|string',
+                 'episode_reference' => 'nullable|string',
+                 'description_reference' => 'nullable|string',
+                 'logo_platform_reference' => 'nullable|string',
+                 'logo_platform_url_reference' => 'nullable|string',
+                 'image_recipe_reference' => 'nullable|string',
+                 'ingredients' => 'array',
+                 'ingredients.*.id' => 'exists:ingredients,id',
+                 'ingredients.*.quantity' => 'nullable|numeric',
+                 'ingredients.*.unit' => 'nullable|string',
+                 'diets' => 'array',
+                 'diets.*.id' => 'exists:diets,id',
+             ]);
+     
+             $data['user_id'] = $request->user()->id;
+     
+             Log::info('Creating recipe with data: ', $data);
+     
+             $recipe = Recipe::create($data);
+     
+             if (!$recipe) {
+                 Log::error('Recipe creation failed.');
+                 return response()->json(['message' => 'Recipe creation failed'], 500);
+             }
+     
+             if (isset($data['category_ids'])) {
+                 $recipe->categories()->sync($data['category_ids']);
+             }
+     
+             if (isset($data['ingredients'])) {
+                 $ingredientsData = collect($data['ingredients'])->mapWithKeys(function ($ingredient) {
+                     return [
+                         $ingredient['id'] => [
+                             'quantity' => $ingredient['quantity'],
+                             'unit' => $ingredient['unit'],
+                         ],
+                     ];
+                 });
+     
+                 $recipe->ingredients()->attach($ingredientsData);
+             }
+     
+             if (isset($data['diets'])) {
+                 $recipe->diets()->sync(collect($data['diets'])->pluck('id')->toArray());
+             }
+     
+             return response()->json(['message' => 'Recipe created successfully', 'recipe' => $recipe], 201);
+         } catch (ValidationException $e) {
+             Log::error('Validation error: ', $e->errors());
+             return response()->json(['message' => 'Validation error', 'errors' => $e->errors()], 400);
+         } catch (\Exception $e) {
+             Log::error('Error creating recipe: ' . $e->getMessage());
+             return response()->json(['message' => 'Internal Server Error', 'error' => $e->getMessage()], 500);
+         }
+     }
 
     /**
      * @OA\Put(
@@ -433,7 +446,7 @@ class RecipeController extends Controller
      * )
      */
 
-    public function filter(Request $request)
+    public function getFilter(Request $request)
     {
         $ingredient = $request->query('ingredient');
         $diet = $request->query('diet');

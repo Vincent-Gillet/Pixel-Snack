@@ -7,7 +7,7 @@ use App\Models\User;
 use App\Models\Ingredient;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class IngredientControllerTest extends TestCase
+class IngredientControllerFunctionalTest extends TestCase
 {
     use RefreshDatabase;
 

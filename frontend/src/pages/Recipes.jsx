@@ -10,7 +10,7 @@ function Recipes() {
   
   return (
     <div className="App container">
-      <Banner title="Recettes" image={customImage} />
+      <Banner title="Recettes" image={customImage} altText="plat d'un animé" />
       <FilterBloc setRecipes={setRecipes} />
       <RecipesBloc recipes={recipes} setRecipes={setRecipes} />
       <Newsletter />

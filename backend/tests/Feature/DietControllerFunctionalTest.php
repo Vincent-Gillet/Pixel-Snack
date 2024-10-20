@@ -7,7 +7,7 @@ use App\Models\Diet;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class DietControllerTest extends TestCase
+class DietControllerFunctionalTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -43,13 +43,13 @@ class DietControllerTest extends TestCase
     {
         $user = User::factory()->create(['role' => 'admin']);
         $this->actingAs($user, 'sanctum');
-        
+
         $data = [
             'name' => 'New Diet',
         ];
-    
+
         $response = $this->post('/api/v1/admin/diets', $data);
-    
+
         $response->assertStatus(201);
         $response->assertJson(['diet' => ['name' => 'New Diet']]);
         $this->assertDatabaseHas('diets', ['name' => 'New Diet']);
@@ -106,7 +106,7 @@ class DietControllerTest extends TestCase
     {
         $user = User::factory()->create(['role' => 'admin']);
         $this->actingAs($user, 'sanctum');
-        
+
         $response = $this->delete('/api/v1/admin/diets/999');
 
         $response->assertStatus(404);

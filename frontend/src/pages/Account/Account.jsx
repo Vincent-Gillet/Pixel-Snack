@@ -53,7 +53,7 @@ function Account() {
   return (
     <>
       <div className="container dashboard">
-      <Banner title="Mon Compte" image={customImage} />
+      <Banner title="Mon Compte" image={customImage} altText="plat d'un animé" />
         <nav className='nav_dashboard'>
           <ul>
             <li>

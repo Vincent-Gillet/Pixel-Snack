@@ -97,24 +97,24 @@ function UserGet() {
         <form className='form_dashboard' onSubmit={handleFormSubmit}>
           <div className='dashboard_input'>
             <label>Nom :</label>
-            <input type="text" name="name" value={formData.name} onChange={handleInputChange} />
+            <input type="text" name="name" value={formData.name} onChange={handleInputChange} aria-label="Nom Pseudo" />
           </div>
           <div className='dashboard_input'>
             <label>Email :</label>
-            <input type="email" name="email" value={formData.email} onChange={handleInputChange} />
+            <input type="email" name="email" value={formData.email} onChange={handleInputChange} aria-label="Email" />
           </div>
           <div className='dashboard_input'>
             <label>Mot de passe :</label>
-            <input type="password" name="password" value={formData.password} onChange={handleInputChange} />
+            <input type="password" name="password" value={formData.password} onChange={handleInputChange} aria-label="Mot de passe" />
           </div>
           <div className='dashboard_input'>
             <label>Confirmer le mot de passe :</label>
-            <input type="password" name="password_confirmation" value={formData.password_confirmation} onChange={handleInputChange} />
+            <input type="password" name="password_confirmation" value={formData.password_confirmation} onChange={handleInputChange} aria-label="Confirmer le mot de passe" />
           </div>
           {localStorage.getItem('role') === 'admin' && (
             <div className='dashboard_input'>
               <label>Rôle:</label>
-              <input type="text" name="role" value={formData.role} onChange={handleInputChange} />
+              <input type="text" name="role" value={formData.role} onChange={handleInputChange} aria-label="Rôle de l'utilisateur" />
             </div>
           )}
           <div className='button_dashboard'>

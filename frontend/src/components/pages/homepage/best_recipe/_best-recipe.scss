@@ -54,6 +54,8 @@
       gap: $spacing-medium;
 
       .image_recipe {
+        height: 200px;
+        
         img {
           box-shadow: -10px 10px 0px $orange;
         }

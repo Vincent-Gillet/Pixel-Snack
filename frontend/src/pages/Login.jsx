@@ -7,7 +7,7 @@ import customImage from '../assets/image/recettes/20969525.webp';
 function Login() {
   return (
     <div className="App container">
-        <Banner title="Connexion" image={customImage} />
+        <Banner title="Connexion" image={customImage} altText="origiri" />
         <LoginBloc />
         <Newsletter />
     </div>

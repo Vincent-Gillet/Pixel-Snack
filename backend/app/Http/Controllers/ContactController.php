@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
-    public function sendEmail(Request $request)
+    public function getSendEmail(Request $request)
     {
         $details = [
             'firstname' => $request->firstname,

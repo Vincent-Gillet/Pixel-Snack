@@ -32,14 +32,14 @@ function HeaderBurger({ isUserLoggedIn, handleLogout }) {
                 )}
                 <div>
                     {isUserLoggedIn ? (
-                        <button onClick={handleLogout} className='connexion normal_button'>
+                        <button onClick={handleLogout} className='connexion normal_button' aria-label="Déconnexion">
                             Déconnexion
-                            <i className="fa-solid fa-user"></i>
+                            <i className="fa-solid fa-user" aria-hidden="true"></i>
                         </button>
                     ) : (
-                        <NavLink to="/login" className='connexion normal_button' onClick={closeMenu}>
+                        <NavLink to="/login" className='connexion normal_button' onClick={closeMenu} aria-label="Connexion">
                             Connexion
-                            <i className="fa-solid fa-user"></i>
+                            <i className="fa-solid fa-user" aria-hidden="true"></i>
                         </NavLink>
                     )}
                 </div>

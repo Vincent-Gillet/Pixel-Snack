@@ -7,7 +7,7 @@ import customImage from '../assets/image/recettes/foodwarsterrinedelégumes.png'
 function Register() {
   return (
     <div className="App container">
-        <Banner title="Inscription" image={customImage} />
+        <Banner title="Inscription" image={customImage} altText="plat d'un animé : terrine arc-en-ciel de légumes" />
         <RegisterBloc />
         <Newsletter />
     </div>

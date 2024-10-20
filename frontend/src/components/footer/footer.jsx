@@ -16,7 +16,7 @@ function Footer() {
                 <img src={logo} className="App-logo" alt="logo" />
             </NavLink>
             <nav>
-                <h3>Navigation</h3>
+                <h2>Navigation</h2>
                 <ul>
                 <li>
                     <NavLink to="/recettes">Recettes</NavLink>
@@ -33,19 +33,19 @@ function Footer() {
                 </ul>
             </nav>
             <div className='social_network'>
-                <a href="#youtube" target='_blank'>
+                <a href="#youtube" target='_blank' aria-label="YouTube">
                     <i className="fa-brands fa-youtube"></i>
                 </a>
-                <a href="#instagram" target='_blank'>
+                <a href="#instagram" target='_blank' aria-label="Instagram">
                     <i className="fa-brands fa-instagram"></i>
                 </a>
-                <a href="#printerest" target='_blank'>
+                <a href="#printerest" target='_blank' aria-label="Pinterest">
                     <i className="fa-brands fa-pinterest"></i>
                 </a>
-                <a href="#facebook" target='_blank'>
-                    <i className="fa-brands fa-facebook"></i>
+                <a href="#facebook" target='_blank' aria-label="Facebook">
+                    <i className="fa-brands fa-facebook" ></i>
                 </a>
-                <a href="#x" target='_blank'>
+                <a href="#x" target='_blank' aria-label="X (Twitter)">
                     <i className="fa-brands fa-x-twitter"></i>
                 </a>
             </div>

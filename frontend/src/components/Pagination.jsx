@@ -25,7 +25,7 @@ const Pagination = ({ currentPage, totalPages, handlePreviousPage, handleNextPag
 
   return (
     <div className="pagination">
-      <button className="arrow" onClick={handlePreviousPage} disabled={currentPage === 1}>
+      <button className="arrow" onClick={handlePreviousPage} disabled={currentPage === 1} aria-label="Page précédente" aria-disabled={currentPage === 1}>
         <i className="fa-solid fa-angle-left"></i>
       </button>
       {getPageNumbers().map((page, index) => (
@@ -34,11 +34,12 @@ const Pagination = ({ currentPage, totalPages, handlePreviousPage, handleNextPag
           onClick={() => typeof page === 'number' && handlePageClick(page)}
           className={`page ${currentPage === page ? 'active' : ''}`}
           disabled={typeof page !== 'number'}
+          aria-disabled={typeof page !== 'number'}
         >
           {page}
         </button>
       ))}
-      <button className="arrow" onClick={handleNextPage} disabled={currentPage === totalPages}>
+      <button className="arrow" onClick={handleNextPage} disabled={currentPage === totalPages} aria-label="Page suivante" aria-disabled={currentPage === totalPages}>
         <i className="fa-solid fa-angle-right"></i>
       </button>
     </div>

@@ -8,7 +8,7 @@ const DashboardRecipeCard = ({ title, image, link, onView, onDelete }) => {
         <img src={image} alt={title} />
       </div>
       <div className='card_content'>
-        <h3>{title}</h3>
+        <p>{title}</p>
         <div className='button_card'>
           <button className='dashboard_button' onClick={onView}>Voir</button>
           <button className='dashboard_button' onClick={onDelete}>Supprimer</button>

@@ -9,7 +9,7 @@ function Categories() {
 
   return (
     <div className="App container">
-        <Banner title="Catégories" image={customImage} />
+        <Banner title="Catégories" image={customImage} altText="plat d'un animé : Spicy Mapo Tofu" />
         <CategoriesBloc categories={categories} setCategories={setCategories} />
         <Newsletter />
     </div>

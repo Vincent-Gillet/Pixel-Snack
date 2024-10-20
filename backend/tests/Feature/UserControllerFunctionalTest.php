@@ -6,7 +6,7 @@ use Tests\TestCase;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class UserControllerTest extends TestCase
+class UserControllerFunctionalTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -36,7 +36,7 @@ class UserControllerTest extends TestCase
         $response = $this->put("/api/v1/users/{$user->id}", [
             'name' => 'Jane Doe',
             'email' => 'jane.doe@example.com',
-            'role' => 'user', 
+            'role' => 'user',
         ]);
 
         $response->assertStatus(200);
@@ -57,7 +57,7 @@ class UserControllerTest extends TestCase
         $response->assertStatus(204);
         $this->assertDatabaseMissing('users', [
             'id' => $user->id,
-       ]);
+        ]);
     }
 
     public function test_delete_non_existent_user()

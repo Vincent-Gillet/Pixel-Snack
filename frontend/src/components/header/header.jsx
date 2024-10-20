@@ -29,10 +29,12 @@ function Header() {
     useEffect(() => {
         const handleScroll = () => {
             const burgerButton = document.querySelector('.bm-burger-button');
-            if (window.scrollY > 50) {
-                burgerButton.classList.add('scrolled');
-            } else {
-                burgerButton.classList.remove('scrolled');
+            if (burgerButton) { // Vérifiez que l'élément existe
+                if (window.scrollY > 50) {
+                    burgerButton.classList.add('scrolled');
+                } else {
+                    burgerButton.classList.remove('scrolled');
+                }
             }
         };
 

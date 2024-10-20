@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Banner({ title, image }) {
+function Banner({ title, image, altText }) {
 
   const backgroundBanner = {
     backgroundImage: `url(${image})`,
@@ -9,7 +9,7 @@ function Banner({ title, image }) {
   };
 
   return (
-    <div className="App-banner container" style={backgroundBanner}>
+    <div className="App-banner container" style={backgroundBanner} role="img" aria-label={altText}>
       <h1>{title}</h1>
       <div className='filter'></div>
     </div>

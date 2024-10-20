@@ -75,11 +75,19 @@ const FilterBloc = ({ setRecipes }) => {
               placeholder="Rechercher une recette"
               value={searchQuery}
               onChange={handleSearchChange}
+              aria-describedby="search-desc"
+              aria-label="Barre de recherche des recettes"
             />
           </div>
           <div className='filter'>
             <label htmlFor="ingredients">Ingrédients</label>
-            <select name="ingredients" id="ingredients" onChange={handleIngredientChange}>
+            <select
+              name="ingredients"
+              id="ingredients"
+              onChange={handleIngredientChange}
+              aria-describedby="ingredients-desc"
+              aria-label="Filtrer les recettes par ingrédients"
+            >
               <option value="">Tous les ingrédients</option>
               {ingredients.map((ingredient) => (
                 <option key={ingredient.id} value={ingredient.name}>
@@ -90,7 +98,13 @@ const FilterBloc = ({ setRecipes }) => {
           </div>
           <div className='filter'>
             <label htmlFor="diets">Régimes</label>
-            <select name="diets" id="diets" onChange={handleDietChange}>
+            <select
+              name="diets"
+              id="diets"
+              onChange={handleDietChange}
+              aria-describedby="diets-desc"
+              aria-label="Filtrer les recettes par régimes alimentaires"
+            >
               <option value="">Tous les régimes</option>
               {diets.map((diet) => (
                 <option key={diet.id} value={diet.name}>

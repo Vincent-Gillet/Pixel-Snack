@@ -254,7 +254,7 @@ class CategoryController extends Controller
     * )
     */
 
-    public function recipesByCategory($id)
+    public function getRecipesByCategoryId($id)
     {
         $category = Category::with('recipes')->find($id);
 

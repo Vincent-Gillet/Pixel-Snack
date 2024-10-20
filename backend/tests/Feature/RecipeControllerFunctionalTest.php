@@ -9,7 +9,7 @@ use App\Models\Diet;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class RecipeControllerTest extends TestCase
+class RecipeControllerFunctionalTest extends TestCase
 {
     use RefreshDatabase;
 

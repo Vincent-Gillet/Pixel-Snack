@@ -23,9 +23,9 @@ import './styles/main.scss';
 
 function App() {
   return (
-    <UserProvider>
-      <div className="App">
-        <Router>
+    <div className="App">
+      <Router>
+        <UserProvider>
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -44,9 +44,9 @@ function App() {
             <Route path="/cgu" element={<CGU />} />
           </Routes>
           <Footer />
-        </Router>
-      </div>
-    </UserProvider>
+        </UserProvider>
+      </Router>
+    </div>
   );
 }
 

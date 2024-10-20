@@ -6,7 +6,7 @@ function CGU() {
 
     return (
         <div className="App container">
-            <Banner title="CGU" image={customImage} />
+            <Banner title="CGU" image={customImage} altText="plat d'un animé : Spicy Mapo Tofu"/>
             <div className='cgu'>
                 <h2>Conditions générales d'utilisation</h2>
                 <p>En vigueur au 01/01/2023</p>

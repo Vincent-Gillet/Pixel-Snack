@@ -17,21 +17,21 @@ Route::group(['prefix' => 'v1'], function () {
 
     Route::get('/recipes', [RecipeController::class, 'index'])->name('recipes.index');
     Route::get('/recipes/{id}', [RecipeController::class, 'show'])->name('recipes.show');
-    Route::get('/recipes/filter/recipes', [RecipeController::class, 'filter']);
+    Route::get('/recipes/filter/recipes', [RecipeController::class, 'getFilter']);
     Route::get('/recipes/{id}/categories', [RecipeController::class, 'show']);
 
     Route::get('/categories/{id}', [CategoryController::class, 'show'])->name('categories.show');
     Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
-    Route::get('/categories/{id}/recipes', [CategoryController::class, 'recipesByCategory'])->name('categories.recipes');
+    Route::get('/categories/{id}/recipes', [CategoryController::class, 'getRecipesByCategoryId'])->name('categories.recipes');
 
     Route::get('/ingredients', [IngredientController::class, 'index'])->name('ingredients.index');
 
     Route::get('/diets', [DietController::class, 'index']);
     Route::get('/diets/{id}', [DietController::class, 'show']);
 
-    Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
+    Route::post('/newsletter/subscribe', [NewsletterController::class, 'getSubcribe'])->name('newsletter.subscribe');
     
-    Route::post('/send-email', [ContactController::class, 'sendEmail']);
+    Route::post('/send-email', [ContactController::class, 'getSendEmail']);
 
     Route::middleware('auth:sanctum')->group(function () {
         Route::post('/logout', [AuthController::class, 'logout']);
