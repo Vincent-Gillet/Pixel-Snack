@@ -20,8 +20,8 @@ Pour utiliser l'application, il vous faudra au préalable avoir les éléments s
 Clonez le dépôt GitHub avec la commande suivante :
 
 ```bash
-git clone https://github.com/your-repository-url.git
-cd your-repository-folder
+git clone https://github.com/Vincent-Gillet/Pixel-Snack.git
+cd Pixel-Snack
 ```
 
 ### La base de données
